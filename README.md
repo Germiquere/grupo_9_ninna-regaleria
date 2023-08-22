@@ -6,7 +6,7 @@
 
 ## SITOS DE REFERENCIA
 
-- Sitio uno: [Link](https://www.mercadolibre.com.ar/)
+- Sitio uno: [Mercado Libre](https://www.mercadolibre.com.ar/) Tomamos como referencia a uno de las grandes tiendas online de latinoamerica por la forma en que muestra las diferentes secciones de los productos y ofertas que ofrece.
 - Sitio dos:
 - Sitio tres:
 - Sitio cuatro:
