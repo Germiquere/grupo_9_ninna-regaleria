@@ -15,7 +15,7 @@
 ## PARTICIPANTES
 - Leandro Zapata:
 - Augusto Marino:
-- Gisel Giaroli:
+- Gisel Giaroli: tengo 29 años, soy de Maggiolo, Santa Fe. Estoy terminando la carrera de Ingeniería Civil en la UTN de Venado Tuerto. Este curso me pareció una gran oportunidad para empezar a aprender sobre programación, ya que es un tema que siempre me llamó la atención y tenía pendiente.
 - Felipe Duarte:
 - German Miquere:
 
