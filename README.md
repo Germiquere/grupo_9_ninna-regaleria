@@ -17,5 +17,5 @@
 - Augusto Marino:
 - Gisel Giaroli: tengo 29 años, soy de Maggiolo, Santa Fe. Estoy terminando la carrera de Ingeniería Civil en la UTN de Venado Tuerto. Este curso me pareció una gran oportunidad para empezar a aprender sobre programación, ya que es un tema que siempre me llamó la atención y tenía pendiente.
 - Felipe Duarte:
-- German Miquere:
+- German Miquere: Hola como va? Soy German, soy de la ciudad de Esperanza - Santa Fe . Actualmente me encuentro cursando las ultimas dos materias de la carrera Certified Tech Developer en Digital House. Desde que descubri el mundo de la programacion web hace casi 2 años no paro de aprender cosas nuevas y conocer gente nueva. 
 
