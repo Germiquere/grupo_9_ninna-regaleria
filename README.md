@@ -13,7 +13,7 @@
 - Sitio cinco:[Frappe](https://frappe.com.ar/) Creemos que este seria un gran sitio web para tener como referencia en la parte de diseño grafico como por ejemplo la tipografia, colores, y mas.
 
 ## PARTICIPANTES
-- Leandro Zapata:
+- Leandro Zapata: me gusta aprender, cocinar, jugar, viajar y ahora le sumo programar, tengo 35 años, estudio Diseño Industrial en UNRaf, administro la empresa familiar.
 - Augusto Marino:
 - Gisel Giaroli: tengo 29 años, soy de Maggiolo, Santa Fe. Estoy terminando la carrera de Ingeniería Civil en la UTN de Venado Tuerto. Este curso me pareció una gran oportunidad para empezar a aprender sobre programación, ya que es un tema que siempre me llamó la atención y tenía pendiente.
 - Felipe Duarte:
