@@ -14,7 +14,7 @@
 
 ## PARTICIPANTES
 - Leandro Zapata: me gusta aprender, cocinar, jugar, viajar y ahora le sumo programar, tengo 35 años, estudio Diseño Industrial en UNRaf, administro la empresa familiar.
-- Augusto Marino:
+- Augusto Marino: Soy de Santa Fe Capital, estudio la carrera de Diseño Multimedial y Desarrollo Web en la FICH, me encanta todo los temas sobre videojuegos, computacion y programacion y este curso me dio la opurtunidad de pronfundizar y aprender cosas nuevas.
 - Gisel Giaroli: tengo 29 años, soy de Maggiolo, Santa Fe. Estoy terminando la carrera de Ingeniería Civil en la UTN de Venado Tuerto. Este curso me pareció una gran oportunidad para empezar a aprender sobre programación, ya que es un tema que siempre me llamó la atención y tenía pendiente.
 - Felipe Duarte:
 - German Miquere: Hola como va? Soy German, soy de la ciudad de Esperanza - Santa Fe . Actualmente me encuentro cursando las ultimas dos materias de la carrera Certified Tech Developer en Digital House. Desde que descubri el mundo de la programacion web hace casi 2 años no paro de aprender cosas nuevas y conocer gente nueva. 
