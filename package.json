@@ -1,6 +1,19 @@
 {
   "dependencies": {
     "express": "^4.18.2",
+    "nodemon": "^3.0.1",
     "path": "^0.12.7"
-  }
+  },
+  "name": "grupo_9_ninna-regaleria",
+  "description": "- ¡Bienvenidos al punto de encuentro definitivo para todos los apasionados del buen beber! Sumérgete en una experiencia única donde los sabores exquisitos cobran vida. Nuestra comunidad te invita a explorar el fascinante mundo de cócteles meticulosamente elaborados, vinos que cuentan historias y cervezas artesanales que desafían los sentidos.\r ## PUBLICO OBJETIVO\r - El publico de nuestro sitio va a ser mayores de edad en primer lugar y esta referido tanto a mujeres como hombres de la region centro de la provincia de santa fe.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "dev":"nodemon src/app.js" ,
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
