@@ -1,0 +1,252 @@
+main {
+    /* background-color: #f0f0f0; */
+    text-align: center;
+    margin: 30px 0px;
+    padding: 15px;
+    font-weight: 600;
+}
+
+.producto, .detalle-compra {
+    background-color: #ffffff;
+    margin: auto;
+}
+
+.descripcion {
+    background-color: #ffffff;
+    margin: 20px;
+    border-radius: 15px;
+    border: solid #000 0.5px;
+    width: 80%;
+    padding: 10px;
+}
+
+.detalle-producto {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    margin: 20px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    border: solid #000 0.5px;
+}
+
+div.img-producto > img {
+    width: 60%;
+}
+
+.img-producto {
+    margin: auto;
+    justify-content: center;
+}
+
+h5.nombre-producto {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.boton-cantidad, .cantidad {
+    display: inline-block;
+    border: solid 1px #666;
+    padding: 5px;
+    background-color: #ffffff;
+    font-weight: normal;
+    font-size: 10px;
+}
+
+.boton-cantidad {
+    width: 20%;
+}
+
+.cantidad {
+    width: 50%;
+}
+
+.cantidad-compra {
+    margin: auto;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.precio, .uva, .stock, .descripcion > p {
+    font-size: 10px;
+    line-height: 20px;
+}
+
+.boton-compra, .boton-carrito {
+    margin: 5px;
+    color: #ffffff;
+    display: inline-block;
+    width: 80%;
+    font-size: 10px;
+    line-height: 30px;
+    border: none;
+    background-color: #820000;
+}
+
+h5.nombre-producto, .descripcion > h5 {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.descripcion {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.categoria {
+    display: inline-block;
+    width: 120px;
+    margin-right: 0px;
+    text-align: left;
+}
+
+@media (min-width:361px){
+    main {
+        margin-top: 40px;
+    }
+    div.detalle-producto {
+        position: relative;
+        height: 350px;
+        margin: auto;
+    }
+
+    div.descripcion {
+        margin: 0;
+        margin-top: 20px;
+        width: 45%;
+    }
+
+    .img-producto {
+        width: 400px;
+        position: absolute;
+        left: 0;
+    }
+
+    .descripcion, .detalle-producto {
+        width: 100%;
+        margin: 20px;
+    }
+
+    h5.nombre-producto, .descripcion > h5 {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 8px;
+    }
+
+    .boton-cantidad, .cantidad {
+        display: inline-block;
+        border: solid 1px #666;
+        padding: 5px;
+        background-color: #ffffff;
+        font-weight: normal;
+        font-size: 14px;
+    }
+    
+    .precio, .uva, .stock, .descripcion > p {
+        font-size: 14px;
+        line-height: 35px;
+    }
+
+    .boton-compra, .boton-carrito {
+        font-size: 14px;
+        line-height: 35px;
+    }
+
+    .detalles {
+        margin-left: 30%;
+    }
+
+    .categoria {
+        width: 150px;
+        margin: 0;
+    }
+}
+
+@media (min-width:769px) {
+    main {
+        margin-top: 130px;
+    }
+
+    .detalles {
+        height: 80%;
+    }
+
+    div.detalle-producto {
+        height: 450px;
+    }
+
+    .img-producto {
+        width: 500px;
+        position: absolute;
+        left: 50px;
+    }
+
+    h5.nombre-producto, .descripcion > h5 {
+        font-size: 25px;
+        font-weight: 600;
+        margin-bottom: 15px;
+    }
+
+    .precio, .uva, .stock, .descripcion > p {
+        font-size: 18px;
+        line-height: 50px;
+        text-align: left;
+    }
+
+    .boton-cantidad, .cantidad {
+        padding: 10px;
+        font-size: 16px;
+        margin-bottom: 16px;
+    }
+
+    .cantidad-compra {
+        width: 100%;
+    }
+
+    .boton-compra, .boton-carrito {
+        font-size: 16px;
+        line-height: 40px;
+        margin-bottom: 10px;
+        width: 100%;
+    }    
+
+    .categoria {
+        width: 250px;
+    }
+    
+    body {
+        /* background-image: linear-gradient(rgb(255 255 255 / 10%), rgba(255 255 255 / 10%)), url(../images/photo_8.webp); */
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;;
+    }
+
+    footer {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        color: #f0f0f0;
+    }
+
+    .informacion {
+        align-items: flex-start;
+    }
+    
+    .informacion input {
+        margin-left: 0;
+    }
+
+    .informacion a {
+        color:#f0f0f0;
+    }
+}
