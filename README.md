@@ -19,3 +19,5 @@
 - Felipe Duarte:
 - German Miquere: Hola como va? Soy German, soy de la ciudad de Esperanza - Santa Fe . Actualmente me encuentro cursando las ultimas dos materias de la carrera Certified Tech Developer en Digital House. Desde que descubri el mundo de la programacion web hace casi 2 años no paro de aprender cosas nuevas y conocer gente nueva. 
 
+## LINK TRELLO 
+https://trello.com/b/6flBFaNO/tablero-grupo-9-ninna
