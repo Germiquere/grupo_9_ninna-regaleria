@@ -222,6 +222,11 @@ article div.main-article {
     color: #820000;
 }
 
+section div.products  {
+    width: 80%;
+    margin: auto;
+}
+
 /* MAIN END */
 /* FOOTER START */
 
