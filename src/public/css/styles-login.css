@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* inicio estilos */
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+.logo{
+    font-size: 2em;
+    color: #fff;
+    user-select: none;
+}
+
+.navigation .btnLogin-popup {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 1000;
+    margin-left: 40px;
+    transition: .5s;
+}
+
+.navigation .btnLogin-popup:hover{
+    background: #fff;
+    color:#000;
+}
+/* fin de estilos */
+.container{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #820000;
+}
+
+.form{
+    max-width: 430px;
+    padding: 30px;
+    border-radius: 6px;
+    background: #fff;
+}
+
+.header-2 {
+    font-size: 28px;
+    font-weight: 600;
+    color: black;
+    text-align: center;
+}
+
+form {
+    margin-top: 30px;
+
+}
+
+form .field {
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.field input,
+.field button{
+    height: 100%;
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    font-weight: 400px;
+    border-radius: 6px;   
+}
+
+.field input{
+    padding: 0 15px;
+    border: 1px solid #CACACA;
+}
+
+.form-link{
+    text-align: center;
+    margin-top: 10px;
+}
+
+.form-link span,
+.form-link a{
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.form a{
+    text-decoration: none;
+    color: #722f37;
+}
+
+.form a:hover{
+    text-decoration: underline;
+}
+
+@media (min-width: 480px){
+    .form{
+        width: 100%;
+    }
+
+    header{
+    padding: 20px 100px;
+    }
+}
+
+@media (max-width: 480px){
+    header {
+        
+    }
+}
+
+footer {
+    width: 100%;
+    padding: 20px 10px;
+    display: flex;
+    justify-content: space-between;
+
+}
