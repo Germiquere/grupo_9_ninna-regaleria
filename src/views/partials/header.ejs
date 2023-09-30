@@ -1,0 +1,58 @@
+
+    <header class="header-1">
+        <h2 class="logo">NINNA</h2>
+        <div class="burger-menu">
+            <i class="fa-solid fa-bars"></i>
+            <div class="drop-menu">
+                <ul>
+                    <li>
+                        <h3>Categorias</h3>
+                    </li>
+                    <li><a href="#">Vinos</a></li>
+                    <li><a href="#">Whiskies</a></li>
+                    <li><a href="#">Spirits</a></li>
+                    <li><a href="#">Cervezas</a></li>
+                    <li><a href="#">Combos</a></li>
+                    <li><a href="#">Promociones</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- <div class="search-container"> -->
+            <input type="search" id="search-input" placeholder="Buscar...">
+        <!-- </div> -->
+        <a href="/login" class="box-login"><div class="icon-user">
+            <i class="fa-solid fa-user"></i>
+            <p>Login</p>
+        </div></a>
+        <a href="/productCart" class="box-cart"><div class="cart-shopping">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <p>Cart</p>
+        </div></a>
+    </header>
+    <header class="header-2">
+        <nav class="navigation">
+            <div><a href="#">Vinos</a></div>
+            <div><a href="#">Whiskies</a></div>
+            <div><a href="#">Spirits</a></div>
+            <div><a href="#">Cervezas</a></div>
+            <div><a href="#">Combos</a></div>
+            <div><a href="#">Promociones</a></div>
+        </nav>
+    </header>
+
+
+    <script>
+        const burgerBtn = document.querySelector('.burger-menu')
+        const burgerBtnIcon = document.querySelector('burger-menu i')
+        const dropDownMenu = document.querySelector('.drop-menu')
+
+        burgerBtn.onclick = function () {
+            dropDownMenu.classList.toggle('open')
+            const isOpen = dropDownMenu.classList.contains('open')
+
+            burgerBtnIcon.classList = isOpen
+                ? 'fa-solid fa-xmark'
+                : 'fa-solid fa-bars'
+        }
+    </script>
