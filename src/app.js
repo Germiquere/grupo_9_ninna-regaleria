@@ -1,27 +1,22 @@
 const express = require('express');
 const path = require('path');
+const mainLogin = require('./routes/users');
+const main = require('./routes/main');
+const mainProduct = require('./routes/product');
 
 const app = express();
 
 const port = 3000;
 
 app.use(express.static(path.join(__dirname, 'public')));
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 
-app.get('/', (req,res)=> {
-    res.sendFile(__dirname + '/views/index.html');
-});
-app.get('/productCart', (req,res)=> {
-    res.sendFile(__dirname + '/views/productCart.html');
-});
-app.get('/productDetail', (req,res)=> {
-    res.sendFile(__dirname + '/views/productDetail.html');
-});
-app.get('/login', (req,res)=> {
-    res.sendFile(__dirname + '/views/login.html');
-});
-app.get('/register', (req,res)=> {
-    res.sendFile(__dirname + '/views/register.html');
-});
+
+app.use('/', main);
+app.use('/', mainLogin);
+app.use('/', mainProduct);
+
 
 app.listen(port, () => {
     console.log(`Servidor iniciado en http://localhost:${port}`);
