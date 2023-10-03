@@ -1,31 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
 
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
 
+body {
+    background-color: #820000;
+}
 
 header {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     padding: 20px 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #820000;
 }
 
-.logo{
+.logo {
     font-size: 32px;
     color: #fff;
     user-select: none;
 }
 
-.navigation .btnLogin-popup {
+.navigation .btnHome {
     width: 130px;
     height: 50px;
     background: transparent;
@@ -40,13 +42,15 @@ header {
     transition: .5s;
 }
 
-.navigation .btnLogin-popup:hover{
+.navigation .btnHome:hover {
     background: #fff;
-    color:#000;
+    color: #000;
 }
 
+/* Main Styles */
+
 main {
-    height: 100vh;
+    height: 500px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -54,7 +58,7 @@ main {
     background-color: #820000;
 }
 
-.form{
+.form {
     max-width: 430px;
     padding: 30px;
     border-radius: 6px;
@@ -80,39 +84,42 @@ form .field {
 }
 
 .field input,
-.field button{
+.field button {
     height: 100%;
     width: 100%;
     border: none;
     font-size: 16px;
     font-weight: 400px;
-    border-radius: 6px;   
+    border-radius: 6px;
 }
 
-.field input{
+.field input {
     padding: 0 15px;
     border: 1px solid #CACACA;
 }
 
-.form-link{
+.form-link {
     text-align: center;
     margin-top: 10px;
 }
 
-.form-link span
-{
+.form-link span {
     font-size: 14px;
     font-weight: 400;
+
 }
 
+.form-link a{
+    text-decoration: none;
+    color: #7C3030;
+}
 
-
-@media (min-width: 480px){
-    .form{
+@media (min-width: 480px) {
+    .form {
         width: 100%;
     }
 
-    header{
-    padding: 20px 100px;
+    header {
+        padding: 20px 100px;
     }
 }
