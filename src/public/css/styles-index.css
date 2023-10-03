@@ -184,7 +184,7 @@ main {
 }
 
 main section article {
-    background-color: #f0f0f0;
+    background-color: #fff;
     margin: 10px 0px;
     border-radius: 5%;
 }
@@ -193,6 +193,7 @@ main section article img {
     width: 20%;
     display: block;
     margin: auto;
+    padding: 10px;
 }
 
 main section article .discount {
@@ -222,13 +223,11 @@ article div.main-article {
     color: #820000;
 }
 
-leandro
 section div.products  {
     width: 80%;
     margin: auto;
 }
 
-=======
 main
 /* MAIN END */
 /* FOOTER START */
@@ -266,6 +265,21 @@ footer {
 
 @media(min-width: 768px){
 
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    section.categories {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    section div.products {
+        width: 50%;
+    }
+
     .box-login {
         text-decoration: none;
         border: 2px solid rgb(0, 0, 0);
@@ -281,7 +295,6 @@ footer {
     .icon-user p {
         display: block;
         margin-left: 20px;
-
     }
 
     .icon-user {
@@ -305,7 +318,6 @@ footer {
     .cart-shopping p {
         display: block;
         margin-left: 20px;
-
     }
 
     .header-2 .navigation div a {
@@ -361,7 +373,6 @@ footer {
     .icon-user p {
         display: block;
         margin-left: 20px;
-
     }
 
     .icon-user {
@@ -385,7 +396,6 @@ footer {
     .cart-shopping p {
         display: block;
         margin-left: 20px;
-
     }
 
     .header-2 .navigation div a {

@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NINNA AROMAS & SABORES</title>
-    <!-- ICONOS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" /> 
-    <!-- FUENTES DE GOOGLE -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
-    <!-- NORMALIZE -->
-    <link rel="stylesheet" href="/css/normalize.css">
-    <!-- ESTILOS PROPIOS -->
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/styles-index.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Carrito de compras</title>
+        <script src="https://kit.fontawesome.com/f2650b748c.js" crossorigin="anonymous"></script>
+        <!-- ICONOS -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" /> 
+        <!-- FUENTES DE GOOGLE -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+        <style> 
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+        </style>
+        <!-- NORMALIZE -->
+        <link rel="stylesheet" href="/css/normalize.css">
+        <!-- ESTILOS PROPIOS -->
+        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="stylesheet" href="/css/styles-index.css">
 </head>
 <body>
-    <header>
-        <h2 class="logo">NINNA Header</h2>
+    <header class="header-1">
+        <img class="logo" src="/images/logo-ninna.png" alt="logo ninna">
         <div class="burger-menu">
             <i class="fa-solid fa-bars"></i>
             <div class="drop-menu">
@@ -39,15 +45,14 @@
         <!-- <div class="search-container"> -->
             <input type="search" id="search-input" placeholder="Buscar...">
         <!-- </div> -->
-        <a href="http://localhost:3030/login2" class="box-login"><div class="icon-user">
+        <a href="/login" class="box-login"><div class="icon-user">
             <i class="fa-solid fa-user"></i>
             <p>Login</p>
         </div></a>
-        <a href="" class="box-cart"><div class="cart-shopping">
+        <a href="/productCart" class="box-cart"><div class="cart-shopping">
             <i class="fa-solid fa-cart-shopping"></i>
             <p>Cart</p>
         </div></a>
-
     </header>
     <header class="header-2">
         <nav class="navigation">
@@ -59,8 +64,6 @@
             <div><a href="#">Promociones</a></div>
         </nav>
     </header>
-
-
     <script>
         const burgerBtn = document.querySelector('.burger-menu')
         const burgerBtnIcon = document.querySelector('burger-menu i')
@@ -79,7 +82,7 @@
         <section class="carrusel">
             <img src="/images/vinedos.jpg" alt="Viñedos">
         </section>
-        <section class="suggestions">
+        <section class="categories">
             <h3>Sugerencias</h3>
             <div class="products">
                 <article>
@@ -125,7 +128,7 @@
                 </article>
             </div>
         </section>
-        <section class="offers">
+        <section class="categories">
             <h3>Ofertas</h3>
             <div class="products">
                 <article>
@@ -173,10 +176,36 @@
         </section>
     </main>
     <footer>
-<div class="box" id="box1">Logo</div>
-<div class="box" id="box2">Catagorias</div>
-<div class="box" id="box3">Ayuda</div>
-<div class="box" id="box4">Suscribirse</div>
+        <img class="logo" src="/images/logo-ninna.png" alt="logo ninna">
+        <div class="informacion">
+            <h4>Categorías</h4>
+            <p><a href="#">Vinos</a></p>
+            <p><a href="#">Whiskies</a></p>
+            <p><a href="#">Spirits</a></p>
+            <p><a href="#">Cervezas</a></p>
+            <p><a href="#">Promociones</a></p>
+        </div>
+        <div class="informacion"> 
+        <h4> Ayuda </h4>
+        <p><a href="">Medios de pago</a></p>
+        <p><a href="">Envíos</a></p>
+        <p><a href="">Preguntas frecuentes</a></p>
+        <p><a href="">Arrepentimiento</a></p> 
+        </div>
+        <div class="informacion">
+            <h4>Contacto</h4>
+            <p><a href="">correo@email.com</a></i></p>
+            <div>
+                <span><a href=""><i class="fab fa-instagram"></i></a></span>
+                <span><a href=""><i class="fab fa-facebook"></i></a></span>
+                <span><a href=""><i class="fab fa-whatsapp"></i></i></a></span>
+            </div>
+        </div>
+        <div class="informacion">
+            <h4>Suscribirse</h4>
+            <input type="email" placeholder="Ingresá tu correo">
+            <button class="suscripcion">SUSCRIBIRSE</button>
+        </div>
     </footer>
 </body>
 </html>
