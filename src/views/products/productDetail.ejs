@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Los intocables Red Blend</title>
+    <script src="https://kit.fontawesome.com/f2650b748c.js" crossorigin="anonymous"></script>
+    <!-- ICONOS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" /> 
+    <!-- FUENTES DE GOOGLE -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+    </style>
+    <!-- NORMALIZE -->
+    <link rel="stylesheet" href="/css/normalize.css">
+    <!-- ESTILOS PROPIOS -->
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/styles-productDetail.css">
+</head>
+<body>
+    <%- include('../partials/header') %>
+    <main>
+        <div class="detalle-producto">
+            <div class="img-producto"><img src="/images/los-intocables.png" alt="imagen producto"></div>
+            <div class="detalles">
+                <h5 class="nombre-producto">Los intocables</h5>
+                <p class="uva">Malbec</p>
+                <p class="precio">$5.049,81</p>
+                <p class="stock">Stock disponible</p>
+                <div class="cantidad-compra">
+                    <span class="boton-cantidad"> - </span> <span class="cantidad"> 1 </span> <span class="boton-cantidad"> + </span>
+                </div>
+                <button class="boton-compra" href="">Comprar ahora</button>
+                <button class="boton-carrito" href="">Agregar al carrito</button>
+            </div>
+        </div>
+        <div class="descripcion">
+            <h5>Características</h5>
+            <p ><span class="categoria">VARIETAL: </span><span>Malbec</span></p>
+            <p ><span class="categoria">BODEGA: </span><span>Finca Las Moras</span></p>
+            <p ><span class="categoria">AÑADA: </span><span>2018</span></p>
+            <p ><span class="categoria">TIPO DE BARRICA: </span><span>roble bourbon</span></p>
+            <p ><span class="categoria">TIEMPO DE BARRICA: </span><span>12 meses</span></p>
+        </div>
+    </main>
+    <%- include('../partials/footer') %>
+</body>
+</html>
