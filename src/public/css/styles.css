@@ -31,13 +31,13 @@ header {
 
 }
 
+.header-1 {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+
 .header-2 {
-    display: flex;
-    background-color: #820000;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 25px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
@@ -108,7 +108,7 @@ header {
     right: 50px;
     top: 80px;
     height: 0px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255);
     width: 300px;
     backdrop-filter: blur(15px);
     border-radius: 10px;
@@ -213,7 +213,7 @@ footer .logo {
 
 
 
-@media(min-width: 769px){
+@media(min-width: 768px){
 
     .header-2 {
         display: block;
@@ -230,7 +230,7 @@ footer .logo {
 
     .box-login {
         text-decoration: none;
-        border: 2px solid #f0f0f0;
+        border: 2px solid #ffffff;
         border-radius: 5px;
         width: 100px;
         height: 35px;
@@ -254,7 +254,7 @@ footer .logo {
     
     .box-cart {
         text-decoration: none;
-        border: 2px solid #f0f0f0;
+        border: 2px solid #ffffff;
         border-radius: 5px;
         width: 100px;
         height: 35px;
@@ -271,9 +271,14 @@ footer .logo {
     }
     
     .header-2 .navigation div a {
-        color: #f0f0f0;
+        color: #000000;
         text-decoration: none;
         font-size: large;
+    }
+
+    #search-input {
+        border-radius: 20px;
+        width: 370px;
     }
 
     footer {
@@ -319,19 +324,11 @@ footer .logo {
     }
 
     #search-input {
-        width: 500px;
+        width: 400px;
     }
 
-    .box-login {
-        text-decoration: none;
-        border: 2px solid #f0f0f0;
-        border-radius: 5px;
-        width: 100px;
-        height: 35px;
-        align-items: center;
-        cursor: pointer;
-        display: inline-flex;
-        justify-content: center;
+    .box-login{
+        transition: .5s;
     }
 
     .icon-user p {
@@ -347,15 +344,13 @@ footer .logo {
     }
 
     .box-cart {
-        text-decoration: none;
-        border: 2px solid #f0f0f0;
-        border-radius: 5px;
-        width: 100px;
-        height: 35px;
-        align-items: center;
-        cursor: pointer;
-        display: inline-flex;
-        justify-content: center
+        transition: .5s;
+    }
+
+    .box-cart:hover,
+    .box-login:hover {
+        background: #fff;
+        color: #000;
     }
 
     .cart-shopping p {
@@ -365,15 +360,21 @@ footer .logo {
     }
 
     .header-2 .navigation div a {
-        color: #f0f0f0;
+        color: #000000;
         text-decoration: none;
         font-size: large;
     }
 }
 
-@media (min-width: 1150px) {
+@media (min-width: 1200px) {
     .box-login {
         position: relative;
-        left: 100px;
+        left: 120px;
+    }
+
+    #search-input{
+        position: relative;
+        left: 40px;
+        width: 500px;
     }
 }
