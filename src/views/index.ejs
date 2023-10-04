@@ -3,7 +3,7 @@
 <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Carrito de compras</title>
+        <title>NINNA Regaleria</title>
         <script src="https://kit.fontawesome.com/f2650b748c.js" crossorigin="anonymous"></script>
         <!-- ICONOS -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" /> 
@@ -23,61 +23,7 @@
         <link rel="stylesheet" href="/css/styles-index.css">
 </head>
 <body>
-    <header class="header-1">
-        <img class="logo" src="/images/logo-ninna.png" alt="logo ninna">
-        <div class="burger-menu">
-            <i class="fa-solid fa-bars"></i>
-            <div class="drop-menu">
-                <ul>
-                    <li>
-                        <h3>Categorias</h3>
-                    </li>
-                    <li><a href="#">Vinos</a></li>
-                    <li><a href="#">Whiskies</a></li>
-                    <li><a href="#">Spirits</a></li>
-                    <li><a href="#">Cervezas</a></li>
-                    <li><a href="#">Combos</a></li>
-                    <li><a href="#">Promociones</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- <div class="search-container"> -->
-            <input type="search" id="search-input" placeholder="Buscar...">
-        <!-- </div> -->
-        <a href="/login" class="box-login"><div class="icon-user">
-            <i class="fa-solid fa-user"></i>
-            <p>Login</p>
-        </div></a>
-        <a href="/productCart" class="box-cart"><div class="cart-shopping">
-            <i class="fa-solid fa-cart-shopping"></i>
-            <p>Cart</p>
-        </div></a>
-    </header>
-    <header class="header-2">
-        <nav class="navigation">
-            <div><a href="#">Vinos</a></div>
-            <div><a href="#">Whiskies</a></div>
-            <div><a href="#">Spirits</a></div>
-            <div><a href="#">Cervezas</a></div>
-            <div><a href="#">Combos</a></div>
-            <div><a href="#">Promociones</a></div>
-        </nav>
-    </header>
-    <script>
-        const burgerBtn = document.querySelector('.burger-menu')
-        const burgerBtnIcon = document.querySelector('burger-menu i')
-        const dropDownMenu = document.querySelector('.drop-menu')
-
-        burgerBtn.onclick = function () {
-            dropDownMenu.classList.toggle('open')
-            const isOpen = dropDownMenu.classList.contains('open')
-
-            burgerBtnIcon.classList = isOpen
-                ? 'fa-solid fa-xmark'
-                : 'fa-solid fa-bars'
-        }
-    </script>
+    <%- include('./partials/header') %>
     <main>
         <section class="carrusel">
             <img src="/images/vinedos.jpg" alt="Viñedos">
@@ -175,37 +121,6 @@
             </div>
         </section>
     </main>
-    <footer>
-        <img class="logo" src="/images/logo-ninna.png" alt="logo ninna">
-        <div class="informacion">
-            <h4>Categorías</h4>
-            <p><a href="#">Vinos</a></p>
-            <p><a href="#">Whiskies</a></p>
-            <p><a href="#">Spirits</a></p>
-            <p><a href="#">Cervezas</a></p>
-            <p><a href="#">Promociones</a></p>
-        </div>
-        <div class="informacion"> 
-        <h4> Ayuda </h4>
-        <p><a href="">Medios de pago</a></p>
-        <p><a href="">Envíos</a></p>
-        <p><a href="">Preguntas frecuentes</a></p>
-        <p><a href="">Arrepentimiento</a></p> 
-        </div>
-        <div class="informacion">
-            <h4>Contacto</h4>
-            <p><a href="">correo@email.com</a></i></p>
-            <div>
-                <span><a href=""><i class="fab fa-instagram"></i></a></span>
-                <span><a href=""><i class="fab fa-facebook"></i></a></span>
-                <span><a href=""><i class="fab fa-whatsapp"></i></i></a></span>
-            </div>
-        </div>
-        <div class="informacion">
-            <h4>Suscribirse</h4>
-            <input type="email" placeholder="Ingresá tu correo">
-            <button class="suscripcion">SUSCRIBIRSE</button>
-        </div>
-    </footer>
+    <%- include('./partials/footer') %>
 </body>
 </html>
