@@ -3,10 +3,7 @@ h3 {
     padding: 8px 0;
     font-weight: bold;
     color: #f0f0f0;
-    /* background-color: #000; */
 }
-
-
 
 main {
     text-align: center;
@@ -15,35 +12,32 @@ main {
     font-weight: 600;
 }
 
-section.carrito {
+section.cart {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
 }
 
-.detalle-compra {
+.purchase-item-detail {
     background-color: #f0f0f0;
     margin: auto;
     border-radius: 15px;
-}
-
-div.img-producto > img {
-    width: 30%;
-}
-
-.detalle-compra {
     margin: 20px;
     border: solid #000 0.5px;
 }
 
-h5.nombre-producto {
+div.img-product > img {
+    width: 30%;
+}
+
+h5.name-product {
     font-size: 12px;
     font-weight: bold;
     margin-bottom: 8px;
 }
 
-.boton-cantidad, .cantidad {
+.quantity-buttom, .quantity {
     display: inline-block;
     border: solid 1px #666;
     padding: 5px;
@@ -52,20 +46,20 @@ h5.nombre-producto {
     font-size: 10px;
 }
 
-.cantidad {
+.quantity {
     width: 50px;
 }
 
-.boton-cantidad {
+.quantity-buttom {
     width: 25px;
 }
 
-.precio {
+.price {
     font-size: 10px;
     margin: 16px;
 }
 
-.boton-compra, .boton-eliminar {
+.purchase-buttom, .delete-buttom {
     color: #000;
     display: inline-block;
     width: 100%;
@@ -76,11 +70,11 @@ h5.nombre-producto {
     border-radius: 15px;
 }
 
-.producto, .resumen, .detalle-compra {
+.product, .summary, .purchase-item-detail {
     width: 80%;
 }
 
-.resumen {
+.summary {
     margin: auto;
     padding: 16px;
     background-color: #820000;
@@ -89,21 +83,21 @@ h5.nombre-producto {
     border-radius: 15px;
 }
 
-section.resumen {
+section.summary {
     margin-top: 20px;
 }
 
-h4.titulo-seccion {
+h4.title-section {
     font-size: 14px;
     margin-bottom: 10px;
 }
 
-.resumen-info {
+.info-summary {
     display: inline-block;
     margin: 10px 0;
 }
 
-.resumen > .boton-compra {
+.summary > .purchase-buttom {
     text-decoration: none;
     display: inline-block;
     width: 70%;
@@ -114,7 +108,7 @@ h4.titulo-seccion {
 }
 
 @media (min-width:481px) {
-    div.img-producto > img {
+    div.img-product > img {
         width: 20%;
     }
 }
@@ -130,49 +124,49 @@ h4.titulo-seccion {
         font-weight: 500;
     }
 
-    section.carrito {
+    section.cart {
         width: 70%;
         margin: 0;
         padding-left: 20px;
         align-items: flex-start;
     }
 
-    section.resumen {
+    section.summary {
         width: 30%;
         margin-top: 170px;
     }
 
-    .producto, .resumen, .detalle-compra {
+    .product, .summary, .purchase-item-detail {
         width: 90%;
     }
 
-    .img-producto {
+    .img-product {
         width: 200px;
         position: absolute;
         left: -20px;
     }
     
-    h5.nombre-producto {
+    h5.name-product {
         font-size: 16px;
         margin-top: 40px;
         text-align: left;
         margin-left: 150px;
     }
 
-    .cantidad-compra {
+    .purchase-quantity {
         font-size: 16px;
         position: absolute;
         right: 20%;
         top: 55px;
     }
 
-    div.detalle-compra {
+    div.purchase-item-detail {
         position: relative;
         height: 175px;
         margin: 25px 0;
     }
 
-    .detalle-compra > .boton-compra, .boton-eliminar {
+    .purchase-item-detail > .purchase-buttom, .delete-buttom {
         width: auto;
         font-size: 16px;
         line-height: 32px;
@@ -182,11 +176,11 @@ h4.titulo-seccion {
         border-radius: 0;
     }
 
-    .detalle-compra > .boton-compra {
+    .purchase-item-detail > .purchase-buttom {
         left: 250px
     }
 
-    .precio {
+    .price {
         font-size: 16px;
         position: absolute;
         right: 20px;
@@ -194,7 +188,7 @@ h4.titulo-seccion {
         margin: 0;
     }
 
-    .resumen {
+    .summary {
         position: absolute;
         display: flex;
         flex-direction: column;
@@ -204,7 +198,7 @@ h4.titulo-seccion {
         right: 50px;
     }
 
-    .resumen-precio {
+    .price-summary {
         display: flex;
         width: 90%;
         flex-direction: row;
@@ -212,20 +206,32 @@ h4.titulo-seccion {
         justify-content: space-around;
         align-items: center;
     }
-    .boton-cantidad, .cantidad {
+    .quantity-buttom, .quantity {
         font-size: 14px;
     }
 
-    .cantidad {
+    .quantity {
         width: 45px;
     }
 
-    span.precio, .resumen-info {
+    span.price, .info-summary {
         font-size: 14px;
         position: static;
     }
 
-    .resumen > .boton-compra {
+    .summary > .purchase-buttom {
         font-size: 14px;
+    }
+}
+
+@media (min-width:1024px) {
+    .summary {
+        right: 20px;
+    }
+}
+
+@media (min-width:1400px) {
+    .purchase-item-detail {
+        width: 80%;
     }
 }
