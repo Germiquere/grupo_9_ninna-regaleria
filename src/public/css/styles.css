@@ -145,35 +145,35 @@ footer .logo {
     align-self: center;
 }
 
-.informacion > h4 {
+.information > h4 {
     font-weight: 600;
     line-height: 30px;
 }
 
-.informacion p {
+.information p {
     margin: 5px;
 }
 
-.informacion a {
+.information a {
     text-decoration: none;
     color: #f0f0f0;
 }
 
-.informacion i {
+.information i {
     font-size: 25px;
     margin: 5px 15px;
     color: #f0f0f0;
     display: inline-block;
 }
 
-.informacion input {
+.information input {
     margin: 15px;
     padding: 10px;
     border-radius: 5px;
     border:none;
 }
 
-.informacion {
+.information {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -182,7 +182,7 @@ footer .logo {
     color: #f0f0f0;
 }
 
-.suscripcion {
+.suscription {
     width: 90%;
     background-color: #f0f0f0;
     padding: 5px;
@@ -288,15 +288,15 @@ footer .logo {
         color: #f0f0f0;
     }
 
-    .informacion {
+    .information {
         align-items: flex-start;
     }
     
-    .informacion input {
+    .information input {
         margin-left: 0;
     }
 
-    .informacion a {
+    .information a {
         color:#f0f0f0;
     }
 }
