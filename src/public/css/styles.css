@@ -15,8 +15,8 @@ body {
 }
 
 .logo {
+    width: 10%;
     font-size: 2em;
-    color: #fff;
     user-select: none;
     display: none;
 }
@@ -141,8 +141,10 @@ footer {
 }
 
 footer .logo {
+    width: 30%;
     margin: 20px;
     align-self: center;
+    display: block;
 }
 
 .informacion > h4 {
@@ -274,7 +276,7 @@ footer .logo {
         color: #000000;
         text-decoration: none;
         font-size: large;
-    }
+    }footer
 
     #search-input {
         border-radius: 20px;
