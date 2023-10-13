@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
 * {
-    box-sizing: border-box;
     margin: 0;
-    font-family: 'Poppins';
-    font-weight: normal;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
 }
 
 body {
@@ -64,7 +67,7 @@ header {
     display: inline-flex;
     justify-content: center;
     border-radius: 5px;
-    color:#f0f0f0;
+    color: #f0f0f0;
 }
 
 #search-input {
@@ -127,7 +130,7 @@ header {
     justify-content: center;
 }
 
-.drop-menu li a{
+.drop-menu li a {
     text-decoration: none;
     color: black;
 }
@@ -147,7 +150,11 @@ footer .logo {
     display: block;
 }
 
+
+.informacion>h4 {
+
 .information > h4 {
+
     font-weight: 600;
     line-height: 30px;
 }
@@ -172,7 +179,7 @@ footer .logo {
     margin: 15px;
     padding: 10px;
     border-radius: 5px;
-    border:none;
+    border: none;
 }
 
 .information {
@@ -215,7 +222,7 @@ footer .logo {
 
 
 
-@media(min-width: 768px){
+@media(min-width: 768px) {
 
     .header-2 {
         display: block;
@@ -234,32 +241,33 @@ footer .logo {
         text-decoration: none;
         border: 2px solid #ffffff;
         border-radius: 5px;
-        width: 100px;
-        height: 35px;
+        width: 105px;
+        height: 40px;
         align-items: center;
         cursor: pointer;
         display: inline-flex;
         justify-content: center;
     }
-    
+
     .icon-user p {
         display: block;
         margin-left: 20px;
-        
+
     }
-    
+
     .icon-user {
         display: flex;
         justify-content: center;
         align-items: center;
+        margin-left: 6px;
     }
-    
+
     .box-cart {
         text-decoration: none;
         border: 2px solid #ffffff;
         border-radius: 5px;
         width: 100px;
-        height: 35px;
+        height: 40px;
         align-items: center;
         cursor: pointer;
         display: inline-flex;
@@ -268,10 +276,10 @@ footer .logo {
 
     .cart-shopping p {
         display: block;
-        margin-left: 20px;
-        
+        margin-left: 10px;
+
     }
-    
+
     .header-2 .navigation div a {
         color: #000000;
         text-decoration: none;
@@ -293,6 +301,15 @@ footer .logo {
     .information {
         align-items: flex-start;
     }
+
+
+    .informacion input {
+        margin-left: 0;
+    }
+
+    .informacion a {
+        color: #f0f0f0;
+
     
     .information input {
         margin-left: 0;
@@ -300,6 +317,7 @@ footer .logo {
 
     .information a {
         color:#f0f0f0;
+
     }
 }
 
@@ -312,7 +330,7 @@ footer .logo {
 
     .header-2 {
         display: none;
-    } 
+    }
 
 }
 
@@ -329,21 +347,10 @@ footer .logo {
         width: 400px;
     }
 
-    .box-login{
+    .box-login {
         transition: .5s;
     }
 
-    .icon-user p {
-        display: block;
-        margin-left: 20px;
-
-    }
-
-    .icon-user {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
 
     .box-cart {
         transition: .5s;
@@ -353,12 +360,6 @@ footer .logo {
     .box-login:hover {
         background: #fff;
         color: #000;
-    }
-
-    .cart-shopping p {
-        display: block;
-        margin-left: 20px;
-
     }
 
     .header-2 .navigation div a {
@@ -374,7 +375,7 @@ footer .logo {
         left: 120px;
     }
 
-    #search-input{
+    #search-input {
         position: relative;
         left: 40px;
         width: 500px;
