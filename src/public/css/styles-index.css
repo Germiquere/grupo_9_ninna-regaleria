@@ -1,14 +1,6 @@
 /* HEADER START */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-
-}
-
 body {
     background: #820000;
     /* background: url(/images/cropped-1920-1080-443997.jpg) no-repeat;  */
@@ -17,195 +9,36 @@ body {
     min-height: 100vh;
 }
 
-.logo {
-    font-size: 2em;
-    color: #fff;
-    user-select: none;
-    display: none;
-}
-
-header {
-    display: flex;
-    background-color: rgb(95, 181, 224);
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 25px;
-
-}
-
-.header-2 {
-    display: flex;
-    background-color: rgb(95, 181, 224);
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 25px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
-
-.navigation {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    flex-wrap: wrap
-}
-
-.navigation div {
-    margin: 0px 20px;
-}
-
-
-.burger-menu {
-    border: 2px solid rgb(0, 0, 0);
-    width: 35px;
-    height: 35px;
-    align-items: center;
-    cursor: pointer;
-    display: inline-flex;
-    justify-content: center;
-    border-radius: 5px;
-}
-
-#search-input {
-    border-radius: 20px;
-    width: 200px;
-    height: 35px;
-    padding: 5px;
-    margin: 0;
-    border: 1px solid #ccc;
-}
-
-.box-cart {
-    color: black;
-}
-
-.box-login {
-    color: black;
-}
-
-.cart-shopping {
-    width: 35px;
-    height: 35px;
-    align-items: center;
-    cursor: pointer;
-    display: inline-flex;
-    justify-content: center;
-    border-radius: 5px;
-}
-
-.icon-user p {
-    display: none;
-}
-
-.cart-shopping p {
-    display: none;
-}
-
-.drop-menu {
-    display: none;
-    position: absolute;
-    right: 50px;
-    top: 80px;
-    height: 0px;
-    background: rgba(255, 255, 255, 0.1);
-    width: 300px;
-    backdrop-filter: blur(15px);
-    border-radius: 10px;
-    overflow: hidden;
-    transition: height .2s;
-}
-
-.drop-menu.open {
-    height: 335px;
-}
-
-
-
-.drop-menu li {
-    padding: 0.7rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.drop-menu li a{
-    text-decoration: none;
-    color: black;
-}
-
-.carrusel img {
-    background-color: #ffffff;
-    width: 100%;
-}
-
-/* HEADER END */
 /* MAIN START */
-div.suggestions,
-div.offers {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.price {
-    display: none;
-    font-size: 18px;
-    width: 30%;
-}
-
-.discount {
-    width: 70%;
-}
-
-.discount,
-.store {
-    font-size: 16px;
-    font-weight: normal;
-}
-
-h3,
-.store {
-    color: #000000;
-}
-
-.store {
-    margin-top: 20px;
+main {
+    width: 90%;
+    margin: auto;
 }
 
 section.carrusel img {
     width: 100%;
 }
 
-main {
-    width: 90%;
-    margin: 0 auto;
+main h3{
+    background-color: #a50000;
+    margin: 10px 0px;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+}
+
+section div.products  {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 main section article {
-    background-color: #f0f0f0;
-    margin: 10px 0px;
-    border-radius: 5%;
-}
-
-main section article img {
-    width: 20%;
-    display: block;
-    margin: auto;
-}
-
-main section article .discount {
-    display: none;
-    color: #39b54a;
-}
-
-main section h3 {
-    display: flex;
-    margin: 20px 0px;
-    flex-direction: column;
-    align-items: center;
-    color: #fff;
+    width: 80%;
+    background-color: #fff;
+    margin: 10px 25px;
+    border-radius: 20px;
 }
 
 article div.main-article {
@@ -218,188 +51,122 @@ article div.main-article {
     padding: 15px;
 }
 
+article div.main-article div p i {
+    display: flex;
+}
+
+main section article img {
+    width: 30%;
+    display: block;
+    margin: auto;
+    padding: 10px;
+}
+
+.price {
+    display: none;
+    font-size: 18px;
+    width: 30%;
+}
+
+.discount {
+    display: none;
+    color: #39b54a;
+}
+
+.store {
+    color: #000000;
+    margin-top: 10px;
+}
+
+.discount,
+.store {
+    font-size: 16px;
+    font-weight: normal;
+    width: 100%;
+    text-align: center;
+}
+
+main section h3 {
+    display: flex;
+    margin: 20px 0px;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+}
+
 .grape {
     color: #820000;
 }
 
-leandro
-section div.products  {
-    width: 80%;
-    margin: auto;
-}
-
-=======
-main
 /* MAIN END */
 /* FOOTER START */
 
-footer {
-    background-color: #fff;
-}
-
 /* FOOTER END */
 
-/* MEDIAQUERY PHONE START */
+/* MEDIAQUERIE PHONE START */
 
-@media (max-width: 320px) {
-
-    header {
-        padding: 20px 9px;
+@media (min-width: 426px) {
+    main h3 {
+        color: #fff;
+        margin: auto;
     }
-
-    .search-container {
-        padding: 0px 15px;
-    }
-
-    .cart-shopping {
-        padding: 10px;
-    }
-
-    .burger-menu {
-        padding: 10px;
-    }
-}
-
-/* MEDIAQUERY PHONE END */
-
-/* MEDIAQUERY TABLET START */
-
-@media(min-width: 768px){
-
-    .box-login {
-        text-decoration: none;
-        border: 2px solid rgb(0, 0, 0);
-        border-radius: 5px;
-        width: 100px;
-        height: 35px;
-        align-items: center;
-        cursor: pointer;
-        display: inline-flex;
-        justify-content: center;
-    }
-
-    .icon-user p {
-        display: block;
-        margin-left: 20px;
-
-    }
-
-    .icon-user {
+    section.categories {
+        width: 100%;
+        margin: 10px 30px;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        flex-wrap: wrap;
     }
-
-    .box-cart {
-        text-decoration: none;
-        border: 2px solid rgb(0, 0, 0);
-        border-radius: 5px;
-        width: 100px;
-        height: 35px;
-        align-items: center;
-        cursor: pointer;
-        display: inline-flex;
-        justify-content: center
-    }
-
-    .cart-shopping p {
-        display: block;
-        margin-left: 20px;
-
-    }
-
-    .header-2 .navigation div a {
-        color: black;
-        text-decoration: none;
-        font-size: large;
-    }
-
-}
-
-/* MEDIAQUERY TABLET END */
-
-/* MEDIAQUERY DESKTOP START */
-
-@media (max-width: 1023px) {
-    .drop-menu {
-        display: block;
-        width: unset;
-        left: 3rem;
-    }
-
-    .header-2 {
-        display: none;
-    }
-
-}
-
-@media (min-width: 1024px) {
-    .burger-menu {
-        display: none;
-    }
-
-    .logo {
-        display: block;
-    }
-
-    #search-input {
-        width: 500px;
-    }
-
-    .box-login {
-        text-decoration: none;
-        border: 2px solid rgb(0, 0, 0);
-        border-radius: 5px;
-        width: 100px;
-        height: 35px;
-        align-items: center;
-        cursor: pointer;
-        display: inline-flex;
-        justify-content: center;
-    }
-
-    .icon-user p {
-        display: block;
-        margin-left: 20px;
-
-    }
-
-    .icon-user {
+    section div.products {
+        width: 100%;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        flex-wrap: wrap;
+        justify-content: flex-start;
     }
-
-    .box-cart {
-        text-decoration: none;
-        border: 2px solid rgb(0, 0, 0);
-        border-radius: 5px;
-        width: 100px;
-        height: 35px;
-        align-items: center;
-        cursor: pointer;
-        display: inline-flex;
-        justify-content: center
+    section div.products article{
+        width: 40%;
+        margin: 10px 20px;
     }
-
-    .cart-shopping p {
-        display: block;
-        margin-left: 20px;
-
+    div.main-article p{
+        font-size: 12px;
     }
-
-    .header-2 .navigation div a {
-        color: black;
-        text-decoration: none;
-        font-size: large;
+    main section article img {
+        width: 35%;
     }
 }
 
-@media (min-width: 1150px) {
-    .box-login {
-        position: relative;
-        left: 100px;
+/* MEDIAQUERIE PHONE END */
+
+/* MEDIAQUERIE TABLET START */
+
+@media(min-width: 769px){
+    section.categories {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: auto;
+    }
+
+    section div.products {
+        width: 100%;
+        flex-wrap: nowrap;
     }
 }
 
-/* MEDIAQUERY DESKTOP END */
+/* MEDIAQUERIE TABLET END */
+
+/* MEDIAQUERIE DESKTOP START */
+
+@media (min-width: 1025px) {
+    
+}
+
+/* MEDIAQUERIE DESKTOP END */
+
+/* MEDIAQUERIE DESKTOP HD START */
+
+@media (min-width: 1400px) {
+    
+}
+
+/* MEDIAQUERIE DESKTOP HD END */
