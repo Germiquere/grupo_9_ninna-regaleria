@@ -153,53 +153,53 @@ footer .logo {
 
 .informacion>h4 {
 
-    .information>h4 {
+.information > h4 {
 
-        font-weight: 600;
-        line-height: 30px;
-    }
-
-    .information p {
-        margin: 5px;
-    }
-
-    .information a {
-        text-decoration: none;
-        color: #f0f0f0;
-    }
-
-    .information i {
-        font-size: 25px;
-        margin: 5px 15px;
-        color: #f0f0f0;
-        display: inline-block;
-    }
-
-    .information input {
-        margin: 15px;
-        padding: 10px;
-        border-radius: 5px;
-        border: none;
-    }
-
-    .information {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        align-items: center;
-        margin: 15px;
-        color: #f0f0f0;
-    }
-
-    .suscription {
-        width: 90%;
-        background-color: #f0f0f0;
-        padding: 5px;
-        border: none;
-        border-radius: 5px;
-        color: #000;
-    }
+    font-weight: 600;
+    line-height: 30px;
 }
+
+.information p {
+    margin: 5px;
+}
+
+.information a {
+    text-decoration: none;
+    color: #f0f0f0;
+}
+
+.information i {
+    font-size: 25px;
+    margin: 5px 15px;
+    color: #f0f0f0;
+    display: inline-block;
+}
+
+.information input {
+    margin: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+.information {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 15px;
+    color: #f0f0f0;
+}
+
+.suscription {
+    width: 90%;
+    background-color: #f0f0f0;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    color: #000;
+}
+
 
 @media (max-width: 320px) {
 
@@ -284,9 +284,9 @@ footer .logo {
         color: #000000;
         text-decoration: none;
         font-size: large;
-    }
+    }footer
 
-    footer #search-input {
+    #search-input {
         border-radius: 20px;
         width: 370px;
     }
@@ -309,14 +309,14 @@ footer .logo {
 
     .informacion a {
         color: #f0f0f0;
-    }
 
+    
     .information input {
         margin-left: 0;
     }
 
     .information a {
-        color: #f0f0f0;
+        color:#f0f0f0;
 
     }
 }
