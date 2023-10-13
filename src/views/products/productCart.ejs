@@ -1,63 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <%- include('../partials/head') %>
         <title>Carrito de compras</title>
-        <script src="https://kit.fontawesome.com/f2650b748c.js" crossorigin="anonymous"></script>
-        <!-- ICONOS -->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" /> 
-        <!-- FUENTES DE GOOGLE -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
-            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap');
-            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
-          </style>        
-        <!-- NORMALIZE -->
-        <link rel="stylesheet" href="/css/normalize.css">
-        <!-- ESTILOS PROPIOS -->
-        <link rel="stylesheet" href="/css/styles.css">
         <link rel="stylesheet" href="/css/styles-productCart.css">
     </head>
     <body>
         <%- include('../partials/header') %>
         <main>
             <h3>MI CARRITO</h3>
-            <section class="cart">
-                    <div class="purchase-item-detail">
-                        <div class="img-product"><img src="/images/los-intocables.png" alt="imagen producto"></div>
-                        <h5 class="name-product">Los intocables</h5>
-                        <div class="purchase-quantity">
-                            <span class="quantity-buttom"> - </span> <span class="quantity"> 1 </span> <span class="quantity-buttom"> + </span>
+            <div class="cart-details">
+                <section class="cart">
+                        <div class="purchase-item-detail">
+                            <div class="img-product"><img src="/images/los-intocables.png" alt="imagen producto"></div>
+                            <div class="purchase-detail">
+                                <h5 class="name-product">Los intocables</h5>
+                                <div class="purchase-quantity">
+                                    <span class="quantity-buttom"> - </span> <span class="quantity"> 1 </span> <span class="quantity-buttom"> + </span>
+                                </div>
+                                <p class="price">$5.049,81</p>
+                                <a class="purchase-buttom" href="">Comprar ahora</a>
+                                <a class="delete-buttom" href="">Eliminar</a>
+                            </div>
                         </div>
-                        <p class="price">$5.049,81</p>
-                        <a class="purchase-buttom" href="">Comprar ahora</a>
-                        <a class="delete-buttom" href="">Eliminar</a>
+                        <div class="purchase-item-detail">
+                            <div class="img-product"><img src="/images/luigi-bosca.png" alt="imagen producto"></div>
+                            <div class="purchase-detail">
+                                <h5 class="name-product">Luigi Bosca</h5>
+                                <div class="purchase-quantity">
+                                    <span class="quantity-buttom"> - </span> <span class="quantity"> 1 </span> <span class="quantity-buttom"> + </span>
+                                </div>
+                                <p class="price">$4.500</p>
+                                <a class="purchase-buttom" href="">Comprar ahora</a>
+                                <a class="delete-buttom" href="">Eliminar</a>
+                            </div>
+                        </div>               
+                </section>
+                <section class="summary">
+                    <h4 class="title-section">RESUMEN DE COMPRA</h4>
+                    <div class="price-summary">
+                        <span class="info-summary">Productos (2)</span><span class="price">$9.549,81</span >
                     </div>
-                    <div class="purchase-item-detail">
-                        <div class="img-product"><img src="/images/luigi-bosca.png" alt="imagen producto"></div>
-                        <h5 class="name-product">Luigi Bosca</h5>
-                        <div class="purchase-quantity">
-                            <span class="quantity-buttom"> - </span> <span class="quantity"> 1 </span> <span class="quantity-buttom"> + </span>
-                        </div>
-                        <p class="price">$4.500</p>
-                        <a class="purchase-buttom" href="">Comprar ahora</a>
-                        <a class="delete-buttom" href="">Eliminar</a>
-                    </div>               
-            </section>
-            <section class="summary">
-                <h4 class="title-section">RESUMEN DE COMPRA</h4>
-                <div class="price-summary">
-                    <span class="info-summary">Productos (2)</span><span class="price">$9.549,81</span >
-                </div>
-                <div class="price-summary">
-                    <span class="info-summary">Total:</span> <span class="price"> $9.549,81</span>
-                </div>
-                <button type="submit" class="purchase-button">Comprar</button>
-            </section>
+                    <div class="price-summary">
+                        <span class="info-summary">Total:</span> <span class="price"> $9.549,81</span>
+                    </div>
+                    <button type="submit" class="purchase-buttom">Comprar</button>
+                </section>
+            </div>
         </main>
         <%- include('../partials/footer') %>
     </body>
