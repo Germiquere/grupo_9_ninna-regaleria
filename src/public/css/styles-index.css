@@ -20,7 +20,7 @@ section.carrusel img {
 }
 
 main h3{
-    background-color: #920008;
+    background-color: #a50000;
     margin: 10px 0px;
     color: #fff;
     text-align: center;
@@ -38,7 +38,7 @@ main section article {
     width: 80%;
     background-color: #fff;
     margin: 10px 25px;
-    border-radius: 5px;
+    border-radius: 20px;
 }
 
 article div.main-article {
