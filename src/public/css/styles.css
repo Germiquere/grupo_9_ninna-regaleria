@@ -150,56 +150,53 @@ footer .logo {
     display: block;
 }
 
+.information>h4 {
 
-.informacion>h4 {
-
-    .information>h4 {
-
-        font-weight: 600;
-        line-height: 30px;
-    }
-
-    .information p {
-        margin: 5px;
-    }
-
-    .information a {
-        text-decoration: none;
-        color: #f0f0f0;
-    }
-
-    .information i {
-        font-size: 25px;
-        margin: 5px 15px;
-        color: #f0f0f0;
-        display: inline-block;
-    }
-
-    .information input {
-        margin: 15px;
-        padding: 10px;
-        border-radius: 5px;
-        border: none;
-    }
-
-    .information {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        align-items: center;
-        margin: 15px;
-        color: #f0f0f0;
-    }
-
-    .suscription {
-        width: 90%;
-        background-color: #f0f0f0;
-        padding: 5px;
-        border: none;
-        border-radius: 5px;
-        color: #000;
-    }
+    font-weight: 600;
+    line-height: 30px;
 }
+
+.information p {
+    margin: 5px;
+}
+
+.information a {
+    text-decoration: none;
+    color: #f0f0f0;
+}
+
+.information i {
+    font-size: 25px;
+    margin: 5px 15px;
+    color: #f0f0f0;
+    display: inline-block;
+}
+
+.information input {
+    margin: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+.information {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 15px;
+    color: #f0f0f0;
+}
+
+.suscription {
+    width: 90%;
+    background-color: #f0f0f0;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    color: #000;
+}
+
 
 @media (max-width: 320px) {
 
@@ -340,7 +337,7 @@ footer .logo {
     }
 
     .logo {
-        display: block;
+        display: contents;
     }
 
     #search-input {
