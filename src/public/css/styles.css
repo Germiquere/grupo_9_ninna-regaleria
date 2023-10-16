@@ -150,7 +150,7 @@ footer .logo {
     display: block;
 }
 
-.information > h4 {
+.information>h4 {
 
     font-weight: 600;
     line-height: 30px;
@@ -281,9 +281,9 @@ footer .logo {
         color: #000000;
         text-decoration: none;
         font-size: large;
-    }footer
+    }
 
-    #search-input {
+    footer #search-input {
         border-radius: 20px;
         width: 370px;
     }
@@ -307,13 +307,13 @@ footer .logo {
     .informacion a {
         color: #f0f0f0;
     }
-    
+
     .information input {
         margin-left: 0;
     }
 
     .information a {
-        color:#f0f0f0;
+        color: #f0f0f0;
 
     }
 }
@@ -337,7 +337,7 @@ footer .logo {
     }
 
     .logo {
-        display: block;
+        display: contents;
     }
 
     #search-input {
