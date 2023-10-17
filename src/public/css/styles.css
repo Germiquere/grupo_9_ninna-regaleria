@@ -158,7 +158,7 @@ footer .logo {
     color: #f0f0f0
 }
 
-.information > h4 {
+.information>h4 {
 
     font-weight: 600;
     line-height: 30px;
@@ -325,7 +325,7 @@ footer .logo {
         font-size: large;
     }
 
-    #search-input {
+    footer #search-input {
         border-radius: 20px;
     }
 
@@ -334,7 +334,6 @@ footer .logo {
         width: auto;
         color: #f0f0f0
     }
-
 }
 
 @media (max-width: 1023px) {
@@ -356,7 +355,7 @@ footer .logo {
     }
 
     .logo {
-        display: block;
+        display: contents;
     }
 
     .box-login {
