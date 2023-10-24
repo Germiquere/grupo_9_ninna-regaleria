@@ -78,7 +78,7 @@ form {
 }
 
 form .field {
-    height: 50px;
+    height: 100% ;
     width: 100%;
     margin-top: 20px;
 }
@@ -91,11 +91,11 @@ form .field {
     font-size: 16px;
     font-weight: 400px;
     border-radius: 6px;
+    border: 1px solid #CACACA;
 }
 
 .field input {
     padding: 0 15px;
-    border: 1px solid #CACACA;
 }
 
 .form-link {
@@ -113,6 +113,29 @@ form .field {
     text-decoration: none;
 }
 
+main h2 {
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.form-create {
+    padding: 10px;
+    border-radius: 6px;
+    background: #fff;
+    margin-top: 100px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+textarea.form-input {
+    width: inherit;
+    display: block;
+    min-height: 140px;
+    padding: 15px;
+    border: 1px solid #CACACA;
+    border-radius: 6px;
+}
+
 @media (min-width: 480px) {
     .form {
         width: 100%;
@@ -120,5 +143,43 @@ form .field {
 
     header {
         padding: 20px 100px;
+    }
+
+    form {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .form-create {
+        margin-top: 90px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+@media (min-width: 769px) {
+    main {
+        margin-top: 40px;
+    }
+    div.form-create {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    div.form-content {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    form .field {
+        width: 50%;
+        padding: 10px;
+    }
+    form div.input-description {
+        width: 100%;
+    }
+    form div.button-field {
+        width: 40%;
+        margin: auto;
+        text-align: center;
+        align-self: center;
     }
 }

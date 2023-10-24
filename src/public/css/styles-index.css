@@ -149,7 +149,9 @@ main section h3 {
 
     section div.products {
         width: 100%;
-        flex-wrap: nowrap;
+    }
+    section div article {
+        width: 20%;
     }
 }
 

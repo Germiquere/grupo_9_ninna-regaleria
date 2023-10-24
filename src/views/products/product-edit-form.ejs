@@ -1,11 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%- include('../partials/head') %>
   <title>Editar producto</title>
+  <link rel="stylesheet" href="/css/styles-register.css">
 </head>
 <body>
-  
+  <%- include('../partials/header') %>
+
+  <main>
+    <div class="form-create">
+      <div class="form-content">
+        <div>
+          <h2>Crear nuevo producto</h2>
+        </div>
+        <form action="" method="POST">
+          <div class="field input-field">
+            <label for="store" class="form-label">Bodega:</label>
+            <input type="text" id="store" name="store" placeholder="Ej: Catena Zapata" class="form-input">
+          </div>
+          <div class="field input-field">
+            <label for="grape" class="form-label">Varietal:</label>
+            <input type="text" id="grape" name="grape" placeholder="Ej: Cabernet Franc 2016" class="form-input">
+          </div>
+          <div class="field input-field">
+            <label for="price" class="form-label">Precio:</label>
+            <input type="text" id="price" name="price" placeholder="Ej: Cabernet Franc 2016" class="form-input">
+          </div>
+          <div class="field input-field">
+            <label for="discount" class="form-label">Descuento:</label>
+            <input type="text" id="discount" name="discount" placeholder="Ej: 10" class="form-input">
+          </div>
+          <div class="field input-field input-description">
+            <label for="description" class="form-label">Descripcion:</label>
+            <textarea name="description" id="description" class="form-input"></textarea>
+          </div>
+          <div class="field button-field">
+            <button>Guardar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <%- include('../partials/footer') %>
 </body>
 </html>
