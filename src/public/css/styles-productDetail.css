@@ -47,7 +47,8 @@ h5.product-name {
     margin-bottom: 8px;
 }
 
-.quantity-buttom, .quantity {
+.quantity-buttom, 
+.quantity {
     display: inline-block;
     border: solid 1px #666;
     padding: 5px;
@@ -72,23 +73,48 @@ h5.product-name {
     justify-content: space-between;
 }
 
-.price, .grape, .stock, .description > p {
+.price, 
+.grape, 
+.stock, 
+.description > p {
     font-size: 10px;
     line-height: 20px;
 }
 
-.purchase-buttom, .cart-buttom {
+.purchase-buttom, 
+.cart-buttom {
     margin: 5px;
     color: #ffffff;
     display: inline-block;
-    width: 80%;
+    width: 90%;
     font-size: 10px;
     line-height: 30px;
     border: none;
     background-color: #820000;
 }
 
-h5.product-name, .description > h5 {
+.product-buttom {
+    color: #ffffff;
+    display: inline-block;
+    width: 90%;
+    font-size: 10px;
+    line-height: 30px;
+    border: none;
+    background-color: #820000;
+    width: 40%;
+}
+
+.edit-product {
+    margin: auto;
+    display: flex;
+    width: 95%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+h5.product-name, 
+.description > h5 {
     font-size: 12px;
     font-weight: bold;
     margin-bottom: 8px;
@@ -130,18 +156,21 @@ h5.product-name, .description > h5 {
         left: -20px;
     }
 
-    .description, .product-detail {
+    .description, 
+    .product-detail {
         width: 100%;
         margin: 20px;
     }
 
-    h5.product-name, .description > h5 {
+    h5.product-name, 
+    .description > h5 {
         font-size: 16px;
         font-weight: bold;
         margin-bottom: 8px;
     }
 
-    .quantity-buttom, .quantity {
+    .quantity-buttom, 
+    .quantity {
         display: inline-block;
         border: solid 1px #666;
         padding: 5px;
@@ -150,14 +179,23 @@ h5.product-name, .description > h5 {
         font-size: 14px;
     }
     
-    .price, .grape, .stock, .description > p {
+    .price, 
+    .grape, 
+    .stock, 
+    .description > p {
         font-size: 14px;
         line-height: 35px;
     }
 
-    .purchase-buttom, .cart-buttom {
+    .purchase-buttom, 
+    .cart-buttom,
+    .product-buttom {
         font-size: 14px;
         line-height: 35px;
+    }
+
+    .product-buttom {
+        width: 45%;
     }
 
     .details {
@@ -190,19 +228,24 @@ h5.product-name, .description > h5 {
         left: 10vw;
     }
 
-    h5.product-name, .description > h5 {
+    h5.product-name, 
+    .description > h5 {
         font-size: 25px;
         font-weight: 600;
         margin-bottom: 15px;
     }
 
-    .price, .grape, .stock, .description > p {
+    .price, 
+    .grape, 
+    .stock, 
+    .description > p {
         font-size: 18px;
         line-height: 50px;
         text-align: left;
     }
 
-    .quantity-buttom, .quantity {
+    .quantity-buttom, 
+    .quantity {
         padding: 10px;
         font-size: 16px;
         margin-bottom: 16px;
@@ -212,12 +255,17 @@ h5.product-name, .description > h5 {
         width: 100%;
     }
 
-    .purchase-buttom, .cart-buttom {
+    .purchase-buttom, 
+    .cart-buttom {
         font-size: 16px;
         line-height: 40px;
         margin-bottom: 10px;
-        width: 100%;
+        width: 96%;
     }    
+
+    .edit-product {
+        margin: 0 5px,
+    }
 
     .category {
         width: 250px;

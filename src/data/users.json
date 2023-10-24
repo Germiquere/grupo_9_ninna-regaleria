@@ -1,162 +1,182 @@
 [
     {
       "i": 1,
-      "name": "Pedro Martínez",
+      "fullname": "Pedro Martínez",
       "edad": 18,
       "dni": 40456789,
       "email": "pedromartinez@email.com",
-      "contraseña": "soy14pedro74"
+      "contraseña": "soy14pedro74",
+      "image": ""
     },
     {
       "i": 2,
-      "name": "Ana Rodríguez",
+      "fullname": "Ana Rodríguez",
       "edad": 25,
       "dni": 42123456,
       "email": "anarodriguez@email.com",
-      "contraseña": "ana2023rodriguez"
+      "contraseña": "ana2023rodriguez",
+      "image": ""
     },
     {
       "i": 3,
-      "name": "Luisa Pérez",
+      "fullname": "Luisa Pérez",
       "edad": 30,
       "dni": 37965154,
       "email": "luisaperez@email.com",
-      "contraseña": "luisa_12345"
+      "contraseña": "luisa_12345",
+      "image": ""
     },
     {
       "i": 4,
-      "name": "Juan López",
+      "fullname": "Juan López",
       "edad": 35,
       "dni": 28456789,
       "email": "juanlopez@email.com",
-      "contraseña": "lopez_juan89"
+      "contraseña": "lopez_juan89",
+      "image": ""
     },
     {
       "i": 5,
-      "name": "María Sánchez",
+      "fullname": "María Sánchez",
       "edad": 40,
       "dni": 19876543,
       "email": "mariasanchez@email.com",
-      "contraseña": "maria-2023"
+      "contraseña": "maria-2023",
+      "image": ""
     },
     {
       "i": 6,
-      "name": "Carlos González",
+      "fullname": "Carlos González",
       "edad": 45,
       "dni": 15432109,
       "email": "carlosgonzalez@email.com",
-      "contraseña": "carlosG_456"
+      "contraseña": "carlosG_456",
+      "image": ""
     },
     {
       "i": 7,
-      "name": "Laura Rodríguez",
+      "fullname": "Laura Rodríguez",
       "edad": 50,
       "dni": 11234567,
       "email": "laurarodriguez@email.com",
-      "contraseña": "laura12345"
+      "contraseña": "laura12345",
+      "image": ""
     },
     {
       "i": 8,
-      "name": "Pablo Fernández",
+      "fullname": "Pablo Fernández",
       "edad": 55,
       "dni": 7654321,
       "email": "pablofernandez@email.com",
-      "contraseña": "pablo_fer_2023"
+      "contraseña": "pablo_fer_2023",
+      "image": ""
     },
     {
       "i": 9,
-      "name": "Carmen López",
+      "fullname": "Carmen López",
       "edad": 60,
       "dni": 8456789,
       "email": "carmenlopez@email.com",
-      "contraseña": "carmenL_789"
+      "contraseña": "carmenL_789",
+      "image": ""
     },
     {
       "i": 10,
-      "name": "Manuel Torres",
+      "fullname": "Manuel Torres",
       "edad": 25,
       "dni": 42123456,
       "email": "manueltorres@email.com",
-      "contraseña": "torresManuel_2023"
+      "contraseña": "torresManuel_2023",
+      "image": ""
     },
     {
       "i": 11,
-      "name": "Isabel García",
+      "fullname": "Isabel García",
       "edad": 30,
       "dni": 379740654,
       "email": "isabelgarcia@email.com",
-      "contraseña": "isabel_4628"
+      "contraseña": "isabel_4628",
+      "image": ""
     },
     {
       "i": 12,
-      "name": "Javier Ruiz",
+      "fullname": "Javier Ruiz",
       "edad": 35,
       "dni": 23456789,
       "email": "javierruiz@email.com",
-      "contraseña": "javierR-456"
+      "contraseña": "javierR-456",
+      "image": ""
     },
     {
       "i": 13,
-      "name": "Marta Rodríguez",
+      "fullname": "Marta Rodríguez",
       "edad": 40,
       "dni": 19876543,
       "email": "martarodriguez@email.com",
-      "contraseña": "marta_12345"
+      "contraseña": "marta_12345",
+      "image": ""
     },
     {
       "i": 14,
-      "name": "Sergio López",
+      "fullname": "Sergio López",
       "edad": 45,
       "dni": 15432109,
       "email": "sergiolopez@email.com",
-      "contraseña": "sergio_L789"
+      "contraseña": "sergio_L789",
+      "image": ""
     },
     {
       "i": 15,
-      "name": "Elena Pérez",
+      "fullname": "Elena Pérez",
       "edad": 50,
       "dni": 11234567,
       "email": "elenaperez@email.com",
-      "contraseña": "elenaPerez_2023"
+      "contraseña": "elenaPerez_2023",
+      "image": ""
     },
     {
         "i": 16,
-        "name": "Andrés González",
+        "fullname": "Andrés González",
         "edad": 55,
         "dni": 7654321,
         "email": "andresgonzalez@email.com",
         "contraseña": "andres-G456"
+ ,       "image": ""
       },
       {
         "i": 17,
-        "name": "Sofía Martínez",
+        "fullname": "Sofía Martínez",
         "edad": 29,
         "dni": 32352378,
         "email": "sofiamartinez@email.com",
         "contraseña": "sofia_2023"
+ ,       "image": ""
       },
       {
         "i": 18,
-        "name": "Luis Torres",
+        "fullname": "Luis Torres",
         "edad": 32,
         "dni": 35784321,
         "email": "luistorres@email.com",
         "contraseña": "luistorres-123"
+ ,       "image": ""
       },
       {
         "i": 19,
-        "name": "Eva Rodríguez",
+        "fullname": "Eva Rodríguez",
         "edad": 38,
         "dni": 28743789,
         "email": "evarodriguez@email.com",
         "contraseña": "eva3726"
+ ,       "image": ""
       },
       {
         "i": 20,
-        "name": "Miguel López",
+        "fullname": "Miguel López",
         "edad": 21,
         "dni": 49625345,
         "email": "miguellopez@email.com",
         "contraseña": "miguelLopez_2023"
+ ,       "image": ""
       }
   ]
