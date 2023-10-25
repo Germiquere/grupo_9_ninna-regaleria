@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const methodOverride =  require('method-override');
 const mainLogin = require('./routes/users');
 const main = require('./routes/main');
 const mainProduct = require('./routes/product');
@@ -12,6 +13,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+
+app.use(methodOverride('_method'));
 
 app.use('/', main);
 app.use('/', mainLogin);

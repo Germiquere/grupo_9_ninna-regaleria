@@ -9,11 +9,11 @@
     <%- include('../partials/header') %>
     <main>
         <div class="product-detail">
-            <div class="img-product"><img src="/images/los-intocables.png" alt="imagen producto"></div>
+            <div class="img-product"><img src="/images/<%= locals.product && product.image %>"" alt="imagen producto"></div>
             <div class="details">
-                <h5 class="product-name">Los intocables</h5>
-                <p class="grape">Malbec</p>
-                <p class="price">$5.049,81</p>
+                <h5 class="product-name"><%= locals.product && product.name %></h5>
+                <p class="grape"><%= locals.product && product.grape %></p>
+                <p class="price"><%= locals.product && product.price %></p>
                 <p class="stock">Stock disponible</p>
                 <div class="purchase-quantity">
                     <span class="quantity-buttom"> - </span> <span class="quantity"> 1 </span> <span class="quantity-buttom"> + </span>
@@ -21,18 +21,18 @@
                 <button class="purchase-buttom" href="">Comprar ahora</button>
                 <button class="cart-buttom" href="">Agregar al carrito</button>
                 <div class="edit-product">
-                    <button class="product-buttom" href="">Editar</button>
-                    <button class="product-buttom" href="">Eliminar</button>
+                    <a href="/productDetail/<%= product.id %>/edit"><button class="product-buttom" href="">Editar</button></a>
+                    <form action="/productDetail/<%= product.id %>?_method=DELETE" method="post"><button class="product-buttom" href="">Eliminar</button></form>
                 </div>
             </div>
         </div>
         <div class="description">
             <h5>Características</h5>
-            <p ><span class="category">VARIETAL: </span><span>Malbec</span></p>
-            <p ><span class="category">BODEGA: </span><span>Finca Las Moras</span></p>
-            <p ><span class="category">AÑADA: </span><span>2018</span></p>
-            <p ><span class="category">TIPO DE BARRICA: </span><span>roble bourbon</span></p>
-            <p ><span class="category">TIEMPO DE BARRICA: </span><span>12 meses</span></p>
+            <p ><span class="category">VARIETAL: </span><span><%= locals.product && product.grape %></span></p>
+            <p ><span class="category">BODEGA: </span><span><%= locals.product && product.store %></span></p>
+            <p ><span class="category">AÑADA: </span><span><%= locals.product && product.year %></span></p>
+            <p ><span class="category">TIPO DE BARRICA: </span><span><%= locals.product && product.typeOfBarrel %></span></p>
+            <p ><span class="category">TIEMPO DE BARRICA: </span><span><%= locals.product && product.timeInBarrel %></span></p>
         </div>
     </main>
     <%- include('../partials/footer') %>
