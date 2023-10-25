@@ -7,6 +7,9 @@
     font-family: 'Poppins', sans-serif;
 
 }
+main {
+    min-height: 70vh;
+}
 
 body {
     background-color: #820000;
