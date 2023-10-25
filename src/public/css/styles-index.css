@@ -150,7 +150,8 @@ main section h3 {
     section div.products {
         width: 100%;
     }
-    section div article {
+    
+    section div.products article {
         width: 20%;
     }
 }
