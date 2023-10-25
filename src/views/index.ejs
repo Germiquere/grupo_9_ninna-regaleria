@@ -50,113 +50,52 @@
         </div>
         <h3>Sugerencias</h3>
         <section class="categories">
-
             <div class="products">
+                <% locals.sugerencias && sugerencias.forEach(product => { %>
                 <article>
-                    <img src="/images/luigi-bosca.png" alt="Vino Luigi Bosca" class="product_img">
+                    <a href="/productDetail/<%= product.id %>">
+                    <img src="/images/<%= product.image %>" class="product_img">
                     <div class="main-article">
-                        <p class="price">$12.152</p>
-                        <p class="discount">10% off</p>
-                        <h4 class="store">Luigi Bosca</h4>
-                        <h4 class="grape">Malbec 2016</h4>
+                        <p class="price"><%= product.price %></p>
+                        <p class="discount"><%= product.discount %></p>
+                        <h4 class="store"><%= product.name %></h4>
+                        <h4 class="grape"><%= product.typeOfBarrel %></h4>
                         <div>
                             <P><h5>Calificacion</h5><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></P>
                         </div>
                     </div>
+                    </a>
                 </article>
-                <article>
-                    <img src="/images/piattelli.png" alt="Vino Piattelli" class="product_img">
-                    <div class="main-article">
-                        <p class="price">$19.800</p>
-                        <p class="discount">10% off</p>
-                        <h4 class="store">Piattelli</h4>
-                        <h4 class="grape">Gran Reserva 2019</h4>
-                        <div>
-                            <P><h5>Calificacion</h5><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></P>
-                        </div>    
-                    </div>
-                </article>
-                <article>
-                    <img src="/images/los-intocables.png" alt="Vino Los Intocables"
-                        class="product_img">
-                        <div class="main-article">
-                            <p class="price">$22.300</p>
-                            <p class="discount">10% off</p>
-                            <h4 class="store">Las Moras</h4>
-                            <h4 class="grape">Malbec 2018</h4>
-                            <div>
-                                <P><h5>Calificacion</h5><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></P>
-                            </div>
-                        </div>
-                </article>
-                <article>
-                    <img src="/images/catena-zapata.png" alt="Vino Catena Zapata" class="product_img">
-                    <div class="main-article">
-                        <p class="price">$36.590</p>
-                        <p class="discount">5% off</p>
-                        <h4 class="store">Catena Zapata</h4>
-                        <h4 class="grape">Cabernet Franc 2016</h4>
-                        <div>
-                            <P><h5>Calificacion</h5><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></P>
-                        </div>
-                    </div>
-                </article>
+            <% }) %>
             </div>
-        </section>
         <h3>Ofertas</h3>
         <section class="categories">
             <div class="products">
-                <article>
-                    <img src="/images/luigi-bosca.png" alt="Vino Luigi Bosca" class="product_img">
-                    <div class="main-article">
-                        <p class="price">$12.152</p>
-                        <p class="discount">10% off</p>
-                        <h4 class="store">Luigi Bosca</h4>
-                        <h4 class="grape">Malbec 2016</h4>
-                        <div>
-                            <P><h5>Calificacion</h5><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></P>
-                        </div>
-                    </div>
-                </article>
-                <article>
-                    <img src="/images/piattelli.png" alt="Vino Piattelli" class="product_img">
-                    <div class="main-article">
-                        <p class="price">$19.800</p>
-                        <p class="discount">10% off</p>
-                        <h4 class="store">Piattelli</h4>
-                        <h4 class="grape">Gran Reserva 2019</h4>
-                        <div>
-                            <P><h5>Calificacion</h5><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></P>
-                        </div>
-                    </div>
-                </article>
-                <article>
-                    <img src="/images/los-intocables.png" alt="Vino Los Intocables"
-                        class="product_img">
-                        <div class="main-article">
-                            <p class="price">$22.300</p>
-                            <p class="discount">10% off</p>
-                            <h4 class="store">Las Moras</h4>
-                            <h4 class="grape">Malbec 2018</h4>
-                            <div>
-                                <P><h5>Calificacion</h5><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></P>
+                <% locals.ofertas && ofertas.forEach(product => { %>
+                    <article>
+                        <a href="/productDetail/<%= product.id %>">
+                            <img src="/images/<%= product.image %>" class="product_img">
+                            <div class="main-article">
+                                <p class="price">
+                                    <%= product.price %>
+                                </p>
+                                <p class="discount"><%= product.discount %></p>
+                                <h4 class="store">
+                                    <%= product.store %>
+                                </h4>
+                                <h4 class="grape">
+                                    <%= product.typeOfBarrel %>
+                                </h4>
+                                <div>
+                                    <P>
+                                    <h5>Calificacion</h5><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                        class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></P>
+                                </div>
                             </div>
-                        </div>
-                </article>
-                <article>
-                    <img src="/images/catena-zapata.png" alt="Vino Catena Zapata" class="product_img">
-                    <div class="main-article">
-                        <p class="price">$36.590</p>
-                        <p class="discount">5% off</p>
-                        <h4 class="store">Catena Zapata</h4>
-                        <h4 class="grape">Cabernet Franc 2016</h4>
-                        <div>
-                            <P><h5>Calificacion</h5><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></P>
-                        </div>
-                    </div>
-                </article>
+                        </a>
+                    </article>
+                    <% }) %>
             </div>
-        </section>
     </main>
     <%- include('./partials/footer') %>
 </body>
