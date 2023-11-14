@@ -57,12 +57,12 @@ a.btnHome {
 /* Main Styles */
 
 main {
-    height: 650px;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #820000;
+    margin-bottom: 50px;
 }
 
 .form {
@@ -120,6 +120,14 @@ form .field {
     text-decoration: none;
 }
 
+.error-msg {
+    color: #820000;
+}
+
+select.input {
+    width: 100%;
+}
+
 main h2 {
     font-size: 1.2em;
     font-weight: 600;
@@ -168,6 +176,9 @@ textarea.form-input {
     main {
         margin-top: 40px;
     }
+    form {
+        flex-direction: column;
+    }
     div.form-create {
         margin-left: 20px;
         margin-right: 20px;
@@ -177,7 +188,7 @@ textarea.form-input {
         margin-right: 20px;
     }
     form .field {
-        width: 50%;
+        width: 100%;
         padding: 10px;
     }
     form div.input-description {

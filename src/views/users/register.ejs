@@ -19,33 +19,68 @@
         <div class="form signup">
             <div class="form-content">
                 <div class="header-2">Registrate</div>
-                <form action="#">
+                <form action="/register" method="POST" enctype="multipart/form-data">
                     <div class="field input-field">
-                        <input type="text" placeholder="Nombre y Apellido" name="fullname" class="input" required>
+                        <input 
+                            type="text" placeholder="Nombre y Apellido" 
+                            name="fullname" class="input" 
+                            value="<%= locals.oldData?.fullname && oldData?.fullname %>">
+                            <% if(locals.errors?.fullname) {%>
+                                <p class="error-msg"><%= errors.fullname.msg %></p>
+                            <% } %>
                     </div>
 
                     <div class="field input-field">
-                        <input type="number" placeholder="Edad" min="18" name="age" class="input" required>
+                        <input 
+                            type="number" placeholder="Edad" min="18" 
+                            name="age" class="input" value="<%= locals.oldData?.age && oldData?.age %>">
+                            <% if(locals.errors?.age) {%>
+                                <p class="error-msg"><%= errors.age.msg %></p>
+                            <% } %>
+                        </div>
+
+                    <div class="field input-field">
+                        <input 
+                            type="number" placeholder="Numero de Documento" 
+                            name="dni" class="input" value="<%= locals.oldData?.dni && oldData?.dni %>">
+                        <% if(locals.errors?.dni) {%>
+                            <p class="error-msg"><%= errors.dni.msg %></p>
+                        <% } %>
                     </div>
 
                     <div class="field input-field">
-                        <input type="number" placeholder="Numero de Documento" name="dni" class="input" required>
+                        <input 
+                            type="email" placeholder="Email" 
+                            name="email" class="input" value="<%= locals.oldData?.email && oldData?.email %>">
+                        <% if(locals.errors?.email) {%>
+                            <p class="error-msg"><%= errors.email.msg %></p>
+                        <% } %>
                     </div>
 
                     <div class="field input-field">
-                        <input type="email" placeholder="Email" name="email" class="input" required>
+                        <input 
+                            type="password" placeholder="Contraseña" 
+                            name="password" class="input">
+                        <% if(locals.errors?.password) {%>
+                            <p class="error-msg"><%= errors.password.msg %></p>
+                        <% } %>
                     </div>
-
+                    
                     <div class="field input-field">
-                        <input type="password" placeholder="Contraseña" name="password" class="input" required>
+                        <input type="password" placeholder="Confirmar Contraseña" class="input">
                     </div>
-
+                  
                     <div class="field input-field">
-                        <input type="password" placeholder="Confirmar Contraseña" class="input" required>
+                        <label for="avatar" class="input">Selecciona tu imagen de perfil: </label>
+                        <input type="file" name="avatar" accept=".img, .jpg, .jpeg, .png" class="input">
+                        <% if(locals.errors?.avatar) {%>
+                            <p class="error-msg"><%= errors.avatar.msg %></p>
+                        <% } %>
                     </div>
-
+                    
                     <div class="field button-field">
-                        <button>Registrarse</button>
+
+                        <button type="submit">Registrarse</button>
                     </div>
 
                     <div class="form-link">
