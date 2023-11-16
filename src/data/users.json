@@ -118,5 +118,15 @@
         "password": "$2a$10$usLPUHFpHwHSwMQIeepCRep/x4GOHmhGIuTIlXBhjDCyhxb3oUQ8.",
         "image": "avatar1699914892501.png",
         "category": "Usuario"
+    },
+    {
+        "id": 13,
+        "fullname": "Augusto Marino",
+        "age": "23",
+        "dni": "34567890",
+        "email": "augusto@gmail.com",
+        "password": "$2a$10$Rm/TMWmHSw1TyqPzgrkShO7U6M7AzJ1ok7ljuA7dy2Y53FE7i8sP.",
+        "image": "user-default.png",
+        "category": "Usuario"
     }
 ]
