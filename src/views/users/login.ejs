@@ -21,13 +21,16 @@
             <div class="form-content">
                 <div class="header-2">Iniciar Sesion</div>
 
-                <form action="#">
+                <form action="/login" method="post">
+                    <% if (locals.errors?.unauthorized) { %>
+                        <p class="error"><%= errors.unauthorized.msg %></p>
+                    <% }%>
                     <div class="field input-field">
-                        <input type="email" placeholder="Email" class="input">
+                        <input type="email" name="email" placeholder="Email" class="input">
                     </div>
 
                     <div class="field input-field">
-                        <input type="password" placeholder="Contraseña" class="input">
+                        <input type="password" name="password" placeholder="Contraseña" class="input">
                     </div>
 
                     <div class="form-link">
@@ -35,7 +38,7 @@
                     </div>
 
                     <div class="field button-field">
-                        <button>Iniciar Sesion</button>
+                        <button type="submit">Iniciar Sesion</button>
                     </div>
 
                     <div class="form-link">

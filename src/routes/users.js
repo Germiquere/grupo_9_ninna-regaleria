@@ -4,6 +4,7 @@ const multer = require('multer');
 
 const usersController = require('../controllers/usersController');
 const {createUserValidations} = require('../middlewares/registerValidations');
+const isLoggedMiddleware = require('../middlewares/isLogedMiddleware')
 
 const router = express.Router();
 
@@ -21,6 +22,9 @@ const uploadFile = multer({storage});
 
 /*** LOGIN ***/ 
 router.get('/login', usersController.login);
+router.post('/login', usersController.loginIn)
+router.get('/profile', isLoggedMiddleware, usersController.profile)
+router.get('/logout', usersController.logout);
 
 /*** REGISTER ***/ 
 router.get('/register', usersController.register);
