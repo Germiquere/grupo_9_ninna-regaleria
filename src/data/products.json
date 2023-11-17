@@ -298,5 +298,13 @@
     "category": "sugerencia",
     "description": "Un Wild Turkey 101 envejecido durante 5 años.",
     "image": "piattelli.png"
+  },
+  {
+    "id": 21,
+    "image": "products1700179437155.png",
+    "store": "San Pedro",
+    "grape": "Cabernet Sauvignon",
+    "price": "12000",
+    "discount": "10"
   }
 ]
