@@ -26,6 +26,7 @@
                 </div>
             </div>
         </div>
+    <div class="desc-container">
         <div class="description">
             <h5>Características</h5>
             <p ><span class="category">VARIETAL: </span><span><%= locals.product && product.grape %></span></p>
@@ -34,6 +35,11 @@
             <p ><span class="category">TIPO DE BARRICA: </span><span><%= locals.product && product.typeOfBarrel %></span></p>
             <p ><span class="category">TIEMPO DE BARRICA: </span><span><%= locals.product && product.timeInBarrel %></span></p>
         </div>
+        <div class="description">
+            <h5>Descripción</h5>
+            <p class="description-text"><%= locals.product && product.description %></p>
+        </div>
+    </div>
     </main>
     <%- include('../partials/footer') %>
 </body>
