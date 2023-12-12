@@ -2,14 +2,16 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.6",
+    "dotenv": "^16.3.1",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
     "express-session": "^1.17.3",
     "express-validator": "^7.0.1",
     "method-override": "^3.0.0",
     "multer": "^1.4.5-lts.1",
-    "nodemon": "^3.0.1",
-    "path": "^0.12.7"
+    "mysql2": "^3.6.5",
+    "path": "^0.12.7",
+    "sequelize": "^6.35.2"
   },
   "name": "grupo_9_ninna-regaleria",
   "description": "- ¡Bienvenidos al punto de encuentro definitivo para todos los apasionados del buen beber! Sumérgete en una experiencia única donde los sabores exquisitos cobran vida. Nuestra comunidad te invita a explorar el fascinante mundo de cócteles meticulosamente elaborados, vinos que cuentan historias y cervezas artesanales que desafían los sentidos.\r ## PUBLICO OBJETIVO\r - El publico de nuestro sitio va a ser mayores de edad en primer lugar y esta referido tanto a mujeres como hombres de la region centro de la provincia de santa fe.",
@@ -19,7 +21,16 @@
     "dev": "nodemon src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "nodemonConfig": {
+    "ignore": [
+      "src/data/*.json"
+    ]
+  },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.0.2",
+    "sequelize-cli": "^6.6.2"
+  }
 }

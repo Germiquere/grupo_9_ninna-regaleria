@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Perfil de usuario</title>
+  <link rel="stylesheet" href="/css/profile.css">
+</head>
+<body>
+  <div class="perfil">
+    <div class="datos">
+      <h2>Nombre de usuario: <%= user.name %></h2>
+      <p>Ingresaste a las <%= new Date(user.timestamp) %></p>
+      <p>Email: <%= user.email %></p>
+      <p>DNI: <%= user.dni %></p>
+      <p>Edad: <%= user.age %></p>
+      <ul class="redes-sociales">
+        <li><a href="#">Twitter</a></li>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Instagram</a></li>
+      </ul>
+    </div>
+    <a href="/logout"><button>Cerrar Sesion</button></a>
+  </div>
+</body>
+</html>
+

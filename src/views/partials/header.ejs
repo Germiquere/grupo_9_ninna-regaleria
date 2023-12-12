@@ -20,7 +20,11 @@
     <a href="/login" class="box-login">
         <div class="icon-user">
             <i class="fa-solid fa-user"></i>
-            <p>Iniciar Sesion</p>
+            <% if (!locals.isLogged){ %>
+                <p>Iniciar Sesion</p>
+            <% } else { %>
+                <p><%= locals.user.name %></p>
+                <% } %>
         </div>
     </a>
     <a href="/productCart" class="box-cart">

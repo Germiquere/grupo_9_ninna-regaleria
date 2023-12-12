@@ -121,12 +121,12 @@
     },
     {
         "id": 13,
-        "fullname": "Leandro Zapata",
-        "age": "35",
-        "dni": "33553477",
-        "email": "leandrojosezapata@gmail.com",
-        "password": "$2a$10$61dGw8enyd0X144yZn/fmepOy2xwJAareDUUN4vGkca4EKEkplP5i",
-        "image": "avatar1699957525446.jpg",
+        "fullname": "Augusto Marino",
+        "age": "23",
+        "dni": "34567890",
+        "email": "augusto@gmail.com",
+        "password": "$2a$10$Rm/TMWmHSw1TyqPzgrkShO7U6M7AzJ1ok7ljuA7dy2Y53FE7i8sP.",
+        "image": "user-default.png",
         "category": "Usuario"
     }
 ]
