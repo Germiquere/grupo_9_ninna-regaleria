@@ -270,21 +270,6 @@
     "image": "catena-zapata.png"
   },
   {
-    "id": 19,
-    "name": "Chivas Regal",
-    "store": "Chivas Brothers",
-    "year": "No especificado",
-    "grape": "No especificado",
-    "typeOfBarrel": "Roble americano",
-    "timeInBarrel": "12 años",
-    "price": "$21,076",
-    "discount": "95%",
-    "type": "whiskey",
-    "category": "oferta",
-    "description": "Un Chivas Regal envejecido durante 12 años.",
-    "image": "piattelli.png"
-  },
-  {
     "id": 20,
     "name": "Wild Turkey 101",
     "store": "Wild Turkey Distillery",
@@ -293,7 +278,7 @@
     "typeOfBarrel": "Roble americano",
     "timeInBarrel": "5 años",
     "price": "$21,520",
-    "discount": "100%",
+    "discount": "10%",
     "type": "whiskey",
     "category": "sugerencia",
     "description": "Un Wild Turkey 101 envejecido durante 5 años.",

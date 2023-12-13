@@ -9,6 +9,10 @@
 }
 main {
     min-height: 70vh;
+    margin-top: 130px;
+    text-align: center;
+    padding: 15px;
+    font-weight: 600;
 }
 
 body {
@@ -45,6 +49,7 @@ header {
 }
 
 .header-1 {
+    align-items: baseline;
     position: fixed;
     top: 0;
     z-index: 1;
@@ -143,6 +148,15 @@ header {
 .drop-menu li a {
     text-decoration: none;
     color: black;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+button a {
+    color: #F0F0F0;
 }
 
 footer {

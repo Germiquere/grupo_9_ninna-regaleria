@@ -1,9 +1,3 @@
-main {
-    text-align: center;
-    margin: 30px 0px;
-    padding: 15px;
-    font-weight: 600;
-}
 
 .product {
     background-color: #ffffff;
@@ -16,7 +10,7 @@ main {
     border-radius: 15px;
     border: solid #000 0.5px;
     width: 80%;
-    padding: 10px;
+    padding: 10px 5px;
 }
 
 p.description-text {
@@ -117,6 +111,18 @@ h5.product-name {
     padding: 5px;
 }
 
+div.edit-product form {
+    width: 40%;
+}
+
+form button.product-buttom {
+    display: flex;
+    position: relative;
+    width: 93%;
+    flex-direction: column;
+    align-items: center;
+}
+
 h5.product-name, 
 .description > h5 {
     font-size: 12px;
@@ -133,16 +139,12 @@ h5.product-name,
 }
 
 .category {
-    display: inline-block;
     width: 120px;
     margin-right: 0px;
     text-align: left;
 }
 
 @media (min-width:361px){
-    main {
-        margin-top: 40px;
-    }
     div.product-detail {
         position: relative;
         height: 350px;

@@ -15,6 +15,13 @@ const controller = {
             return res.redirect('/profile')
         }
         res.render('./users/login')
+
+
+        if (res.body.remember != undefined) {
+            res.cookie('remember',
+            usuarioALoguearse.email, { maxAge: 120000})
+            res.render('./')
+        }
     },
 
     loginIn(req, res) {

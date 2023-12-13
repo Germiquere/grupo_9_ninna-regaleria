@@ -21,7 +21,7 @@
                 <button class="purchase-buttom" href="">Comprar ahora</button>
                 <button class="cart-buttom" href="">Agregar al carrito</button>
                 <div class="edit-product">
-                    <a href="/productDetail/<%= product.id %>/edit"><button class="product-buttom" href="">Editar</button></a>
+                    <button class="product-buttom" href=""><a href="/productDetail/<%= product.id %>/edit">Editar</a></button>
                     <form action="/productDetail/<%= product.id %>?_method=DELETE" method="post"><button class="product-buttom" href="">Eliminar</button></form>
                 </div>
             </div>
