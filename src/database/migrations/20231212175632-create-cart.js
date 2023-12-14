@@ -28,7 +28,7 @@ module.exports = {
         },
       },
       quantity: {
-        type: Sequelize.BIGINT,
+        type: Sequelize.INTEGER,
         allowNull: false
       },
       createdAt: {

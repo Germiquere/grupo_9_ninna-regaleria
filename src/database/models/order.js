@@ -11,13 +11,34 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Order.belongsTo(models.PaymentMethod, {
+        foreignKey: 'payment_method_id',
+        as:'payment_method'
+      }),
+      Order.belongsTo(models.Cart, {
+        foreignKey: 'cart_id',
+        as:'carts'
+      })
     }
   }
   Order.init({
-    total: DataTypes.BIGINT
+    user_id: {
+      type: DataTypes.INTEGER,
+    },
+    cart_id: {
+      type: DataTypes.INTEGER,
+    },
+    paymentmethod_id: {
+      type: DataTypes.INT,
+    },
+    total: {
+      type: DataTypes.DECIMAL(10,2),
+      allowNull: false
+    }
   }, {
     sequelize,
     modelName: 'Order',
+    tableName: 'orders'
   });
   return Order;
 };

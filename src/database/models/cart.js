@@ -11,13 +11,35 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Cart.belongsTo(models.Product, {
+        foreingKey: 'product_id',
+        as: 'products'
+      });
+      Cart.belongsTo(models.User, {
+        foreingKey: 'user_id',
+        as: 'users'
+      });
+      Cart.hasMany(models.Order, {
+        foreingKey: 'cart_id',
+        as: 'orders'
+      });
     }
   }
   Cart.init({
-    quantity: DataTypes.BIGINT
+    product_id: {
+      type: DataTypes.INT,
+    },
+    user_id: {
+      type: DataTypes.INT,
+    },
+    quantity: {
+      type: DataTypes.INT,
+      allowNull: false
+    }
   }, {
     sequelize,
     modelName: 'Cart',
+    tableName:'carts'
   });
   return Cart;
 };

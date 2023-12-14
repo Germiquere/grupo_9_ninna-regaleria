@@ -11,13 +11,21 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      PaymentMethod.hasMany(models.Order, {
+        foreignKey: 'payment_method_id',
+        as:'payment_method'
+      })
     }
   }
   PaymentMethod.init({
-    name: DataTypes.STRING
+    name: {
+      type: DataTypes.STRING
+    }
   }, {
     sequelize,
     modelName: 'PaymentMethod',
+    tableName: 'payment_method',
+    timestamps: false
   });
   return PaymentMethod;
 };
