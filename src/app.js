@@ -7,8 +7,8 @@ const path = require('path');
 const main = require('./routes/main');
 const mainLogin = require('./routes/users');
 const mainProduct = require('./routes/product');
-const session = require('express-session');
-const cookieParser = require('cookie-parser');
+// const session = require('express-session');
+// const cookieParser = require('cookie-parser');
 const { cookie } = require('express-validator');
 
 const rememberMiddleware = require('./middlewares/rememberMiddleware');

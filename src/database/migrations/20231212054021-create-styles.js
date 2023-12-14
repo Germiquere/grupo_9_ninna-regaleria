@@ -19,7 +19,7 @@ module.exports = {
         type: Sequelize.STRING(100),
         allowNull: false
       },
-      pruduct_type_id: {
+      product_type_id: {
         type: Sequelize.INTEGER,
         references: {
           model: {

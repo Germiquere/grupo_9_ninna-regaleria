@@ -15,14 +15,14 @@ module.exports = {
       },
       store: {
         type: Sequelize.STRING,
-        allowNull: true
+        allowNull: false
       },
       price: {
-        type: Sequelize.BIGINT,
+        type: Sequelize.DECIMAL(10,2),
         allowNull: false
       },
       discount: {
-        type: Sequelize.BIGINT,
+        type: Sequelize.INTEGER,
         allowNull: false
       },
       type_of_barrel_id: {
@@ -35,7 +35,7 @@ module.exports = {
         },
       },
       time_of_barrel:{
-        type: Sequelize.BIGINT,
+        type: Sequelize.INTEGER,
         allowNull: true
       },
       style_id: {
@@ -48,7 +48,7 @@ module.exports = {
         },
       },
       year: {
-        type: Sequelize.BIGINT,
+        type: Sequelize.INTEGER,
         allowNull: true
       },
       description: {
@@ -57,10 +57,10 @@ module.exports = {
       },
       image: {
         type: Sequelize.TEXT,
-        allowNull: true
+        allowNull: false
       },
       stock: {
-        type: Sequelize.BIGINT,
+        type: Sequelize.INTEGER,
         allowNull: false
       },
       product_category_id: {

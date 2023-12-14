@@ -28,7 +28,7 @@ module.exports = {
         },
       },
       total: {
-        type: Sequelize.BIGINT,
+        type: Sequelize.DECIMAL(10,2),
         allowNull: false
       },
       paymentmethod_id: {

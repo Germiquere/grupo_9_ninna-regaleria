@@ -11,23 +11,37 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      User.belongsTo(models.UserCategory, {
+        foreingKey: 'users_categories_id',
+        as:'user_categories'
+      })
+      User.hasMany(models.Cart, {
+        foreingKey: 'users_id',
+        as:'carts'
+      })
     }
   }
   User.init({
+    id: {
+      type: DataTypes.INT.UNSIGNED,
+      primaryKey: true,
+      autoIncrement: true
+    },
     fullname: {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING,
       allowNull: false
     },
     age: {
-      type: DataTypes.TEXT,
+      type: DataTypes.INT,
       allowNull: false
     },
     dni: {
-      type: DataTypes.TEXT,
-      allowNull: false
+      type: DataTypes.INT,
+      allowNull: false,
+      unique: true
     },
     email: {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING,
       allowNull: false
     },
     password: {
@@ -36,14 +50,21 @@ module.exports = (sequelize, DataTypes) => {
     },
     img: {
       type: DataTypes.TEXT,
-      allowNull: true
+      allowNull: true,
+      defaultValue: "user-default.png"
     },
     users_categories_id: {
-      type: DataTypes.INTEGER
+      type: DataTypes.INT
     },
   }, {
     sequelize,
     modelName: 'User',
+    tableName: 'user',
+    hooks: {
+      beforeCreate: (user, options) => {
+        user.password = bcrypt.hashSync(user.password, 10);
+      }
+    }
   });
   return User;
 };

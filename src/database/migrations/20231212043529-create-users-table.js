@@ -14,11 +14,11 @@ module.exports = {
         allowNull: false
       },
       age: {
-        type: Sequelize.TEXT,
+        type: Sequelize.INTEGER,
         allowNull: false
       },
       dni: {
-        type: Sequelize.TEXT,
+        type: Sequelize.INTEGER,
         allowNull: false
       },
       email: {
