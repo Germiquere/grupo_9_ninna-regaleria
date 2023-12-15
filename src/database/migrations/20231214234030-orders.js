@@ -2,42 +2,40 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Users', {
+    await queryInterface.createTable('Orders', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      fullname: {
-        type: Sequelize.TEXT,
-        allowNull: false
-      },
-      age: {
-        type: Sequelize.INTEGER,
-        allowNull: false
-      },
-      dni: {
-        type: Sequelize.INTEGER,
-        allowNull: false
-      },
-      email: {
-        type: Sequelize.TEXT,
-        allowNull: false
-      },
-      password: {
-        type: Sequelize.TEXT,
-        allowNull: false
-      },
-      img: {
-        type: Sequelize.TEXT,
-        allowNull: true
-      },
-      users_categories_id: {
+      user_id: {
         type: Sequelize.INTEGER,
         references: {
           model: {
-            tableName: 'users_categories'
+            tableName: 'users'
+          },
+          key: 'id'
+        },
+      },
+      cart_id: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: {
+            tableName: 'carts'
+          },
+          key: 'id'
+        },
+      },
+      total: {
+        type: Sequelize.DECIMAL(10,2),
+        allowNull: false
+      },
+      paymentmethod_id: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: {
+            tableName: 'products'
           },
           key: 'id'
         },
@@ -52,8 +50,7 @@ module.exports = {
       }
     });
   },
-
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Users');
+    await queryInterface.dropTable('Orders');
   }
 };
