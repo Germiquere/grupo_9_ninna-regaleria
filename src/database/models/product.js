@@ -36,7 +36,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   Product.init({
   id: {
-      type: DataTypes.BIGINT(10).UNSIGNED,
+      type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
       allowNull: false
@@ -54,7 +54,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
   },
   discount: {
-      type: DataTypes.INT,
+      type: DataTypes.INTEGER,
       allowNull: false
   },
   description: {
@@ -67,7 +67,7 @@ module.exports = (sequelize, DataTypes) => {
       defaultValue: "default.png"
   },
   stock: {
-      type: DataTypes.INT,
+      type: DataTypes.INTEGER,
       allowNull: false
   },
   time_of_barrel: {
@@ -75,20 +75,20 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true
   },
   year: {
-      type: DataTypes.INT,
+      type: DataTypes.INTEGER,
       allowNull: true
   },
   products_category_id: {
-    type: DataTypes.INT.UNSIGNED
+    type: DataTypes.INTEGER
   },
   products_type_id: {
-    type: DataTypes.INT.UNSIGNED
+    type: DataTypes.INTEGER
   },
   styles_id: {
-    type: DataTypes.INT.UNSIGNED
+    type: DataTypes.INTEGER
   },
   types_of_barrel: {
-    type: DataTypes.INT.UNSIGNED
+    type: DataTypes.INTEGER
   }
   }, 
   {

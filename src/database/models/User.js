@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   User.init({
     id: {
-      type: DataTypes.INT.UNSIGNED,
+      type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true
     },
@@ -32,11 +32,11 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     },
     age: {
-      type: DataTypes.INT,
+      type: DataTypes.INTEGER,
       allowNull: false
     },
     dni: {
-      type: DataTypes.INT,
+      type: DataTypes.INTEGER,
       allowNull: false,
       unique: true
     },
@@ -54,7 +54,7 @@ module.exports = (sequelize, DataTypes) => {
       defaultValue: "user-default.png"
     },
     users_categories_id: {
-      type: DataTypes.INT
+      type: DataTypes.INTEGER
     },
   }, {
     sequelize,

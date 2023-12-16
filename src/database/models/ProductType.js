@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-        ProductType.hasMany(models.Products, {
+        ProductType.hasMany(models.Product, {
             foreignKey: 'products_type_id',
             as: 'products'
         })
@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   ProductType.init({
   id: {
-      type: DataTypes.INT.UNSIGNED,
+      type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
       allowNull: false

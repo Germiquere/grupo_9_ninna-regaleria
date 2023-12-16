@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      TypeOfBarrel.hasMany(models.Products, {
+      TypeOfBarrel.hasMany(models.Product, {
         foreignKey: 'types_of_barrel_id',
         as:'products'
       })
@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   TypeOfBarrel.init({
   id: {
-      type: DataTypes.INT.UNSIGNED,
+      type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
       allowNull: false

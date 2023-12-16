@@ -29,7 +29,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
     },
     paymentmethod_id: {
-      type: DataTypes.INT,
+      type: DataTypes.INTEGER,
     },
     total: {
       type: DataTypes.DECIMAL(10,2),
