@@ -11,11 +11,11 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Style.hasMany(models.Products, {
+      Style.hasMany(models.Product, {
         foreignKey: 'style_id',
         as:'products'
       })
-      Style.belongsTo(models.ProductsType, {
+      Style.belongsTo(models.ProductType, {
         foreignKey: 'product_type_id',
         as:'product_type'
       })
@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   Style.init({
   id: {
-      type: DataTypes.INT.UNSIGNED,
+      type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
       allowNull: false
@@ -33,7 +33,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
   },
   product_type_id: {
-    type: DataTypes.INT
+    type: DataTypes.INTEGER
   }
   }, 
   {

@@ -27,13 +27,13 @@ module.exports = (sequelize, DataTypes) => {
   }
   Cart.init({
     product_id: {
-      type: DataTypes.INT,
+      type: DataTypes.INTEGER,
     },
     user_id: {
-      type: DataTypes.INT,
+      type: DataTypes.INTEGER,
     },
     quantity: {
-      type: DataTypes.INT,
+      type: DataTypes.INTEGER,
       allowNull: false
     }
   }, {

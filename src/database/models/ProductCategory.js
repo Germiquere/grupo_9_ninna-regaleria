@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   ProductCategory.init({
   id: {
-      type: DataTypes.BIGINT(10).UNSIGNED,
+      type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
       allowNull: false
