@@ -2,7 +2,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Products', {
+    await queryInterface.createTable('products', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -10,11 +10,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       name: {
-        type: Sequelize.STRING,
-        allowNull: false
-      },
-      store: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING(255),
         allowNull: false
       },
       price: {
@@ -24,32 +20,6 @@ module.exports = {
       discount: {
         type: Sequelize.INTEGER,
         allowNull: false
-      },
-      type_of_barrel_id: {
-        type: Sequelize.INTEGER,
-        references: {
-          model: {
-            tableName: 'type_of_barrels'
-          },
-          key: 'id'
-        },
-      },
-      time_of_barrel:{
-        type: Sequelize.INTEGER,
-        allowNull: true
-      },
-      style_id: {
-        type: Sequelize.INTEGER,
-        references: {
-          model: {
-            tableName: 'styles'
-          },
-          key: 'id'
-        },
-      },
-      year: {
-        type: Sequelize.INTEGER,
-        allowNull: true
       },
       description: {
         type: Sequelize.TEXT,
@@ -63,20 +33,55 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false
       },
-      product_category_id: {
+      time_of_barrel:{
+        type: Sequelize.STRING(255),
+        allowNull: true
+      },
+      year: {
+        type: Sequelize.INTEGER,
+        allowNull: true
+      },
+      products_segmentations_id: {
         type: Sequelize.INTEGER,
         references: {
           model: {
-            tableName: 'product_categories'
+            tableName: 'products_segmentations'
           },
           key: 'id'
         },
       },
-      product_type_id: {
+      styles_id: {
         type: Sequelize.INTEGER,
         references: {
           model: {
-            tableName: 'product_type'
+            tableName: 'styles'
+          },
+          key: 'id'
+        },
+      },
+      barrels_types_id: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: {
+            tableName: 'barrels_types'
+          },
+          key: 'id'
+        },
+      },
+      products_types_id: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: {
+            tableName: 'products_types'
+          },
+          key: 'id'
+        },
+      },
+      stores_id: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: {
+            tableName: 'stores'
           },
           key: 'id'
         },
@@ -92,6 +97,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Products');
+    await queryInterface.dropTable('products');
   }
 };
