@@ -12,16 +12,19 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-    await queryInterface.bulkInsert('users_categories', [{
-        name: 'Administrador'
-      },
-      {
-        name: 'Usuario'
-      },
-      {
-        name: 'Invitado'
-      }
-    ], {});
+    await queryInterface.bulkInsert('products_segmentations', [{
+      name: 'Ofertas'
+    },
+    {
+      name: 'Sugerencias'
+    },
+    {
+      name: 'Nuevos ingresos'
+    },
+    {
+      name: 'Mas buscados'
+    }
+  ], {});
   },
 
   async down (queryInterface, Sequelize) {
@@ -31,6 +34,6 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-    await queryInterface.bulkDelete('users_categories', null, {});
+    await queryInterface.bulkDelete('products_segmentations', null, {});
   }
 };
