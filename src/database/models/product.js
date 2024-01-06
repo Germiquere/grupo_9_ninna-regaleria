@@ -35,7 +35,6 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'stores_id',
         as: 'Stores'
       });
-
     }
   }
   Product.init({
@@ -92,7 +91,7 @@ module.exports = (sequelize, DataTypes) => {
   },
   stores_id: {
     type: DataTypes.INTEGER
-}
+  }
   }, 
   {
     sequelize,

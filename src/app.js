@@ -7,6 +7,7 @@ const path = require('path');
 const main = require('./routes/main');
 const mainLogin = require('./routes/users');
 const mainProduct = require('./routes/product');
+
 const { cookie } = require('express-validator');
 
 const rememberMiddleware = require('./middlewares/rememberMiddleware');

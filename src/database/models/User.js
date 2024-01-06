@@ -53,7 +53,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true,
       defaultValue: "user-default.png"
     },
-    users_categories_id: {
+    roles_id: {
       type: DataTypes.INTEGER
     },
   }, {

@@ -2,7 +2,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Products', {
+    await queryInterface.createTable('products', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -10,35 +10,47 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       name: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING(255),
         allowNull: false
       },
-      store: {
-        type: Sequelize.STRING,
-        allowNull: true
-      },
       price: {
-        type: Sequelize.BIGINT,
+        type: Sequelize.DECIMAL(10,2),
         allowNull: false
       },
       discount: {
-        type: Sequelize.BIGINT,
+        type: Sequelize.INTEGER,
         allowNull: false
       },
-      type_of_barrel_id: {
+      description: {
+        type: Sequelize.TEXT,
+        allowNull: false
+      },
+      image: {
+        type: Sequelize.TEXT,
+        allowNull: false
+      },
+      stock: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+      },
+      time_of_barrel:{
+        type: Sequelize.STRING(255),
+        allowNull: true
+      },
+      year: {
+        type: Sequelize.INTEGER,
+        allowNull: true
+      },
+      products_segmentations_id: {
         type: Sequelize.INTEGER,
         references: {
           model: {
-            tableName: 'type_of_barrels'
+            tableName: 'products_segmentations'
           },
           key: 'id'
         },
       },
-      time_of_barrel:{
-        type: Sequelize.BIGINT,
-        allowNull: true
-      },
-      style_id: {
+      styles_id: {
         type: Sequelize.INTEGER,
         references: {
           model: {
@@ -47,36 +59,29 @@ module.exports = {
           key: 'id'
         },
       },
-      year: {
-        type: Sequelize.BIGINT,
-        allowNull: true
-      },
-      description: {
-        type: Sequelize.TEXT,
-        allowNull: false
-      },
-      image: {
-        type: Sequelize.TEXT,
-        allowNull: true
-      },
-      stock: {
-        type: Sequelize.BIGINT,
-        allowNull: false
-      },
-      product_category_id: {
+      barrels_types_id: {
         type: Sequelize.INTEGER,
         references: {
           model: {
-            tableName: 'product_categories'
+            tableName: 'barrels_types'
           },
           key: 'id'
         },
       },
-      product_type_id: {
+      products_types_id: {
         type: Sequelize.INTEGER,
         references: {
           model: {
-            tableName: 'product_type'
+            tableName: 'products_types'
+          },
+          key: 'id'
+        },
+      },
+      stores_id: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: {
+            tableName: 'stores'
           },
           key: 'id'
         },
@@ -92,6 +97,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Products');
+    await queryInterface.dropTable('products');
   }
 };

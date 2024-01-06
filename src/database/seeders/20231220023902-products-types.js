@@ -12,14 +12,19 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-    await queryInterface.bulkInsert('styles', [
-      {
-        name: 'Malbec'
-      },
-      {
-        name: 'Blend'
-      },
-    ], {});
+    await queryInterface.bulkInsert('products_types', [{
+      name: 'Vino'
+    },
+    {
+      name: 'Whisky'
+    },
+    {
+      name: 'Cerveza'
+    },
+    {
+      name: 'Spirit'
+    }
+  ], {});
   },
 
   async down (queryInterface, Sequelize) {
@@ -29,6 +34,6 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-    await queryInterface.bulkDelete('styles', null, {});
+    await queryInterface.bulkDelete('products_types', null, {});
   }
 };
