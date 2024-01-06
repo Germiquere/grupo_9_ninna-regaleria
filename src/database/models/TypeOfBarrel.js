@@ -12,8 +12,8 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       TypeOfBarrel.hasMany(models.Product, {
-        foreignKey: 'types_of_barrel_id',
-        as:'products'
+        foreignKey: 'barrels_types_id',
+        as:'TypeOfBarrel'
       })
     }
   }
@@ -32,7 +32,7 @@ module.exports = (sequelize, DataTypes) => {
   {
     sequelize,
     modelName: 'TypeOfBarrel',
-    tableName: 'types_of_barrels',
+    tableName: 'barrels_types',
     timestamps: false
   });
   return TypeOfBarrel;

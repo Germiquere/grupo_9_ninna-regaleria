@@ -11,12 +11,12 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      User.belongsTo(models.UserCategory, {
-        foreingKey: 'users_categories_id',
-        as:'user_categories'
+      User.belongsTo(models.Roles, {
+        foreingKey: 'roles_id',
+        as:'Roles'
       })
       User.hasMany(models.Cart, {
-        foreingKey: 'users_id',
+        foreingKey: 'carts_id',
         as:'carts'
       })
     }
@@ -53,7 +53,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true,
       defaultValue: "user-default.png"
     },
-    users_categories_id: {
+    roles_id: {
       type: DataTypes.INTEGER
     },
   }, {

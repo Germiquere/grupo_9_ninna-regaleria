@@ -11,12 +11,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
         ProductType.hasMany(models.Product, {
-            foreignKey: 'products_type_id',
-            as: 'products'
-        })
-        ProductType.belongsTo(models.Style, {
-          foreignKey: 'product_type_id',
-          as:'product_type'
+            foreignKey: 'products_types_id',
+            as: 'products_types'
         })
       // define association here
     }
@@ -36,7 +32,7 @@ module.exports = (sequelize, DataTypes) => {
   {
     sequelize,
     modelName: 'ProductType',
-    tableName: 'products_type',
+    tableName: 'products_types',
     timestamps: false
   });
   return ProductType;

@@ -11,27 +11,30 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Product.belongsTo(models.ProductCategory, {
-        foreingKey: 'product_category_id',
-        as: 'products_categories'
+      Product.belongsTo(models.ProductSegmentation, {
+        foreignKey: 'products_segmentations_id',
+        as: 'ProductSegmentation'
       });
       Product.belongsTo(models.ProductType, {
-        foreingKey: 'products_type_id',
-        as: 'products_type'
+        foreignKey: 'products_types_id',
+        as: 'ProductType'
       });
       Product.belongsTo(models.TypeOfBarrel, {
-        foreingKey: 'types_of_barrel_id',
-        as: 'types_of_barrels'
+        foreignKey: 'barrels_types_id',
+        as: 'TypeOfBarrel'
       });
       Product.belongsTo(models.Style, {
-        foreingKey: 'style_id',
-        as: 'styles'
+        foreignKey: 'styles_id',
+        as: 'Styles'
       });
       Product.hasMany(models.Cart, {
-        foreingKey: 'product_id',
-        as: 'carts'
+        foreignKey: 'carts_id',
+        as: 'Carts'
       });
-
+      Product.belongsTo(models.Store, {
+        foreignKey: 'stores_id',
+        as: 'Stores'
+      });
     }
   }
   Product.init({
@@ -42,10 +45,6 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
   },
   name: {
-      type: DataTypes.STRING,
-      allowNull: false
-  },
-  store: {
       type: DataTypes.STRING,
       allowNull: false
   },
@@ -78,16 +77,19 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: true
   },
-  products_category_id: {
-    type: DataTypes.INTEGER
-  },
-  products_type_id: {
+  products_segmentations_id: {
     type: DataTypes.INTEGER
   },
   styles_id: {
     type: DataTypes.INTEGER
   },
-  types_of_barrel: {
+  barrels_types_id: {
+    type: DataTypes.INTEGER
+  },
+  products_types_id: {
+    type: DataTypes.INTEGER
+  },
+  stores_id: {
     type: DataTypes.INTEGER
   }
   }, 

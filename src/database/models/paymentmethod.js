@@ -24,7 +24,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'PaymentMethod',
-    tableName: 'payment_method',
+    tableName: 'payment_methods',
     timestamps: false
   });
   return PaymentMethod;
