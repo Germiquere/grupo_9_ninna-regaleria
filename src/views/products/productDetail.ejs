@@ -1,46 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <%- include('../partials/head') %>
-    <title>Los intocables Red Blend</title>
-    <link rel="stylesheet" href="/css/styles-productDetail.css">
+        <title>
+            <%= products.name %>
+        </title>
+        <link rel="stylesheet" href="/css/styles-productDetail.css">
 </head>
+
 <body>
     <%- include('../partials/header') %>
-    <main>
-        <div class="product-detail">
-            <div class="img-product"><img src="/images/products/<%= locals.product && product.image %>"" alt="imagen producto"></div>
-            <div class="details">
-                <h5 class="product-name"><%= locals.product && product.name %></h5>
-                <p class="grape"><%= locals.product && product.grape %></p>
-                <p class="price"><%= locals.product && product.price %></p>
-                <p class="stock">Stock disponible</p>
-                <div class="purchase-quantity">
-                    <span class="quantity-buttom"> - </span> <span class="quantity"> 1 </span> <span class="quantity-buttom"> + </span>
+        <main>
+            <div class="product-detail">
+                <div class="img-product"><img src="/images/products/<%= products.image %>"" alt=" imagen producto">
                 </div>
-                <button class="purchase-buttom" href="">Comprar ahora</button>
-                <button class="cart-buttom" href="">Agregar al carrito</button>
-                <div class="edit-product">
-                    <button class="product-buttom" href=""><a href="/productDetail/<%= product.id %>/edit">Editar</a></button>
-                    <form action="/productDetail/<%= product.id %>?_method=DELETE" method="post"><button class="product-buttom" href="">Eliminar</button></form>
+                <div class="details">
+                    <h5 class="product-name">
+                        <%= products.name %>
+                    </h5>
+                    <p class="grape">
+                        <%= products.Styles.name %>
+                    </p>
+                    <p class="price">
+                        <%= products.price %>
+                    </p>
+                    <p class="stock">Stock: <%= products.stock %>
+                    </p>
+                    <div class="purchase-quantity">
+                        <span class="quantity-buttom"> - </span> <span class="quantity"> 1 </span> <span
+                            class="quantity-buttom"> + </span>
+                    </div>
+                    <button class="purchase-buttom" href="">Comprar ahora</button>
+                    <button class="cart-buttom" href="">Agregar al carrito</button>
+                    <div class="edit-product">
+                        <button class="product-buttom" href="">
+                            <a href="/productDetail/<%= products.id %>/edit">Editar</a>
+                        </button>
+                        <form action="/productDetail/<%= products.id %>?_method=DELETE" method="post">
+                            <button class="product-buttom" type="submit">Eliminar</button>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
-    <div class="desc-container">
-        <div class="description">
-            <h5>Características</h5>
-            <p ><span class="category">VARIETAL: </span><span><%= locals.product && product.grape %></span></p>
-            <p ><span class="category">BODEGA: </span><span><%= locals.product && product.store %></span></p>
-            <p ><span class="category">AÑADA: </span><span><%= locals.product && product.year %></span></p>
-            <p ><span class="category">TIPO DE BARRICA: </span><span><%= locals.product && product.typeOfBarrel %></span></p>
-            <p ><span class="category">TIEMPO DE BARRICA: </span><span><%= locals.product && product.timeInBarrel %></span></p>
-        </div>
-        <div class="description">
-            <h5>Descripción</h5>
-            <p class="description-text"><%= locals.product && product.description %></p>
-        </div>
-    </div>
-    </main>
-    <%- include('../partials/footer') %>
+            <div class="desc-container">
+                <div class="description">
+                    <h5>Características</h5>
+                    <p><span class="category">VARIETAL: </span><span>
+                            <%= products.Styles.name %>
+                        </span></p>
+                    <p><span class="category">BODEGA: </span><span>
+                            <%= products.Stores.name %>
+                        </span></p>
+                    <p><span class="category">AÑADA: </span><span>
+                            <%= products.year %>
+                        </span></p>
+                    <p><span class="category">TIPO DE BARRICA: </span><span>
+                            <%= products.TypeOfBarrel.name %>
+                        </span></p>
+                    <p><span class="category">TIEMPO DE BARRICA: </span><span>
+                            <%= products.time_of_barrel %>
+                        </span></p>
+                </div>
+                <div class="description">
+                    <h5>Descripción</h5>
+                    <p class="description-text">
+                        <%= products.description %>
+                    </p>
+                </div>
+            </div>
+        </main>
+        <%- include('../partials/footer') %>
 </body>
+
 </html>
