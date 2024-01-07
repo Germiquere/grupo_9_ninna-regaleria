@@ -12,7 +12,8 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-    await queryInterface.bulkInsert('styles', [{
+    await queryInterface.bulkInsert('styles', [
+    {
       name: "Cabernet Sauvignon",
     },
     {
@@ -94,7 +95,7 @@ module.exports = {
       name: "Cognac"
     },
     {
-      name: "Licor de Café"
+      name: "Licor"
     },
     {
       name: "Absenta"
@@ -104,6 +105,24 @@ module.exports = {
     },
     {
       name: "Fernet"
+    },
+    {
+      name: "Amber Lager"
+    },
+    {
+      name: "Hooney"
+    },
+    {
+      name: "Pale Lager"
+    },
+    {
+      name: "Blend"
+    },
+    {
+      name: "Cabernet Franc",
+    },
+    {
+      name: "Single Malt",
     }
   ], {});
   },

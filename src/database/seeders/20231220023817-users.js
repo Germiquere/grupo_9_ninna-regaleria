@@ -15,75 +15,75 @@ module.exports = {
     await queryInterface.bulkInsert('users', [
       {
         fullname: "Martínez Pedro",
-        age: "18",
-        dni: "40258743",
+        age: 18,
+        dni: 40258743,
         email: "pedromartinez@email.com",
         password: "$2a$10$IH.s0cYiqkxPSUk9T7/6ee8jgeKC/FfQo.Olj2zGTSi0mnLYx9xfi",
         img: "user-default.png",
-        roles_id: "1"
+        roles_id: 1
       },
       {
         fullname: "Rodríguez Ana",
-        age: "25",
-        dni: "42543687",
+        age: 25,
+        dni: 42543687,
         email: "anarodriguez@email.com",
         password: "$2a$10$BgYeDzxaM2YUBz2m28LgU.6CXpw0/h6stxn4ao8SX1cVxQ./8eeoS",
         img: "avatar1699479310232.png",
-        roles_id: "2"
+        roles_id: 2
       },
       {
         fullname: "Pérez Luisa",
-        age: "30",
-        dni: "37254781",
+        age: 30,
+        dni: 37254781,
         email: "luisaperez@email.com",
         password: "$2a$10$ypWgHcRiCpfp2vtnXwz4.OX2Ljv.AsN1RLsPmtxCLKiusvqzJ9Edm",
         img: "user-default.png",
-        roles_id: "1"
+        roles_id: 1
       },
       {
         fullname: "López Juan",
-        age: "35",
-        dni: "28451726",
+        age: 35,
+        dni: 28451726,
         email: "juanlopez@email.com",
         password: "$2a$10$zkJnFctHzf4dsFD1slvO.uT4Wn6rpytm1YXsb3MU4s82SPjuSlgsK",
         img: "avatar1699479970508.png",
-        roles_id: "1"
+        roles_id: 1
       },
       {
         fullname: "Sánchez María",
-        age: "40",
-        dni: "19471569",
+        age: 40,
+        dni: 19471569,
         email: "mariasanchez@email.com",
         password: "$2a$10$s2lpgK5rQd.YmLtwkG2E3.BufOADV6YfFQbJ9Shkm2OSN2J/nQtji",
         img: "avatar1699484968761.png",
-        roles_id: "2"
+        roles_id: 2
       },
       {
         fullname: "González Carlos",
-        age: "45",
-        dni: "15472984",
+        age: 45,
+        dni: 15472984,
         email: "carlosgonzalez@email.com",
         password: "$2a$10$qbsZCI2T4MCH5Sc/ZaCdIumuE4FUhBNERB.KIRgJVr209LdrfFxrm",
         img: "avatar1699486056597.png",
-        roles_id: "1"
+        roles_id: 1
       },
       {
         fullname: "Rodríguez Laura",
-        age: "50",
-        dni: "11472651",
+        age: 50,
+        dni: 11472651,
         email: "laurarodriguez@email.com",
         password: "$2a$10$Lp1zMlKkAOzpydF7uFSaru/ZWWTUKKRDQ4Tk7Lxqdtz9PK8l6S0TK",
         img: "user-default.png",
-        roles_id: "2"
+        roles_id: 2
       },
       {
         fullname: "Fernández Pablo",
-        age: "55",
-        dni: "8475982",
+        age: 55,
+        dni: 8475982,
         email: "pablofernandez@email.com",
         password: "$2a$10$CwK06Zq6sIX9GZNQixj4kuEy1qxpzTnDWWqozzpE.OQztkPVqio/6",
         img: "avatar1699486577536.png",
-        roles_id: "1"
+        roles_id: 1
       },
       {
         fullname: "López Carmen",

@@ -132,7 +132,37 @@ module.exports = {
       },
       {
         name: "Branca"
-      }
+      },
+      {
+        name: "Bodega Trivento"
+      },
+      {
+        name: "Finca Las Moras"
+      },
+      {
+        name: "Aleanna"
+      },
+      {
+        name: "The Singleton"
+      },
+      {
+        name: "Talisker"
+      },
+      {
+        name: "Clynelish"
+      },
+      {
+        name: "Peters"
+      },
+      {
+        name: "Smirnoff"
+      },
+      {
+        name: "Bodega Banegas"
+      },
+      {
+        name: "Piattelli"
+      },
     ], {});
   },
 
