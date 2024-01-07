@@ -19,7 +19,7 @@
         <div class="form signup">
             <div class="form-content">
                 <div class="header-2">Registrate</div>
-                <form action="/register" method="POST" enctype="multipart/form-data">
+                <form id="register-form" action="/register" method="POST" enctype="multipart/form-data">
                     <div class="field input-field">
                         <input 
                             type="text" placeholder="Nombre y Apellido" 
@@ -28,6 +28,7 @@
                             <% if(locals.errors?.fullname) {%>
                                 <p class="error-msg"><%= errors.fullname.msg %></p>
                             <% } %>
+                            <p class="error-msg" id="error-fullname"></p>
                     </div>
 
                     <div class="field input-field">
@@ -37,6 +38,7 @@
                             <% if(locals.errors?.age) {%>
                                 <p class="error-msg"><%= errors.age.msg %></p>
                             <% } %>
+                            <p class="error-msg" id="error-age"></p>
                         </div>
 
                     <div class="field input-field">
@@ -46,6 +48,7 @@
                         <% if(locals.errors?.dni) {%>
                             <p class="error-msg"><%= errors.dni.msg %></p>
                         <% } %>
+                        <p class="error-msg" id="error-dni"></p>
                     </div>
 
                     <div class="field input-field">
@@ -55,6 +58,7 @@
                         <% if(locals.errors?.email) {%>
                             <p class="error-msg"><%= errors.email.msg %></p>
                         <% } %>
+                        <p class="error-msg" id="error-email"></p>
                     </div>
 
                     <div class="field input-field">
@@ -64,18 +68,23 @@
                         <% if(locals.errors?.password) {%>
                             <p class="error-msg"><%= errors.password.msg %></p>
                         <% } %>
+                        <p class="error-msg" id="error-password"></p>
                     </div>
                     
                     <div class="field input-field">
-                        <input type="password" placeholder="Confirmar Contraseña" class="input">
+                        <input type="password" placeholder="Confirmar Contraseña" 
+                        name="confirmPassword" class="input">
+                        <p class="error-msg" id="error-confirm-password"></p>
                     </div>
                   
                     <div class="field input-field">
                         <label for="avatar" class="input">Selecciona tu imagen de perfil: </label>
-                        <input type="file" name="avatar" accept=".img, .jpg, .jpeg, .png" class="input">
+                        <input type="file" name="avatar"  class="input">
                         <% if(locals.errors?.avatar) {%>
                             <p class="error-msg"><%= errors.avatar.msg %></p>
                         <% } %>
+                        <p class="error-msg"></p>
+                        <p class="error-msg" id="error-avatar"></p>
                     </div>
                     
                     <div class="field button-field">
@@ -92,6 +101,7 @@
         </div>
         </section>
     </main>
-</body>
 
+</body>
+<script src="/js/register.js"></script>
 </html>
