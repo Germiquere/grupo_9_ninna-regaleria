@@ -63,7 +63,7 @@ const controller = {
 			});
 	},
 
-	  store: async (req, res) => {
+	async store (req, res) {
 		// const products = getProducts();
 		// const productsToCreate = {
 		// 	id: products[products.length - 1].id + 1,
@@ -96,22 +96,50 @@ const controller = {
 		res.redirect('/allProducts');
 	},
 
-	edit: (req, res) => {
+	async edit(req, res) {
 		// const products = getProducts();
 		// const product = products.find(product => product.id == req.params.id);
 		// res.render('./products/product-edit-form', { productToEdit: product} );
 
-		let products = db.Product.findByPk(req.params.id);
-		let productSegmentation = db.ProductSegmentation.findAll();
-		let productType = db.ProductType.findAll();
-		let store = db.Store.findByPk(req.params.id);
-		let style = db.Style.findByPk(req.params.id);
-		let typeOfBarrel = db.TypeOfBarrel.findByPk(req.params.id);
+		// let products = db.Product.findByPk(req.params.id);
+		// let productSegmentation = db.ProductSegmentation.findAll();
+		// let productType = db.ProductType.findAll();
+		// let store = db.Store.findByPk(req.params.id);
+		// let style = db.Style.findByPk(req.params.id);
+		// let typeOfBarrel = db.TypeOfBarrel.findByPk(req.params.id);
+		try {
+			const products = await db.Product.findByPk(req.params.id, {
+					include: [
+						{ association: 'Stores' },
+						{ association: 'TypeOfBarrel' },
+						{ association: 'ProductType' },
+						{ association: 'Styles' },
+						{ association: 'ProductSegmentation'}]
+			});
+			const stores = await db.Store.findAll({
+					order: [['name', 'asc']]
+			});
+			const typeOfBarrel = await db.TypeOfBarrel.findAll({
+					order: [['name', 'asc']]
+			});
+			const productType = await db.ProductType.findAll({
+					order: [['name', 'asc']]
+			});
+			const styles = await db.Style.findAll({
+					order: [['name', 'asc']]
+			});
+			const productSegmentation = await db.ProductSegmentation.findAll({
+					order: [['name', 'asc']]
+			});
+			return res.render('./products/product-edit-form', { Product: products, stores, typeOfBarrel, productType, styles, productSegmentation});
+		} catch (error) {
+			return res.status(500).send(error);
+		}
 
-		Promise.all([products, productSegmentation, productType, store, style, typeOfBarrel])
-			.then(function([products, productSegmentation, productType, store, style, typeOfBarrel]){
-				res.render('./products/product-edit-form', { products, productSegmentation, productType, store, style, typeOfBarrel } );
-			})
+		// Promise.all([products, productSegmentation, productType, store, style, typeOfBarrel])
+		// 	.then(function([products, productSegmentation, productType, store, style, typeOfBarrel]){
+		// 		res.render('./products/product-edit-form', { products } );
+		// 	})
 
 	},
 
