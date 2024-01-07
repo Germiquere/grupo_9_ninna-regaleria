@@ -12,76 +12,62 @@
     <div class="form-create">
       <div class="form-content">
         <div>
-          <h2>Crear nuevo producto</h2>
+          <h2>Editar producto</h2>
         </div>
-        <form action="/productDetail/<%= products.id %>/edit?_method=PUT" method="POST">
+        <form action="/productDetail/<%= Product.id %>/edit?_method=PUT" method="POST">
           <div class="field input-field">
             <label for="name" class="form-label">Nombre:</label>
-          <input type="text" id="name" name="name" placeholder="Ej: Felino Malbec 2021" class="form-input" value="<%= products.name %>">
+          <input type="text" id="name" name="name" placeholder="Ej: Felino Malbec 2021" class="form-input" value="<%= Product.name %>">
           </div>
           <div class="field input-field">
             <label for="store" class="form-label">Bodega:</label>
-            <input type="text" id="store" name="store" placeholder="Ej: Catena Zapata" class="form-input" value="<%= store.name %>">
+            <input type="text" id="store" name="store" placeholder="Ej: Catena Zapata" class="form-input" value="<%= Product.Stores.name %>">
           </div>
           <div class="field input-field">
             <label for="grape" class="form-label">Varietal:</label>
-            <input type="text" id="grape" name="grape" placeholder="Ej: Cabernet Franc 2016" class="form-input" value="<%= style.name%>">
+            <input type="text" id="grape" name="grape" placeholder="Ej: Cabernet Franc 2016" class="form-input" value="<%= Product.Styles.name%>">
           </div>
           <div class="field input-field">
             <label for="year" class="form-label">Año:</label>
-          <input type="text" id="year" name="year" placeholder="Ej: 2016" class="form-input" value="<%= products.year %>">
+          <input type="text" id="year" name="year" placeholder="Ej: 2016" class="form-input" value="<%= Product.year %>">
           </div>
           <div class="field input-field">
             <label for="typeOfBarrel" class="form-label">Tipo de barrica:</label>
-          <input type="text" id="typeOfBarrel" name="typeOfBarrel" placeholder="Ej: Roble francés" class="form-input" value="<%= typeOfBarrel.name %>">
+          <input type="text" id="typeOfBarrel" name="typeOfBarrel" placeholder="Ej: Roble francés" class="form-input" value="<%= Product.TypeOfBarrel.name %>">
           </div>
           <div class="field input-field">
             <label for="timeInBarrel" class="form-label">Tiempo de barrica:</label>
-          <input type="text" id="timeInBarrel" name="timeInBarrel" placeholder="Ej: 2 años" class="form-input" value="<%= products.time_of_barrel %>">
+          <input type="text" id="timeInBarrel" name="timeInBarrel" placeholder="Ej: 2 años" class="form-input" value="<%= Product.time_of_barrel %>">
           </div>
           <div class="field input-field">
             <label for="price" class="form-label">Precio:</label>
-            <input type="text" id="price" name="price" placeholder="Ej: Cabernet Franc 2016" class="form-input" value="<%= products.price %>">
+            <input type="text" id="price" name="price" placeholder="Ej: Cabernet Franc 2016" class="form-input" value="<%= Product.price %>">
           </div>
           <div class="field input-field">
             <label for="discount" class="form-label">Descuento:</label>
-            <input type="text" id="discount" name="discount" placeholder="Ej: 10" class="form-input" value="<%= products.discount %>">
+            <input type="text" id="discount" name="discount" placeholder="Ej: 10" class="form-input" value="<%= Product.discount %>">
           </div>
           <div class="field input-field">
             <label for="type" class="form-label">Tipo:</label>
           <select name="type" id="type">
-            <% for (let i=0; i < productType.length; i++) {%>
-              <% if (productType[i].id==products.products_types_id){ %>
-                <option value="<%= productType[i].id %>" selected>
-                  <%= productType[i].name %>
-                </option>
-                <% } else { %>
-                  <option value="<%= productType[i].id %>">
-                    <%= productType[i].name %>
-                  </option>
-                  <% } %>
-                    <% } %>
+              <option value=""><%= Product.ProductType.name %></option>
+              <% productType.forEach(productType => { %> 
+                  <option value="<%= productType.id %>"><%= productType.name %></option>
+              <%}); %>
           </select>
           </div>
           <div class="field input-field">
             <label for="type" class="form-label">Segmento:</label>
-            <select name="category" id="category">
-              <% for (let i=0; i < productSegmentation.length; i++) {%>
-                <% if (productSegmentation[i].id==products.products_segmentations_id){ %>
-                  <option value="<%= productSegmentation[i].id %>" selected>
-                    <%= productSegmentation[i].name %>
-                  </option>
-                  <% } else { %>
-                    <option value="<%= productSegmentation[i].id %>">
-                      <%= productSegmentation[i].name %>
-                    </option>
-                    <% } %>
-                      <% } %>
-            </select>
+          <select name="category" id="category">
+            <option value=""><%= Product.ProductSegmentation.name %></option>
+              <% productSegmentation.forEach(productSegmentation => { %> 
+                  <option value="<%= productSegmentation.id %>"><%= productSegmentation.name %></option>
+              <%}); %>
+          </select>
           </div>
           <div class="field input-field input-description">
             <label for="description" class="form-label">Descripcion:</label>
-            <textarea name="description" id="description" class="form-input"><%= products.description %></textarea>
+            <textarea name="description" id="description" class="form-input"><%= Product.description %></textarea>
           </div>
           <div class="field input-field">
             <label for="products" class="input">Selecciona la imagen del producto: </label>
