@@ -46,20 +46,20 @@
             <div class="desc-container">
                 <div class="description">
                     <h5>Características</h5>
-                    <p><span class="category">VARIETAL: </span><span>
+                    <p><span class="category">ESTILO: </span><span>
                             <%= products.Styles.name %>
                         </span></p>
                     <p><span class="category">BODEGA: </span><span>
                             <%= products.Stores.name %>
                         </span></p>
                     <p><span class="category">AÑADA: </span><span>
-                            <%= products.year %>
+                            <%= (products.year || 'No corresponde') %>
                         </span></p>
                     <p><span class="category">TIPO DE BARRICA: </span><span>
-                            <%= products.TypeOfBarrel.name %>
+                            <%= (products.TypeOfBarrel && products.TypeOfBarrel.name) || 'No corresponde' %>
                         </span></p>
                     <p><span class="category">TIEMPO DE BARRICA: </span><span>
-                            <%= products.time_of_barrel %>
+                            <%= (products.time_of_barrel || "No corresponde") %>
                         </span></p>
                 </div>
                 <div class="description">

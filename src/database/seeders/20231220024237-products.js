@@ -113,7 +113,7 @@ module.exports = {
         styles_id: 8,
         time_of_barrel: "12 meses",
         barrels_types_id: 6,
-        products_types_id: 2,
+        products_types_id: 1,
         stores_id: 42,
         image: "los-intocables.png",
         year: 2020
@@ -128,7 +128,7 @@ module.exports = {
         styles_id: 35,
         time_of_barrel: "12 meses",
         barrels_types_id: 6,
-        products_types_id: 2,
+        products_types_id: 1,
         stores_id: 42,
         image: "los_intocables_blend.png",
         year: 2018
@@ -175,7 +175,7 @@ module.exports = {
         barrels_types_id: 2,
         products_types_id: 2,
         stores_id: 44,
-        image: "the-sigleton.png",
+        image: "the-singleton.png",
         year: 15
       },
       {
@@ -355,7 +355,7 @@ module.exports = {
         barrels_types_id: 1,
         products_types_id: 1,
         stores_id: 50,
-        image: "piatelli.png",
+        image: "piattelli.png",
         year: 2022
       },
     ], {});
