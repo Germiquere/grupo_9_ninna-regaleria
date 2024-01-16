@@ -31,8 +31,8 @@ router.get('/productCart', isLoggedMiddleware, productController.cart);
 router.get('/productDetail/:id', isLoggedMiddleware, productController.detail);
 
 /*** CREATE ONE PRODUCT ***/ 
-router.get('/create', adminMiddleware, productController.create);
-router.post('/create', uploadFile.single('products'), productController.store);
+router.get('/create', adminMiddleware,productController.create);
+router.post('/create', uploadFile.single('image'), productController.store);
 
 /*** EDIT ONE PRODUCT ***/ 
 router.get('/productDetail/:id/edit', adminMiddleware, productController.edit);

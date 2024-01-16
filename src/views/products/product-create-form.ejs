@@ -37,11 +37,15 @@
             </div>
             <div class="field input-field">
               <label for="timeInBarrel" class="form-label">Tiempo de barrica:</label>
-						<input type="text" id="timeInBarrel" name="timeInBarrel" placeholder="Ej: 2 años" class="form-input">
+						<input type="text" id="timeInBarrel" name="timeInBarrel" placeholder="Ej: 2" class="form-input">
+            </div>
+            <div class="field input-field">
+              <label for="timeInBarrel" class="form-label">Stock:</label>
+						<input type="text" id="stock" name="stock" placeholder="Ej: 20" class="form-input">
             </div>
             <div class="field input-field">
               <label for="price" class="form-label">Precio:</label>
-						<input type="text" id="price" name="price" placeholder="Ej: Cabernet Franc 2016" class="form-input">
+						<input type="text" id="price" name="price" placeholder="Ej: 10.000" class="form-input">
             </div>
             <div class="field input-field">
               <label for="discount" class="form-label">Descuento:</label>
@@ -50,17 +54,17 @@
             <div class="field input-field">
               <label for="type" class="form-label">Tipo:</label>
 						<select name="type" id="type">
-              <option value="Vino">Vino</option>
-              <option value="Whiskey">Whiskey</option>
-              <option value="Cerveza">Cerveza</option>
-              <option value="Spirits">Spirits</option>
+              <% for (let i = 0; i < productType.length; i++) {%>
+              <option value="<%= productType[i].id %>"><%= productType[i].name %></option>
+              <% } %>
             </select>
           </div>
             <div class="field input-field">
-              <label for="type" class="form-label">Tipo:</label>
+              <label for="type" class="form-label">Segmento:</label>
               <select name="category" id="category">
-                <option value="oferta">Oferta</option>
-                <option value="sugerencia">Sugerencia</option>
+                <% for (let i = 0; i < productSegmentation.length; i++) {%>
+                  <option value="<%= productSegmentation[i].id %>"><%= productSegmentation[i].name %></option>
+                  <% } %>
               </select>
             </div>
             <div class="field input-field">
@@ -69,13 +73,13 @@
             </div> 
             <div class="field input-field">
               <label for="products" class="input">Selecciona la imagen del producto: </label>
-              <input type="file" name="products" accept=".img, .jpg, .jpeg, .png" class="input">
+              <input type="file" name="image" accept=".img, .jpg, .jpeg, .png" class="input">
               <% if(locals.errors?.products) {%>
                 <p class="error-msg"><%= errors.products.msg %></p>
             <% } %>
           </div>
             <div class="field button-field">
-              <button>Guardar</button>
+              <button type="submit">Guardar</button>
             </div>
           </form>
         </div>
