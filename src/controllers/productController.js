@@ -28,19 +28,6 @@ const controller = {
         res.render('./products/productCart')
     },
     detail: (req, res) => {
-        // const products = getProducts();
-        // const product = products.find(product => product.id == req.params.id);
-        // if (!product) {
-		// 	return res.render('error', {
-		// 		message: 'El producto no existe',
-		// 		error: {
-		// 			status: 404
-		// 		},
-		// 		path: req.url
-		// 	});
-		// }
-        // res.render('./products/productDetail', { product })
-
 		db.Product.findByPk(req.params.id, {
 			include: [
 				{ association: 'Stores' },
@@ -64,14 +51,6 @@ const controller = {
 	},
 
 	async store (req, res) {
-		// const products = getProducts();
-		// const productsToCreate = {
-		// 	id: products[products.length - 1].id + 1,
-		// 	image: req.file ? req.file.filename : "default.png",
-		// 	...req.body
-		// }
-		// products.push(productsToCreate);
-		// fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
 		const [style, barrelType, store] = await Promise.all([
 			db.Style.create({ name: req.body.grape }),
 			db.TypeOfBarrel.create({ name: req.body.typeOfBarrel }),
@@ -97,16 +76,6 @@ const controller = {
 	},
 
 	async edit(req, res) {
-		// const products = getProducts();
-		// const product = products.find(product => product.id == req.params.id);
-		// res.render('./products/product-edit-form', { productToEdit: product} );
-
-		// let products = db.Product.findByPk(req.params.id);
-		// let productSegmentation = db.ProductSegmentation.findAll();
-		// let productType = db.ProductType.findAll();
-		// let store = db.Store.findByPk(req.params.id);
-		// let style = db.Style.findByPk(req.params.id);
-		// let typeOfBarrel = db.TypeOfBarrel.findByPk(req.params.id);
 		try {
 			const products = await db.Product.findByPk(req.params.id, {
 					include: [
@@ -116,94 +85,59 @@ const controller = {
 						{ association: 'Styles' },
 						{ association: 'ProductSegmentation'}]
 			});
-			const stores = await db.Store.findAll({
-					order: [['name', 'asc']]
-			});
-			const typeOfBarrel = await db.TypeOfBarrel.findAll({
-					order: [['name', 'asc']]
-			});
-			const productType = await db.ProductType.findAll({
-					order: [['name', 'asc']]
-			});
-			const styles = await db.Style.findAll({
-					order: [['name', 'asc']]
-			});
-			const productSegmentation = await db.ProductSegmentation.findAll({
-					order: [['name', 'asc']]
-			});
+			const stores = await db.Store.findAll();
+			const typeOfBarrel = await db.TypeOfBarrel.findAll();
+			const productType = await db.ProductType.findAll();
+			const styles = await db.Style.findAll();
+			const productSegmentation = await db.ProductSegmentation.findAll();
 			return res.render('./products/product-edit-form', { Product: products, stores, typeOfBarrel, productType, styles, productSegmentation});
 		} catch (error) {
 			return res.status(500).send(error);
 		}
-
-		// Promise.all([products, productSegmentation, productType, store, style, typeOfBarrel])
-		// 	.then(function([products, productSegmentation, productType, store, style, typeOfBarrel]){
-		// 		res.render('./products/product-edit-form', { products } );
-		// 	})
-
 	},
 
-	update: async (req, res) => {
-		// const products = getProducts();
-		// const indexProduct = products.findIndex(product => product.id == req.params.id);
-		// products[indexProduct] = {
-		// 	...products[indexProduct],
-		// 	...req.body
-		// }
-		// fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
-		// res.redirect('/allProducts');
-
-		const [style, barrelType, store] = await Promise.all([
-			db.Style.update({ name: req.body.grape }, { where: { id: req.params.id } }),
-			db.TypeOfBarrel.update({ name: req.body.typeOfBarrel }, { where: { id: req.params.id } }),
-			db.Store.update({ name: req.body.store }, { where: { id: req.params.id } }),
-		]);
-
-		db.Product.update({
-			name: req.body.name,
-			price: req.body.price,
-			discount: req.body.discount,
-			description: req.body.description,
-			stock: req.body.stock,
-			time_of_barrel: req.body.timeInBarrel,
-			year: req.body.year,
-			products_segmentations_id: req.body.category,
-			products_types_id: req.body.type,
-			styles_id: style.id,
-			barrels_types_id: barrelType.id,
-			stores_id: store.id,
-		},{
-			where:{
-				id: req.params.id
-			}
-		});
-		res.redirect('/productDetail/' + req.params.id);
+	async update (req, res) {
+		try {
+            await db.Product.update({ ...req.body }, { where: { id: req.params.id } });
+            return res.redirect('/productDetail/' + req.params.id);
+        } catch (error) {
+            return res.status(500).send(error);
+        }	
 	},
 
-	destroy: async (req, res) => {
-		// const products = getProducts();
-		// const indexProduct = products.findIndex(product => product.id == req.params.id);
-		// products.splice(indexProduct, 1);
-		// fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
-		// res.redirect('/allProducts');
-
-		await Promise.all([
+	async destroy(req, res) {
+		try {		  
+		  const product = await db.Product.findByPk(req.params.id);
+	  
+		  if (!product) {
+			return res.status(404).send('Producto no encontrado');
+		  }
+	  
+		  const style = product.styles_id;
+		  const typeOfBarrel = product.barrels_types_id;
+		  const store = product.stores_id;
+	  
+		  await Promise.all([
 			db.Product.destroy({
 			  where: { id: req.params.id },
 			}),
 			db.Style.destroy({
-			  where: { id: req.params.id },
+			  where: { id: style },
 			}),
 			db.TypeOfBarrel.destroy({
-			  where: { id: req.params.id },
+			  where: { id: typeOfBarrel },
 			}),
 			db.Store.destroy({
-			  where: { id: req.params.id },
+			  where: { id: store },
 			}),
 		  ]);
 	  
 		  res.redirect('/allProducts');
-	}
+		} catch (error) {
+		  console.error(error);
+		  res.status(500).send('Error interno del servidor');
+		}
+	  }
 };
 
 module.exports = controller;
