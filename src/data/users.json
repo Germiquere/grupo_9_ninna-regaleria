@@ -6,7 +6,7 @@
         "dni": "40258743",
         "email": "pedromartinez@email.com",
         "password": "$2a$10$IH.s0cYiqkxPSUk9T7/6ee8jgeKC/FfQo.Olj2zGTSi0mnLYx9xfi",
-        "category": "Adminidtrador",
+        "category": "Administrador",
         "image": "user-default.png"
     },
     {
@@ -26,7 +26,7 @@
         "dni": "37254781",
         "email": "luisaperez@email.com",
         "password": "$2a$10$ypWgHcRiCpfp2vtnXwz4.OX2Ljv.AsN1RLsPmtxCLKiusvqzJ9Edm",
-        "category": "Adminidtrador",
+        "category": "Administrador",
         "image": "user-default.png"
     },
     {
@@ -36,7 +36,7 @@
         "dni": "28451726",
         "email": "juanlopez@email.com",
         "password": "$2a$10$zkJnFctHzf4dsFD1slvO.uT4Wn6rpytm1YXsb3MU4s82SPjuSlgsK",
-        "category": "Adminidtrador",
+        "category": "Administrador",
         "image": "avatar1699479970508.png"
     },
     {
@@ -56,7 +56,7 @@
         "dni": "15472984",
         "email": "carlosgonzalez@email.com",
         "password": "$2a$10$qbsZCI2T4MCH5Sc/ZaCdIumuE4FUhBNERB.KIRgJVr209LdrfFxrm",
-        "category": "Adminidtrador",
+        "category": "Administrador",
         "image": "avatar1699486056597.png"
     },
     {
@@ -86,7 +86,7 @@
         "dni": "6254712",
         "email": "carmenlopez@email.com",
         "password": "$2a$10$Jnjxe00HfoomN1HO1CdCH.0GFDPpWEJ4mONKze/w40eZDQ4p64Bby",
-        "category": "Adminidtrador",
+        "category": "Administrador",
         "image": "avatar1699486740389.png"
     },
     {
@@ -126,6 +126,26 @@
         "dni": "34567890",
         "email": "augusto@gmail.com",
         "password": "$2a$10$Rm/TMWmHSw1TyqPzgrkShO7U6M7AzJ1ok7ljuA7dy2Y53FE7i8sP.",
+        "image": "user-default.png",
+        "category": "Usuario"
+    },
+    {
+        "id": 14,
+        "fullname": "Leandro Zapata",
+        "age": "35",
+        "dni": "33553477",
+        "email": "leandrojosezapata@gmail.com",
+        "password": "$2a$10$7iT0D4q0BelgIg7Jy/LTEOKUE/iQ1gMFDdHPdK6VqneSFQo/PSoy2",
+        "image": "avatar1704571982021.jpg",
+        "category": "Administrador"
+    },
+    {
+        "id": 15,
+        "fullname": "juan perez",
+        "age": "25",
+        "dni": "37815497",
+        "email": "juan@gmail.com",
+        "password": "$2a$10$HKk9YWICqCx7m7MPJ3eTa.VCuRCM1ENzkSXo8k5qWocIJk6Qe9qp2",
         "image": "user-default.png",
         "category": "Usuario"
     }

@@ -6,6 +6,8 @@ const path = require("path");
 
 // ************ Controller Require ************
 const productController = require('../controllers/productController');
+const isLoggedMiddleware = require('../middlewares/isLogedMiddleware');
+const adminMiddleware = require('../middlewares/adminMiddleware');
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -23,17 +25,17 @@ const uploadFile = multer({storage});
 router.get('/allProducts', productController.index);
 
 /*** GET PRODUCT CART ***/ 
-router.get('/productCart', productController.cart);
+router.get('/productCart', isLoggedMiddleware, productController.cart);
 
 /*** GET ONE PRODUCT ***/ 
-router.get('/productDetail/:id', productController.detail);
+router.get('/productDetail/:id', isLoggedMiddleware, productController.detail);
 
 /*** CREATE ONE PRODUCT ***/ 
-router.get('/create', productController.create);
+router.get('/create', adminMiddleware, productController.create);
 router.post('/create', uploadFile.single('products'), productController.store);
 
 /*** EDIT ONE PRODUCT ***/ 
-router.get('/productDetail/:id/edit', productController.edit);
+router.get('/productDetail/:id/edit', adminMiddleware, productController.edit);
 router.put('/productDetail/:id/edit', productController.update);
 
 /*** DELETE ONE PRODUCT***/ 
