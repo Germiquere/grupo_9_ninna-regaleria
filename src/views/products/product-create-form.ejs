@@ -32,12 +32,20 @@
           <p class="error-msg" id="error-store"></p>
             </div>
             <div class="field input-field">
-              <label for="grape" class="form-label">Varietal:</label>
-						<input type="text" id="grape" name="grape" placeholder="Ej: Cabernet Franc 2016" class="form-input">
+              <label for="grape" class="form-label">Variedad:</label>
+						<input type="text" id="grape" name="grape" placeholder="Ej: Cabernet Franc 2016" class="form-input" value="<%= locals.oldData?.grape && oldData?.grape %>">
+            <% if(locals.errors?.grape) {%>
+              <p class="error-msg"><%= errors.grape.msg %></p>
+          <% } %>
+          <p class="error-msg" id="error-grape"></p>
             </div>
             <div class="field input-field">
               <label for="year" class="form-label">Año:</label>
-						<input type="text" id="year" name="year" placeholder="Ej: 2016" class="form-input">
+						<input type="number" id="year" name="year" placeholder="Ej: 2016" class="form-input" value="<%= locals.oldData?.year && oldData?.year %>">
+            <% if(locals.errors?.year) {%>
+              <p class="error-msg"><%= errors.year.msg %></p>
+          <% } %>
+          <p class="error-msg" id="error-year"></p>
             </div>
             <div class="field input-field">
               <label for="typeOfBarrel" class="form-label">Tipo de barrica:</label>
@@ -48,8 +56,12 @@
 						<input type="text" id="timeInBarrel" name="timeInBarrel" placeholder="Ej: 2" class="form-input">
             </div>
             <div class="field input-field">
-              <label for="timeInBarrel" class="form-label">Stock:</label>
-						<input type="text" id="stock" name="stock" placeholder="Ej: 20" class="form-input">
+              <label for="stock" class="form-label">Stock:</label>
+						<input type="number" id="stock" name="stock" placeholder="Ej: 20" class="form-input" value="<%= locals.oldData?.stock && oldData?.stock %>">
+            <% if(locals.errors?.stock) {%>
+              <p class="error-msg"><%= errors.stock.msg %></p>
+          <% } %>
+          <p class="error-msg" id="error-stock"></p>
             </div>
             <div class="field input-field">
               <label for="price" class="form-label">Precio:</label>
