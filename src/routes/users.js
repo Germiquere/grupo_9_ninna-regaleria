@@ -28,6 +28,6 @@ router.get('/logout', usersController.logout);
 
 /*** REGISTER ***/ 
 router.get('/register', usersController.register);
-router.post('/register', uploadFile.single('avatar'), createUserValidations, usersController.create);
+router.post('/register', uploadFile.single('img'), createUserValidations, usersController.create);
 
 module.exports = router;
