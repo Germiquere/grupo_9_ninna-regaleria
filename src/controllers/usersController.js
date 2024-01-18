@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcryptjs');
 
+const db = require('../database/models');
 const {validationResult} = require('express-validator');
 
 const usersDataFilePath = path.join(__dirname, '../data/users.json');
@@ -24,32 +25,72 @@ const controller = {
         }
     },
 
-    loginIn(req, res) {
-        const users = getUsers();
-        const user = users.find((element) => element.email === req.body.email);
-        const errors = {
-            unauthorized: {
-                msg: 'Usuario y/o contraseña incorrecto'
-            }
-        };
-        if (!user) {
-            return res.render('./users/login', { errors })
-        }
-        if (!bcrypt.compareSync(req.body.password, user.password)) {
-            return res.render('./users/login', { errors });
-        }
-        req.session.user = {
-            timestamp: Date.now(),
-            id: user.id,
-            name: user.fullname,
-            email: user.email,
-            age: user.age,
-            dni: user.dni
-        };
-        res.cookie('username', req.body.email)
-        return res.redirect('/profile')
-    },
+    async loginIn(req, res) {
 
+        try {
+            const errors = validationResult(req);
+      
+            if (!errors.isEmpty()) {
+              return res.render('./users/login', {
+                errors: errors.mapped(),
+                oldData: req.body
+              });
+            }
+      
+            const { email, password } = req.body;
+      
+            const user = await db.User.findOne({
+              where: { email: email }
+            });
+      
+            if (!user || !bcrypt.compareSync(password, user.password)) {
+              return res.render('./users/login', {
+                errors: {
+                  unauthorized: {
+                    msg: 'Usuario y/o contraseña incorrectos'
+                  }
+                },
+                oldData: req.body
+              });
+            }
+      
+            req.session.user = {
+              id: user.id,
+              name: user.fullname,
+              email: user.email,
+              age: user.age,
+              dni: user.dni
+            };
+      
+            res.redirect('/profile');
+          } catch (error) {
+            console.error(error);
+            res.status(500).send('Error interno del servidor');
+          }
+        },
+        // const users = getUsers();
+        // const user = users.find((element) => element.email === req.body.email);
+        // const errors = {
+        //     unauthorized: {
+        //         msg: 'Usuario y/o contraseña incorrecto'
+        //     }
+        // };
+        // if (!user) {
+        //     return res.render('./users/login', { errors })
+        // }
+        // if (!bcrypt.compareSync(req.body.password, user.password)) {
+        //     return res.render('./users/login', { errors });
+        // }
+        // req.session.user = {
+        //     timestamp: Date.now(),
+        //     id: user.id,
+        //     name: user.fullname,
+        //     email: user.email,
+        //     age: user.age,
+        //     dni: user.dni
+        // };
+        // res.cookie('username', req.body.email)
+        // return res.redirect('/profile')
     profile(req, res) {
         const { user } = req.session
         res.render('./users/profile', { user })
@@ -63,25 +104,29 @@ const controller = {
     register(req, res) {
         res.render('./users/register')
     },
-    create(req, res) {
-        const errors = validationResult(req);
-        if(!errors.isEmpty()) {
-            return res.render('./users/register', {
-                errors: errors.mapped(),
-                oldData: req.body
+    async create(req, res) {
+        try {
+            const errors = validationResult(req);
+            if (!errors.isEmpty()) {
+                return res.render('./users/register', {
+                    errors: errors.mapped(),
+                    oldData: req.body
+                });
+            }
+            const role = await db.Roles.findOne({ where: { name: 'Usuario' } })
+            db.User.create({
+                fullname: req.body.fullname,
+                age: req.body.age,
+                dni: req.body.dni,
+                email: req.body.email,
+                password: req.body.password,
+                img: req.file ? req.file.filename : "user-default.png",
+                roles_id: role.id
             });
+            return res.redirect('/login');
+        } catch (error) {
+            return res.status(500).send(error);
         }
-        const users = getUsers();
-        const newUser = {
-            id: [users.length]>0 ? users[users.length - 1].id + 1 : 1,
-            ...req.body,
-            password: bcrypt.hashSync(req.body.password, 10),
-            image: req.file ? req.file.filename : "user-default.png",
-            category: "Usuario"
-        };
-        users.push(newUser);
-        fs.writeFileSync(usersDataFilePath, JSON.stringify(users, null, 4));
-        return res.redirect('/');
     }
 };
 
