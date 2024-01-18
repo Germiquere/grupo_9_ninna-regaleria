@@ -23,8 +23,60 @@ const controller = {
 		})
 		
 	},
-
-    cart(req, res) {
+	wines: (req, res) => {
+		db.Product.findAll({
+			include: [
+				{ association: 'Stores' },
+				{ association: 'TypeOfBarrel' },
+				{ association: 'ProductType' },
+				{ association: 'Styles' }
+			]
+		})
+		.then(function(products) {
+			res.render('./products/wine', { products: products });
+		})
+	},
+	beers: (req, res) => {
+		db.Product.findAll({
+			include: [
+				{ association: 'Stores' },
+				{ association: 'TypeOfBarrel' },
+				{ association: 'ProductType' },
+				{ association: 'Styles' }
+			]
+		})
+		.then(function(products) {
+			res.render('./products/beer', { products: products });
+		})
+	},
+	whiskies: (req, res) => {
+		db.Product.findAll({
+			include: [
+				{ association: 'Stores' },
+				{ association: 'TypeOfBarrel' },
+				{ association: 'ProductType' },
+				{ association: 'Styles' }
+			]
+		})
+		.then(function(products) {
+			res.render('./products/whisky', { products: products });
+		})
+	},
+	spirits: (req, res) => {
+		db.Product.findAll({
+			include: [
+				{ association: 'Stores' },
+				{ association: 'TypeOfBarrel' },
+				{ association: 'ProductType' },
+				{ association: 'Styles' }
+			]
+		})
+		.then(function(products) {
+			res.render('./products/spirits', { products: products });
+		})
+	},
+    
+	cart(req, res) {
         res.render('./products/productCart')
     },
     detail: (req, res) => {

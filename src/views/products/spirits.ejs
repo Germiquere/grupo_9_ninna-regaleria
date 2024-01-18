@@ -2,34 +2,29 @@
 <html lang="en">
 <head>
     <%- include('../partials/head') %>    
-    <title>Todos los productos</title>
+    <title>Spirits</title>
     <link rel="stylesheet" href="/css/styles-index.css">
 </head>
 <body>
     <%- include('../partials/header') %>
     <main>
         <%- include('../partials/carousel') %>
-        <h3>Todos Los Productos</h3>
+        <h3>Spirits</h3>
         <section class="categories">
             <div class="products">
-                <% for (let i = 0; i < products.length; i++) { %>
+                <% for (let i = 0; i < products.length; i++) { if (products[i].ProductType.name === 'Spirit'){ %>
                 <article>
                     <a href="/productDetail/<%= products[i].id %>">
-                        <div class="product_img">
-                            <img src="/images/products/<%= products[i].image %>" class="img">
-                        </div>
+                    <img src="/images/products/<%= products[i].image %>" class="product_img">
                     <div class="main-article">
                         <p class="price"><%= products[i].price %></p>
                         <p class="discount"><%= products[i].discount %></p>
                         <h4 class="store"><%= products[i].Stores ? products[i].Stores.name : 'Sin tienda' %></h4>
-                        <h4 class="grape"><%= products[i].TypeOfBarrel ? products[i].TypeOfBarrel.name : 'Sin barril' %></h4>
-                        <div>
-                            <P><h5>Calificacion</h5><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></P>
-                        </div>
+                        <h4 class="style"><%= products[i].Styles ? products[i].Styles.name : 'Sin barril' %></h4>
                     </div>
                     </a>
                 </article>
-            <% } %>
+            <% }} %>
             </div>
     </main>
     <%- include('../partials/footer') %>

@@ -1,26 +1,33 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <%- include('../partials/head') %>
   <title>Perfil de usuario</title>
   <link rel="stylesheet" href="/css/profile.css">
 </head>
 <body>
-  <div class="perfil">
-    <div class="datos">
-      <h2>Nombre de usuario: <%= user.name %></h2>
-      <p>Ingresaste a las <%= new Date(user.timestamp) %></p>
-      <p>Email: <%= user.email %></p>
-      <p>DNI: <%= user.dni %></p>
-      <p>Edad: <%= user.age %></p>
-      <ul class="redes-sociales">
-        <li><a href="#">Twitter</a></li>
-        <li><a href="#">Facebook</a></li>
-        <li><a href="#">Instagram</a></li>
-      </ul>
+  <%- include('../partials/header') %>
+  <main>
+    <div class="profile">
+      <h2 class="title">Bienvenido <%= user.name %>!</h2>
+      <div class="dates">
+        <p class="date">Ingresaste a las <%= new Date(user.timestamp) %></p>
+        <h4>Tus datos:</h4>
+        <div class="personal-data">
+          <img src="/images/users/avatars/<%=user.image%>" alt="">
+          <p class="personal-data">Email: <%= user.email %></p>
+          <p class="personal-data">DNI: <%= user.dni %></p>
+          <p class="personal-data">Edad: <%= user.age %></p>
+        </div>
+        <ul class="redes-sociales">
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Instagram</a></li>
+        </ul>
+      </div>
+      <button class="log-out"><a href="/logout">Cerrar Sesion</a></button>
     </div>
-    <a href="/logout"><button>Cerrar Sesion</button></a>
-  </div>
+  </main>
+  <%- include('../partials/footer') %>
 </body>
 </html>
-

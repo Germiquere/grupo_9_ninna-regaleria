@@ -21,8 +21,12 @@ const storage = multer.diskStorage({
 
 const uploadFile = multer({storage});
 
-/*** GET ALL PRODUCTS ***/ 
+/*** GET PRODUCTS ***/ 
 router.get('/allProducts', productController.index);
+router.get('/wines', productController.wines);
+router.get('/beers', productController.beers);
+router.get('/whiskies', productController.whiskies);
+router.get('/spirits', productController.spirits);
 
 /*** GET PRODUCT CART ***/ 
 router.get('/productCart', isLoggedMiddleware, productController.cart);
