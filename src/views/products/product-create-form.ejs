@@ -14,14 +14,22 @@
           <div>
             <h2>Crear nuevo producto</h2>
           </div>
-          <form action="" method="POST" enctype="multipart/form-data">
+          <form id="product-create-form" action="" method="POST" enctype="multipart/form-data">
             <div class="field input-field">
               <label for="name" class="form-label">Nombre:</label>
-						<input type="text" id="name" name="name" placeholder="Ej: Felino Malbec 2021" class="form-input">
+						<input type="text" id="name" name="name" placeholder="Ej: Felino Malbec 2021" class="form-input" value="<%= locals.oldData?.name && oldData?.name %>">
+            <% if(locals.errors?.name) {%>
+              <p class="error-msg"><%= errors.name.msg %></p>
+          <% } %>
+          <p class="error-msg" id="error-name"></p>
             </div>
             <div class="field input-field">
-              <label for="store" class="form-label">Bodega:</label>
-						<input type="text" id="store" name="store" placeholder="Ej: Catena Zapata" class="form-input">
+              <label for="store" class="form-label">Marca:</label>
+						<input type="text" id="store" name="store" placeholder="Ej: Catena Zapata" class="form-input" value="<%= locals.oldData?.store && oldData?.store %>">
+            <% if(locals.errors?.store) {%>
+              <p class="error-msg"><%= errors.store.msg %></p>
+          <% } %>
+          <p class="error-msg" id="error-store"></p>
             </div>
             <div class="field input-field">
               <label for="grape" class="form-label">Varietal:</label>
@@ -88,4 +96,5 @@
 
     <%- include('../partials/footer') %>
   </body>
+  <script src="/js/productsAdd.js"></script>
 </html>

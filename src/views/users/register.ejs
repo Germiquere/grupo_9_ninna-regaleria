@@ -22,7 +22,7 @@
                 <form id="register-form" action="/register" method="POST" enctype="multipart/form-data">
                     <div class="field input-field">
                         <input 
-                            type="text" placeholder="Nombre y Apellido" 
+                            type="text" placeholder="Apellido y Nombre" 
                             name="fullname" class="input" 
                             value="<%= locals.oldData?.fullname && oldData?.fullname %>">
                             <% if(locals.errors?.fullname) {%>
