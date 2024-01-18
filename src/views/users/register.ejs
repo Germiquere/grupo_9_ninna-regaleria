@@ -71,15 +71,15 @@
                         <p class="error-msg" id="error-password"></p>
                     </div>
                     
-                    <div class="field input-field">
+                    <!-- <div class="field input-field">
                         <input type="password" placeholder="Confirmar Contraseña" 
                         name="confirmPassword" class="input">
                         <p class="error-msg" id="error-confirm-password"></p>
-                    </div>
+                    </div> -->
                   
                     <div class="field input-field">
                         <label for="avatar" class="input">Selecciona tu imagen de perfil: </label>
-                        <input type="file" name="avatar"  class="input">
+                        <input type="file" name="img"  class="input">
                         <% if(locals.errors?.avatar) {%>
                             <p class="error-msg"><%= errors.avatar.msg %></p>
                         <% } %>
@@ -93,7 +93,7 @@
                     </div>
 
                     <div class="form-link">
-                        <span>Ya tienes una cuenta? <a href="http://localhost:3000/login" class="signup-link">Inicia
+                        <span>Ya tienes una cuenta? <a href="http://localhost:<%= process.env.PORT %>/login" class="signup-link">Inicia
                                 Sesion</a></span>
                     </div>
                 </form>
