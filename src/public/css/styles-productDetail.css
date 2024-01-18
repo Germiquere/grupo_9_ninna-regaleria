@@ -31,7 +31,10 @@ p.description-text {
 }
 
 img {
-    width: 30%;
+    height: 25vh;
+    width: auto;
+    object-fit: cover;
+    overflow: hidden;
 }
 
 .img-product {
@@ -232,6 +235,10 @@ h5.product-name,
         width: 25%;
         position: absolute;
         left: 10vw;
+    }
+
+    img {
+        height: 40vh;
     }
 
     h5.product-name, 
