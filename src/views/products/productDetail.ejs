@@ -33,6 +33,7 @@
                     </div>
                     <button class="purchase-buttom" href="">Comprar ahora</button>
                     <button class="cart-buttom" href="">Agregar al carrito</button>
+                    <% if(locals.user?.role==1) {%>
                     <div class="edit-product">
                         <button class="product-buttom" href="">
                             <a href="/productDetail/<%= products.id %>/edit">Editar</a>
@@ -41,6 +42,7 @@
                             <button class="product-buttom" type="submit">Eliminar</button>
                         </form>
                     </div>
+                    <% } %>
                 </div>
             </div>
             <div class="desc-container">
@@ -72,5 +74,5 @@
         </main>
         <%- include('../partials/footer') %>
 </body>
-
+<script src="/js/admin.js"></script>
 </html>
