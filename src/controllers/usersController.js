@@ -59,7 +59,8 @@ const controller = {
               name: user.fullname,
               email: user.email,
               age: user.age,
-              dni: user.dni
+              dni: user.dni,
+              role: user.roles_id
             };
       
             res.redirect('/profile');
