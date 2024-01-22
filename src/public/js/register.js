@@ -91,8 +91,8 @@ window.onload = function(){
         if(!validImg.test(registerForm.avatar.value)) {
             errors = 1;
             registerForm.avatar.style.border = 'red 1px solid'
-            document.getElementById('error-avatar').innerText = 'El elemento seleccionadeo no correponde a formato de imagen válido. Las extensiones permitidas son: .jpg, .jpeg, .png, .gif';
-         } else {
+            document.getElementById('error-avatar').innerText = 'El elemento seleccionado no correponde a formato de imagen válido. Las extensiones permitidas son: .jpg, .jpeg, .png, .gif';
+        } else {
             registerForm.avatar.style.border = '#CACACA 1px solid'
             document.getElementById('error-avatar').innerText = '';
             errors = 0;

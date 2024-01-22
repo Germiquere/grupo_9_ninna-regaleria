@@ -67,12 +67,15 @@ window.onload = function () {
       errors = 0;
   }
   });
-
-
-
+  
+  
+  
   createForm.addEventListener('submit', (e)=>{
-    e.preventDefault();
-    alert('Debes completar el formulario!');
+    if (errors != 0) {
+      e.preventDefault();
+      console.log(errors);
+      alert('Debes completar el formulario para crear un nuevo producto!');
+    }
   });
 
 }
