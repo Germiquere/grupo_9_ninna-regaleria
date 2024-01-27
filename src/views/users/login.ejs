@@ -21,23 +21,31 @@
             <div class="form-content">
                 <div class="header-2">Iniciar Sesion</div>
 
-                <form action="/login" method="post">
+                <form class="login-form" id="login-form" action="/login" method="post">
                     <% if (locals.errors?.unauthorized) { %>
                         <p class="error"><%= errors.unauthorized.msg %></p>
                     <% }%>
                     <div class="field input-field">
-                        <input type="email" name="email" placeholder="Email" class="input">
+                        <input type="email" name="email" placeholder="Email" class="input" value="<%= locals.oldData?.email && oldData?.email %>">
+                        <% if(locals.errors?.email) {%>
+                            <p class="error-msg"><%= errors.email.msg %></p>
+                        <% } %>
+                        <p class="error-msg" id="error-email"></p>
                     </div>
 
                     <div class="field input-field">
                         <input type="password" name="password" placeholder="Contraseña" class="input">
+                        <% if(locals.errors?.password) {%>
+                            <p class="error-msg"><%= errors.password.msg %></p>
+                        <% } %>
+                        <p class="error-msg" id="error-password"></p>
                     </div>
 
                     <div class="form-link">
                         <a href="#" class="forgot-pass">Olvidó su contraseña?</a>
                     </div>
 
-                    <div class="field button-field">
+                    <div class="button-field">
                         <button type="submit">Iniciar Sesion</button>
                     </div>
 
@@ -55,5 +63,5 @@
         </div>
     </main>
 </body>
-
+<script src="/js/login.js"></script>
 </html>

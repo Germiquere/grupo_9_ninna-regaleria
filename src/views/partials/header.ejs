@@ -7,11 +7,14 @@
                 <li>
                     <h3>Categorias</h3>
                 </li>
-                <li><a href="http://localhost:<%= process.env.PORT %>/wines">Vinos</a></li>
-                <li><a href="http://localhost:<%= process.env.PORT %>/whiskies">Whiskies</a></li>
-                <li><a href="http://localhost:<%= process.env.PORT %>/spirits">Spirits</a></li>
-                <li><a href="http://localhost:<%= process.env.PORT %>/beers">Cervezas</a></li>
-                <li><a href="http://localhost:<%= process.env.PORT %>/allProducts">Todos los Productos</a></li>
+                <li><a href="/wines">Vinos</a></li>
+                <li><a href="/whiskies">Whiskies</a></li>
+                <li><a href="/spirits">Spirits</a></li>
+                <li><a href="/beers">Cervezas</a></li>
+                <li><a href="/allProducts">Todos los Productos</a></li>
+                <% if(locals.user?.role==1) {%>
+                    <div><a href="/create">Crear Producto</a></div>
+                <% } %>
             </ul>
         </div>
     </div>
@@ -35,11 +38,14 @@
 </header>
 <header class="header-2">
     <nav class="navigation">
-        <div><a href="http://localhost:<%= process.env.PORT %>/wines">Vinos</a></div>
-        <div><a href="http://localhost:<%= process.env.PORT %>/whiskies">Whiskies</a></div>
-        <div><a href="http://localhost:<%= process.env.PORT %>/spirits">Spirits</a></div>
-        <div><a href="http://localhost:<%= process.env.PORT %>/beers">Cervezas</a></div>
-        <div><a href="http://localhost:<%= process.env.PORT %>/allProducts">Todos los Productos</a></div>
+        <div><a href="wines">Vinos</a></div>
+        <div><a href="/whiskies">Whiskies</a></div>
+        <div><a href="/spirits">Spirits</a></div>
+        <div><a href="/beers">Cervezas</a></div>
+        <div><a href="/allProducts">Todos los Productos</a></div>
+        <% if(locals.user?.role==1) {%>
+        <div><a href="/create">Crear Producto</a></div>
+        <% } %>
     </nav>
 </header>
 
