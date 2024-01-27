@@ -60,7 +60,8 @@ const controller = {
               email: user.email,
               age: user.age,
               dni: user.dni,
-              role: user.roles_id
+              role: user.roles_id,
+              img: user.img
             };
       
             res.redirect('/profile');
