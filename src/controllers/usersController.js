@@ -60,8 +60,9 @@ const controller = {
               email: user.email,
               age: user.age,
               dni: user.dni,
+              img: user.img,
               role: user.roles_id,
-              img: user.img
+              timestamp: user.createdAt
             };
       
             res.redirect('/profile');
