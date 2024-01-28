@@ -14,7 +14,8 @@
         <p class="date">Ingresaste a las <%= new Date(user.timestamp) %></p>
         <h4>Tus datos:</h4>
         <div class="personal-data">
-          <img src="/images/users/avatars/<%=user.image%>" alt="">
+          <img src="/images/users/avatars/<%=user.img%>" alt="">
+          <p><%=user.img%></p>
           <p class="personal-data">Email: <%= user.email %></p>
           <p class="personal-data">DNI: <%= user.dni %></p>
           <p class="personal-data">Edad: <%= user.age %></p>

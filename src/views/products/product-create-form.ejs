@@ -89,15 +89,15 @@
             </div>
             <div class="field input-field">
               <label for="description" class="form-label">Descripcion:</label>
-              <textarea name="description" id="description" class="form-input"></textarea>
+              <textarea name="description" id="description" class="form-input" minlength="20"></textarea>
             </div> 
             <div class="field input-field">
               <label for="products" class="input">Selecciona la imagen del producto: </label>
               <input type="file" name="image" accept=".img, .jpg, .jpeg, .png" class="input">
-              <% if(locals.errors?.products) {%>
-                <p class="error-msg"><%= errors.products.msg %></p>
+              <% if(locals.errors?.image) {%>
+                <p class="error-msg" id="error-image"><%= errors.image.msg %></p>
             <% } %>
-          </div>
+            </div>
             <div class="field button-field">
               <button type="submit">Guardar</button>
             </div>

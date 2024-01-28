@@ -9,11 +9,15 @@ window.onload = function () {
       errors = 1;
       createForm.name.style.border = 'red 1px solid';
       document.getElementById('error-name').innerText = 'Debe ingresar un nombre';
+    } else if (createForm.name.value.length.trim() > 5) {
+      errors = 1;
+      createForm.name.style.border = 'red 1px solid';
+      document.getElementById('error-name').innerText = 'El nombre debe tener al menos 5 caracteres';
     } else {
       createForm.name.style.border = '#CACACA 1px solid'
       document.getElementById('error-name').innerText = '';
       errors = 0;
-  }
+    }
   });
   
   createForm.store.addEventListener('blur', (e)=>{
@@ -56,7 +60,6 @@ window.onload = function () {
   });
 
   createForm.stock.addEventListener('blur', (e)=>{
-
     if (createForm.stock.value.trim() == '' || createForm.stock.value.trim() == 0) {
       errors = 1;
       createForm.stock.style.border = 'red 1px solid';
@@ -67,7 +70,31 @@ window.onload = function () {
       errors = 0;
   }
   });
-  
+
+  createForm.description.addEventListener('blur', (e)=>{
+    if (createForm.description.value.trim() == '' || createForm.description.value.trim() > 20) {
+      errors = 1;
+      createForm.description.style.border = 'red 1px solid';
+      document.getElementById('error-description').innerText = 'Debes ingresar al menos 1 unidad';
+    } else {
+      createForm.description.style.border = '#CACACA 1px solid'
+      document.getElementById('error-description').innerText = '';
+      errors = 0;
+  }
+  });
+
+  createForm.image.addEventListener('change', ()=>{
+    const validImage =/(.jpg|.jpeg|.png|.gif)$/i;
+    if(!validImage.test(createForm.image.value)) {
+        errors = 1;
+        createForm.image.style.border = 'red 1px solid';
+        document.getElementById('error-image').innerText = 'Formatos validos: .jpg, .jpeg, .png, .gif';
+    } else {
+        createForm.image.style.border = '#CACACA 1px solid'
+        document.getElementById('error-image').innerText = '';
+        errors = 0;
+    }
+});
   
   
   createForm.addEventListener('submit', (e)=>{
