@@ -3,10 +3,14 @@ const session = require('express-session');
 const methodOverride =  require('method-override');
 const cookieParser = require('cookie-parser');
 const path = require('path');
+const cors = require('cors');
 
 const main = require('./routes/main');
 const mainLogin = require('./routes/users');
 const mainProduct = require('./routes/product');
+
+const productsAPI = require('./routes/api/products');
+const usersAPI = require('./routes/api/users');
 
 const { cookie } = require('express-validator');
 
@@ -31,10 +35,15 @@ app.use(session({
 }));
 app.use(cookieParser());
 app.use(userLogedMiddleware);
+app.use(cors())
 
 app.use('/', main);
 app.use('/', mainLogin);
 app.use('/', mainProduct);
+
+app.use('/api/products', productsAPI);
+app.use('/api/users', usersAPI);
+
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {

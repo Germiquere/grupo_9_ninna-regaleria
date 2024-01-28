@@ -87,11 +87,17 @@ form {
 form .field {
     height: 50px;
     width: 100%;
-    margin-top: 20px;
+    margin-top: 30px;
+}
+
+.button-field{
+    height: 50px;
+    width: 100%;
+    margin-top: 10px;
 }
 
 .field input,
-.field button {
+button {
     height: 100%;
     width: 100%;
     border: none;
@@ -107,7 +113,7 @@ form .field {
 
 .form-link {
     text-align: center;
-    margin-top: 10px;
+    margin-top: 40px;
 }
 
 .form-link span {
@@ -119,6 +125,9 @@ form .field {
 .form-link a{
     text-decoration: none;
     color: #7C3030;
+}
+.error-msg {
+    color: #820000;
 }
 
 @media (min-width: 480px) {
