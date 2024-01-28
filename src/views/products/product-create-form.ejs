@@ -14,22 +14,38 @@
           <div>
             <h2>Crear nuevo producto</h2>
           </div>
-          <form action="" method="POST" enctype="multipart/form-data">
+          <form id="product-create-form" action="" method="POST" enctype="multipart/form-data">
             <div class="field input-field">
               <label for="name" class="form-label">Nombre:</label>
-						<input type="text" id="name" name="name" placeholder="Ej: Felino Malbec 2021" class="form-input">
+						<input type="text" id="name" name="name" placeholder="Ej: Felino Malbec 2021" class="form-input" value="<%= locals.oldData?.name && oldData?.name %>">
+            <% if(locals.errors?.name) {%>
+              <p class="error-msg"><%= errors.name.msg %></p>
+          <% } %>
+          <p class="error-msg" id="error-name"></p>
             </div>
             <div class="field input-field">
-              <label for="store" class="form-label">Bodega:</label>
-						<input type="text" id="store" name="store" placeholder="Ej: Catena Zapata" class="form-input">
+              <label for="store" class="form-label">Marca:</label>
+						<input type="text" id="store" name="store" placeholder="Ej: Catena Zapata" class="form-input" value="<%= locals.oldData?.store && oldData?.store %>">
+            <% if(locals.errors?.store) {%>
+              <p class="error-msg"><%= errors.store.msg %></p>
+          <% } %>
+          <p class="error-msg" id="error-store"></p>
             </div>
             <div class="field input-field">
-              <label for="grape" class="form-label">Varietal:</label>
-						<input type="text" id="grape" name="grape" placeholder="Ej: Cabernet Franc 2016" class="form-input">
+              <label for="grape" class="form-label">Variedad:</label>
+						<input type="text" id="grape" name="grape" placeholder="Ej: Cabernet Franc 2016" class="form-input" value="<%= locals.oldData?.grape && oldData?.grape %>">
+            <% if(locals.errors?.grape) {%>
+              <p class="error-msg"><%= errors.grape.msg %></p>
+          <% } %>
+          <p class="error-msg" id="error-grape"></p>
             </div>
             <div class="field input-field">
               <label for="year" class="form-label">Año:</label>
-						<input type="text" id="year" name="year" placeholder="Ej: 2016" class="form-input">
+						<input type="number" id="year" name="year" placeholder="Ej: 2016" class="form-input" value="<%= locals.oldData?.year && oldData?.year %>">
+            <% if(locals.errors?.year) {%>
+              <p class="error-msg"><%= errors.year.msg %></p>
+          <% } %>
+          <p class="error-msg" id="error-year"></p>
             </div>
             <div class="field input-field">
               <label for="typeOfBarrel" class="form-label">Tipo de barrica:</label>
@@ -40,8 +56,12 @@
 						<input type="text" id="timeInBarrel" name="timeInBarrel" placeholder="Ej: 2" class="form-input">
             </div>
             <div class="field input-field">
-              <label for="timeInBarrel" class="form-label">Stock:</label>
-						<input type="text" id="stock" name="stock" placeholder="Ej: 20" class="form-input">
+              <label for="stock" class="form-label">Stock:</label>
+						<input type="number" id="stock" name="stock" placeholder="Ej: 20" class="form-input" value="<%= locals.oldData?.stock && oldData?.stock %>">
+            <% if(locals.errors?.stock) {%>
+              <p class="error-msg"><%= errors.stock.msg %></p>
+          <% } %>
+          <p class="error-msg" id="error-stock"></p>
             </div>
             <div class="field input-field">
               <label for="price" class="form-label">Precio:</label>
@@ -69,15 +89,15 @@
             </div>
             <div class="field input-field">
               <label for="description" class="form-label">Descripcion:</label>
-              <textarea name="description" id="description" class="form-input"></textarea>
+              <textarea name="description" id="description" class="form-input" minlength="20"></textarea>
             </div> 
             <div class="field input-field">
               <label for="products" class="input">Selecciona la imagen del producto: </label>
               <input type="file" name="image" accept=".img, .jpg, .jpeg, .png" class="input">
-              <% if(locals.errors?.products) {%>
-                <p class="error-msg"><%= errors.products.msg %></p>
+              <% if(locals.errors?.image) {%>
+                <p class="error-msg" id="error-image"><%= errors.image.msg %></p>
             <% } %>
-          </div>
+            </div>
             <div class="field button-field">
               <button type="submit">Guardar</button>
             </div>
@@ -88,4 +108,5 @@
 
     <%- include('../partials/footer') %>
   </body>
+  <script src="/js/productsAdd.js"></script>
 </html>

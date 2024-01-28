@@ -35,15 +35,15 @@ router.get('/productCart', isLoggedMiddleware, productController.cart);
 router.get('/productDetail/:id', isLoggedMiddleware, productController.detail);
 
 /*** CREATE ONE PRODUCT ***/ 
-router.get('/create', adminMiddleware,productController.create);
+router.get('/create', productController.create);
 router.post('/create', uploadFile.single('image'), productController.store);
 
 /*** EDIT ONE PRODUCT ***/ 
-router.get('/productDetail/:id/edit', adminMiddleware, productController.edit);
+router.get('/productDetail/:id/edit', isLoggedMiddleware, adminMiddleware, productController.edit);
 router.put('/productDetail/:id/edit', productController.update);
 
 /*** DELETE ONE PRODUCT***/ 
-router.delete('/productDetail/:id', productController.destroy);
+router.delete('/productDetail/:id', isLoggedMiddleware, adminMiddleware, productController.destroy);
 
 
 module.exports = router;
