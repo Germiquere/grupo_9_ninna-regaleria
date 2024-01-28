@@ -159,37 +159,37 @@ const controller = {
 
 	async destroy(req, res) {
 		try {		  
-		  const product = await db.Product.findByPk(req.params.id);
-	  
-		  if (!product) {
-			return res.status(404).send('Producto no encontrado');
-		  }
-	  
-		  const style = product.styles_id;
-		  const typeOfBarrel = product.barrels_types_id;
-		  const store = product.stores_id;
-	  
-		  await Promise.all([
-			db.Product.destroy({
-			  where: { id: req.params.id },
-			}),
-			db.Style.destroy({
-			  where: { id: style },
-			}),
-			db.TypeOfBarrel.destroy({
-			  where: { id: typeOfBarrel },
-			}),
-			db.Store.destroy({
-			  where: { id: store },
-			}),
-		  ]);
-	  
-		  res.redirect('/allProducts');
-		} catch (error) {
-		  console.error(error);
-		  res.status(500).send('Error interno del servidor');
-		}
-	  }
+				const product = await db.Product.findByPk(req.params.id);
+			
+				if (!product) {
+				return res.status(404).send('Producto no encontrado');
+				}
+			
+				const style = product.styles_id;
+				const typeOfBarrel = product.barrels_types_id;
+				const store = product.stores_id;
+			
+				await Promise.all([
+				db.Product.destroy({
+					where: { id: req.params.id },
+				}),
+				db.Style.destroy({
+					where: { id: style },
+				}),
+				db.TypeOfBarrel.destroy({
+					where: { id: typeOfBarrel },
+				}),
+				db.Store.destroy({
+					where: { id: store },
+				}),
+				]);
+			
+				res.redirect('/allProducts');
+			} catch (error) {
+				console.error(error);
+				res.status(500).send('Error interno del servidor');
+			}
+			}
 };
 
 module.exports = controller;

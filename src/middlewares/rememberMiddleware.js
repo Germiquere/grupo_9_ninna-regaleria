@@ -1,16 +1,15 @@
 const fs = require('fs');
+const db = require('../database/models')
 
 function rememberMiddleware(req, res, next) {
   
   if (req.cookies.remember != undefined && 
     req.session.usuarioLogueado == undefined) {
-      let usersJSON = fs.readFileSync('users.json', {
-        encoding: 'utf-8'});
-        let users;
-        if (usersJSON == "") {
+      let users = db.User.findAll()
+        if (users == "") {
           users = [];
         } else {
-          users = JSON.parse(userJSON);
+          users = JSON.parse(user);
         }
         let usuarioALoguearse
         

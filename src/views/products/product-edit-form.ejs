@@ -71,7 +71,7 @@
           </div>
           <div class="field input-field">
             <label for="products" class="input">Selecciona la imagen del producto: </label>
-            <input type="file" name="image" accept=".img, .jpg, .jpeg, .png" class="input">
+            <input type="file" name="image" accept=".img,.jpg,.jpeg,.png" class="input">
             <% if(locals.errors?.products) {%>
               <p class="error-msg"><%= errors.products.msg %></p>
           <% } %>
