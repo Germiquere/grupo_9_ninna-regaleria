@@ -2,11 +2,27 @@ const db = require('../../database/models');
 const sequelize = db.sequelize;
 
 const userAPIController = {
-    'list': (req, res) => {
+    'count': (req, res) => {
         db.User.findAll({include: ['Roles']})
+        .then(user => {res.json({
+            count: user.length,
+            countByCategory: {
+                admin: user.filter(user => user.roles_id === 1).length,
+                user: user.filter(user => user.roles_id === 2).length,
+                invite: user.filter(user => user.roles_id === 3).length
+            }
+        })});
+    },
+
+    'list': (req, res) => {
+        const {page = 1} = req.query;
+        db.User.findAll({
+            include: ['Roles'],
+            limit: 10,
+            offset: (Number(page)-1)*10
+        })
             .then(user => {
                 res.json({
-                    count: user.length,
                     users: user.map(user => ({
                         id: user.id,
                         fullname: user.fullname,
