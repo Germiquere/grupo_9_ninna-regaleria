@@ -16,10 +16,23 @@ const storage = multer.diskStorage({
     filename: (req, file, cb) => {
         let fileName = `${file.fieldname}${Date.now()}${path.extname(file.originalname)}`
         cb(null, fileName);
-    }
+    },
+
 });
 
-const uploadFile = multer({storage});
+const uploadFile = multer({storage},
+    {
+        dest: '/uploads',
+        fileFilter(req, file, next) {
+            const image = file.mimetype.startWith('image/');
+            if (image) {
+                next(null, true);
+            } else {
+                alert("El tipo de archivo no es valido")
+                next({message: "El tipo de archivo no es valido"}, false);
+            }
+        }
+    });
 
 /*** GET PRODUCTS ***/ 
 router.get('/allProducts', productController.index);
@@ -40,7 +53,7 @@ router.post('/create', uploadFile.single('image'), productController.store);
 
 /*** EDIT ONE PRODUCT ***/ 
 router.get('/productDetail/:id/edit', isLoggedMiddleware, adminMiddleware, productController.edit);
-router.put('/productDetail/:id/edit', productController.update);
+router.put('/productDetail/:id/edit', uploadFile.single('image'), productController.update);
 
 /*** DELETE ONE PRODUCT***/ 
 router.delete('/productDetail/:id', isLoggedMiddleware, adminMiddleware, productController.destroy);

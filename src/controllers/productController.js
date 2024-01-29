@@ -142,7 +142,11 @@ const controller = {
 			const productType = await db.ProductType.findAll();
 			const styles = await db.Style.findAll();
 			const productSegmentation = await db.ProductSegmentation.findAll();
+
+
 			return res.render('./products/product-edit-form', { Product: products, stores, typeOfBarrel, productType, styles, productSegmentation});
+
+
 		} catch (error) {
 			return res.status(500).send(error);
 		}
@@ -150,7 +154,11 @@ const controller = {
 
 	async update (req, res) {
 		try {
-            await db.Product.update({ ...req.body }, { where: { id: req.params.id } });
+						const image = db.Product.findByPk(req.params.id).image;
+            await db.Product.update({ 
+							...req.body,
+							image: req.file ? req.file.filename : image
+						}, { where: { id: req.params.id } }, );
             return res.redirect('/productDetail/' + req.params.id);
         } catch (error) {
             return res.status(500).send(error);

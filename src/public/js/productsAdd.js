@@ -9,7 +9,7 @@ window.onload = function () {
       errors = 1;
       createForm.name.style.border = 'red 1px solid';
       document.getElementById('error-name').innerText = 'Debe ingresar un nombre';
-    } else if (createForm.name.value.length.trim() > 5) {
+    } else if (createForm.name.value.length < 5) {
       errors = 1;
       createForm.name.style.border = 'red 1px solid';
       document.getElementById('error-name').innerText = 'El nombre debe tener al menos 5 caracteres';
@@ -75,7 +75,7 @@ window.onload = function () {
     if (createForm.description.value.trim() == '' || createForm.description.value.trim() > 20) {
       errors = 1;
       createForm.description.style.border = 'red 1px solid';
-      document.getElementById('error-description').innerText = 'Debes ingresar al menos 1 unidad';
+      document.getElementById('error-description').innerText = 'La descripcion debe ser de 20 caracteres como mínimo';
     } else {
       createForm.description.style.border = '#CACACA 1px solid'
       document.getElementById('error-description').innerText = '';
