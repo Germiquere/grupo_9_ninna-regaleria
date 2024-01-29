@@ -32,8 +32,8 @@ app.use(session({
     secret: process.env.SECRET 
 }));
 app.use(cookie());
-app.use(cookieParser());
 app.use(userLogedMiddleware);
+app.use(cookieParser());
 app.use(rememberMiddleware);
 app.use(cors())
 
