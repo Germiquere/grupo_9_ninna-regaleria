@@ -3,7 +3,7 @@ const path = require('path');
 const multer = require('multer');
 
 const usersController = require('../controllers/usersController');
-const { loginValidation } = require('../middlewares/loginMiddleware');
+const { loginValidation } = require('../middlewares/loginValidations');
 const { createUserValidations } = require('../middlewares/registerValidations');
 const isLoggedMiddleware = require('../middlewares/isLogedMiddleware');
 const rememberMiddleware = require('../middlewares/rememberMiddleware');

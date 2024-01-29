@@ -33,12 +33,21 @@
           </div>
           <div class="field input-field">
             <label for="typeOfBarrel" class="form-label">Tipo de barrica:</label>
-          <input type="text" id="typeOfBarrel" name="typeOfBarrel" placeholder="Ej: Roble francés" class="form-input" value="<%= Product.TypeOfBarrel.name %>">
-          </div>
-          <div class="field input-field">
-            <label for="timeInBarrel" class="form-label">Tiempo de barrica:</label>
-          <input type="text" id="timeInBarrel" name="timeInBarrel" placeholder="Ej: 2 años" class="form-input" value="<%= Product.time_of_barrel %>">
-          </div>
+            <% if (Product.TypeOfBarrel && Product.TypeOfBarrel.name !== null) { %>
+                <input type="text" id="typeOfBarrel" name="typeOfBarrel" placeholder="Ej: Roble francés" class="form-input" value="<%= Product.TypeOfBarrel.name %>">
+            <% } else { %>
+                <input type="text" id="typeOfBarrel" name="typeOfBarrel" placeholder="No corresponde" class="form-input" readonly>
+            <% } %>
+        </div>
+        <div class="field input-field">
+          <label for="timeInBarrel" class="form-label">Tiempo de barrica:</label>
+          <% if (Product.time_of_barrel !== null) { %>
+              <input type="text" id="timeInBarrel" name="timeInBarrel" placeholder="Ej: 2 años" class="form-input" value="<%= Product.time_of_barrel %>">
+          <% } else { %>
+              <input type="text" id="timeInBarrel" name="timeInBarrel" placeholder="No corresponde" class="form-input" readonly>
+          <% } %>
+      </div>
+      
           <div class="field input-field">
             <label for="price" class="form-label">Precio:</label>
             <input type="text" id="price" name="price" placeholder="Ej: Cabernet Franc 2016" class="form-input" value="<%= Product.price %>">

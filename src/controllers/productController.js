@@ -18,10 +18,10 @@ const controller = {
 				{ association: 'TypeOfBarrel' }
 			]
 		})
-		.then(function(products) {
-			res.render('./products/allProducts', { products: products });
-		})
-		
+			.then(function (products) {
+				res.render('./products/allProducts', { products: products });
+			})
+
 	},
 	wines: (req, res) => {
 		db.Product.findAll({
@@ -32,9 +32,9 @@ const controller = {
 				{ association: 'Styles' }
 			]
 		})
-		.then(function(products) {
-			res.render('./products/wine', { products: products });
-		})
+			.then(function (products) {
+				res.render('./products/wine', { products: products });
+			})
 	},
 	beers: (req, res) => {
 		db.Product.findAll({
@@ -45,9 +45,9 @@ const controller = {
 				{ association: 'Styles' }
 			]
 		})
-		.then(function(products) {
-			res.render('./products/beer', { products: products });
-		})
+			.then(function (products) {
+				res.render('./products/beer', { products: products });
+			})
 	},
 	whiskies: (req, res) => {
 		db.Product.findAll({
@@ -58,9 +58,9 @@ const controller = {
 				{ association: 'Styles' }
 			]
 		})
-		.then(function(products) {
-			res.render('./products/whisky', { products: products });
-		})
+			.then(function (products) {
+				res.render('./products/whisky', { products: products });
+			})
 	},
 	spirits: (req, res) => {
 		db.Product.findAll({
@@ -71,15 +71,15 @@ const controller = {
 				{ association: 'Styles' }
 			]
 		})
-		.then(function(products) {
-			res.render('./products/spirits', { products: products });
-		})
+			.then(function (products) {
+				res.render('./products/spirits', { products: products });
+			})
 	},
-    
+
 	cart(req, res) {
-        res.render('./products/productCart')
-    },
-    detail: (req, res) => {
+		res.render('./products/productCart')
+	},
+	detail: (req, res) => {
 		db.Product.findByPk(req.params.id, {
 			include: [
 				{ association: 'Stores' },
@@ -88,21 +88,21 @@ const controller = {
 				{ association: 'Styles' }
 			]
 		})
-		.then(function(products){
-			res.render('./products/productDetail', { products });
-		})
-    },
+			.then(function (products) {
+				res.render('./products/productDetail', { products });
+			})
+	},
 	create: (req, res) => {
 		return Promise.all([
 			db.ProductSegmentation.findAll(),
 			db.ProductType.findAll()
 		])
 			.then(([productSegmentation, productType]) => {
-				return res.render('./products/product-create-form', {productSegmentation, productType});
+				return res.render('./products/product-create-form', { productSegmentation, productType });
 			});
 	},
 
-	async store (req, res) {
+	async store(req, res) {
 		const [style, barrelType, store] = await Promise.all([
 			db.Style.create({ name: req.body.grape }),
 			db.TypeOfBarrel.create({ name: req.body.typeOfBarrel }),
@@ -130,74 +130,105 @@ const controller = {
 	async edit(req, res) {
 		try {
 			const products = await db.Product.findByPk(req.params.id, {
-					include: [
-						{ association: 'Stores' },
-						{ association: 'TypeOfBarrel' },
-						{ association: 'ProductType' },
-						{ association: 'Styles' },
-						{ association: 'ProductSegmentation'}]
+				include: [
+					{ association: 'Stores' },
+					{ association: 'TypeOfBarrel' },
+					{ association: 'ProductType' },
+					{ association: 'Styles' },
+					{ association: 'ProductSegmentation' }]
 			});
 			const stores = await db.Store.findAll();
 			const typeOfBarrel = await db.TypeOfBarrel.findAll();
 			const productType = await db.ProductType.findAll();
 			const styles = await db.Style.findAll();
 			const productSegmentation = await db.ProductSegmentation.findAll();
-
-
-			return res.render('./products/product-edit-form', { Product: products, stores, typeOfBarrel, productType, styles, productSegmentation});
-
-
+			return res.render('./products/product-edit-form', { Product: products, stores, typeOfBarrel, productType, styles, productSegmentation });
 		} catch (error) {
 			return res.status(500).send(error);
 		}
 	},
 
-	async update (req, res) {
+	async update(req, res) {
 		try {
-						const image = db.Product.findByPk(req.params.id).image;
-            await db.Product.update({ 
-							...req.body,
-							image: req.file ? req.file.filename : image
-						}, { where: { id: req.params.id } }, );
-            return res.redirect('/productDetail/' + req.params.id);
-        } catch (error) {
-            return res.status(500).send(error);
-        }	
+			const product = await db.Product.findByPk(req.params.id);
+
+			if (!product) {
+				return res.status(404).send('Producto no encontrado');
+			}
+
+			const style = product.styles_id;
+			const typeOfBarrel = product.barrels_types_id;
+			const store = product.stores_id;
+
+			await Promise.all([
+				db.Style.update({ name: req.body.grape }, { where: { id: style } }),
+				db.TypeOfBarrel.update({ name: req.body.typeOfBarrel }, { where: { id: typeOfBarrel } }),
+				db.Store.update({ name: req.body.store }, { where: { id: store } }),
+			]);
+
+			await db.Product.update({
+				name: req.body.name,
+				price: req.body.price,
+				discount: req.body.discount,
+				description: req.body.description,
+				image: req.file ? req.file.filename : product.image,
+				stock: req.body.stock,
+				time_of_barrel: req.body.timeInBarrel,
+				year: req.body.year,
+				products_segmentations_id: req.body.category,
+				products_types_id: req.body.type
+			}, { where: { id: req.params.id } });
+			return res.redirect('/productDetail/' + req.params.id);
+		} catch (error) {
+			return res.status(500).send(error);
+		}
 	},
 
 	async destroy(req, res) {
-		try {		  
-				const product = await db.Product.findByPk(req.params.id);
-			
-				if (!product) {
+		try {
+			const productId = req.params.id;
+
+			// Buscar el producto
+			const product = await db.Product.findByPk(productId);
+			if (!product) {
 				return res.status(404).send('Producto no encontrado');
-				}
-			
-				const style = product.styles_id;
-				const typeOfBarrel = product.barrels_types_id;
-				const store = product.stores_id;
-			
-				await Promise.all([
-				db.Product.destroy({
-					where: { id: req.params.id },
-				}),
-				db.Style.destroy({
-					where: { id: style },
-				}),
-				db.TypeOfBarrel.destroy({
-					where: { id: typeOfBarrel },
-				}),
-				db.Store.destroy({
-					where: { id: store },
-				}),
-				]);
-			
-				res.redirect('/allProducts');
-			} catch (error) {
-				console.error(error);
-				res.status(500).send('Error interno del servidor');
 			}
+
+			// Obtener las referencias a los datos en las tablas asociadas
+			const styleReferences = await db.Product.count({ where: { styles_id: product.styles_id } });
+			const typeOfBarrelReferences = await db.Product.count({ where: { barrels_types_id: product.barrels_types_id } });
+			const storeReferences = await db.Product.count({ where: { stores_id: product.stores_id } });
+
+			// Eliminar el producto principal
+			await db.Product.destroy({
+				where: { id: productId },
+			});
+
+			// Eliminar registros en las tablas asociadas solo si no están referenciados por otros productos
+			if (styleReferences === 0) {
+				await db.Style.destroy({
+					where: { id: product.styles_id },
+				});
 			}
-};
+
+			if (typeOfBarrelReferences === 0) {
+				await db.TypeOfBarrel.destroy({
+					where: { id: product.barrels_types_id },
+				});
+			}
+
+			if (storeReferences === 0) {
+				await db.Store.destroy({
+					where: { id: product.stores_id },
+				});
+			}
+
+			res.redirect('/allProducts');
+		} catch (error) {
+			console.error(error);
+			res.status(500).send('Error interno del servidor');
+		}
+	}
+}
 
 module.exports = controller;
