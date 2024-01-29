@@ -18,11 +18,11 @@ const controller = {
         res.render('./users/login')
 
 
-        if (res.body.remember != undefined) {
-            res.cookie('remember',
-            usuarioALoguearse.email, { maxAge: 120000})
-            res.render('./')
-        }
+        // if (res.body.remember != undefined) {
+        //     res.cookie('remember',
+        //     usuarioALoguearse.email, { maxAge: 120000})
+        //     res.render('./')
+        // }
     },
 
     async loginIn(req, res) {

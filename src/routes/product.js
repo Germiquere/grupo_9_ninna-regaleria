@@ -40,7 +40,7 @@ router.post('/create', uploadFile.single('image'), productController.store);
 
 /*** EDIT ONE PRODUCT ***/ 
 router.get('/productDetail/:id/edit', adminMiddleware, productController.edit);
-router.put('/productDetail/:id/edit', productController.update);
+router.put('/productDetail/:id/edit', uploadFile.single('image'), productController.update);
 
 /*** DELETE ONE PRODUCT***/ 
 router.delete('/productDetail/:id', productController.destroy);
