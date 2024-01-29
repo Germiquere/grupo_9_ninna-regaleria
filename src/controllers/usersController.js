@@ -18,7 +18,7 @@ const controller = {
         res.render('./users/login')
 
 
-        // if (res.body.remember != undefined) {
+        // if (req.body.remember != undefined) {
         //     res.cookie('remember',
         //     usuarioALoguearse.email, { maxAge: 120000})
         //     res.render('./')
@@ -26,7 +26,7 @@ const controller = {
     },
 
     async loginIn(req, res) {
-
+        console.log(req.body)
         try {
             const errors = validationResult(req);
       
@@ -38,7 +38,11 @@ const controller = {
             }
       
             const { email, password } = req.body;
-      
+            
+            if(req.body.remember) {
+              res.cookie('userEmail', req.body.email, { maxAge: 120000})
+            }
+
             const user = await db.User.findOne({
               where: { email: email }
             });
@@ -64,7 +68,7 @@ const controller = {
               role: user.roles_id,
               timestamp: user.createdAt
             };
-      
+
             res.redirect('/profile');
           } catch (error) {
             console.error(error);
@@ -95,6 +99,7 @@ const controller = {
         // res.cookie('username', req.body.email)
         // return res.redirect('/profile')
     profile(req, res) {
+        console.log(res.cookie.userEmail)
         const { user } = req.session
         res.render('./users/profile', { user })
     },
@@ -105,6 +110,9 @@ const controller = {
         return res.redirect('/');
     },
     register(req, res) {
+        if (req.session.user) {
+          return res.redirect('/profile')
+      }
         res.render('./users/register')
     },
     async create(req, res) {

@@ -16,10 +16,23 @@ const storage = multer.diskStorage({
     filename: (req, file, cb) => {
         let fileName = `${file.fieldname}${Date.now()}${path.extname(file.originalname)}`
         cb(null, fileName);
-    }
+    },
+
 });
 
-const uploadFile = multer({storage});
+const uploadFile = multer({storage},
+    {
+        dest: '/uploads',
+        fileFilter(req, file, next) {
+            const image = file.mimetype.startWith('image/');
+            if (image) {
+                next(null, true);
+            } else {
+                alert("El tipo de archivo no es valido")
+                next({message: "El tipo de archivo no es valido"}, false);
+            }
+        }
+    });
 
 /*** GET PRODUCTS ***/ 
 router.get('/allProducts', productController.index);
@@ -35,15 +48,15 @@ router.get('/productCart', isLoggedMiddleware, productController.cart);
 router.get('/productDetail/:id', isLoggedMiddleware, productController.detail);
 
 /*** CREATE ONE PRODUCT ***/ 
-router.get('/create', adminMiddleware,productController.create);
+router.get('/create', productController.create);
 router.post('/create', uploadFile.single('image'), productController.store);
 
 /*** EDIT ONE PRODUCT ***/ 
-router.get('/productDetail/:id/edit', adminMiddleware, productController.edit);
+router.get('/productDetail/:id/edit', isLoggedMiddleware, adminMiddleware, productController.edit);
 router.put('/productDetail/:id/edit', uploadFile.single('image'), productController.update);
 
 /*** DELETE ONE PRODUCT***/ 
-router.delete('/productDetail/:id', productController.destroy);
+router.delete('/productDetail/:id', isLoggedMiddleware, adminMiddleware, productController.destroy);
 
 
 module.exports = router;
