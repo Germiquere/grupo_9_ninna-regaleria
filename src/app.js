@@ -27,14 +27,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(session({ secret: "SECRET" }));
-app.use(cookieParser());
-app.use(rememberMiddleware);
 app.use(methodOverride('_method'));
 app.use(session({ 
     secret: process.env.SECRET 
 }));
+app.use(cookie());
 app.use(cookieParser());
 app.use(userLogedMiddleware);
+app.use(rememberMiddleware);
 app.use(cors())
 
 app.use('/', main);
