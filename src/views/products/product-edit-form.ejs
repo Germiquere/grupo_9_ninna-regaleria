@@ -14,7 +14,7 @@
         <div>
           <h2>Editar producto</h2>
         </div>
-        <form action="/productDetail/<%= Product.id %>/edit?_method=PUT" method="POST">
+        <form action="/productDetail/<%= Product.id %>/edit?_method=PUT" method="POST" enctype="multipart/form-data">
           <div class="field input-field">
             <label for="name" class="form-label">Nombre:</label>
           <input type="text" id="name" name="name" placeholder="Ej: Felino Malbec 2021" class="form-input" value="<%= Product.name %>">
@@ -71,7 +71,7 @@
           </div>
           <div class="field input-field">
             <label for="products" class="input">Selecciona la imagen del producto: </label>
-            <input type="file" name="image" accept=".img, .jpg, .jpeg, .png" class="input">
+            <input type="file" name="image" accept=".img,.jpg,.jpeg,.png" class="input" value="/images/products/<%=Product.image%>">
             <% if(locals.errors?.products) {%>
               <p class="error-msg"><%= errors.products.msg %></p>
           <% } %>
