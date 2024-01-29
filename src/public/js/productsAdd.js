@@ -94,7 +94,7 @@ window.onload = function () {
         document.getElementById('error-image').innerText = '';
         errors = 0;
     }
-});
+  });
   
   
   createForm.addEventListener('submit', (e)=>{

@@ -21,10 +21,10 @@ window.onload = function(){
     })
 
     loginForm.password.addEventListener('blur', ()=>{
-        if(loginForm.password.value.length < 6){
+        if(loginForm.password.value.trim().length < 1){
             errors = 1;
             loginForm.password.style.border = 'red 1px solid'
-            document.getElementById('error-password').innerText = 'La contraseña debe tener un mínimo de 6 caracteres';
+            document.getElementById('error-password').innerText = 'Debes ingresar la contraseña';
         } else {
             loginForm.password.style.border = '#CACACA 1px solid'
             document.getElementById('error-password').innerText = '';

@@ -59,9 +59,8 @@
           <div class="field input-field">
             <label for="type" class="form-label">Tipo:</label>
           <select name="type" id="type">
-              <option value=""><%= Product.ProductType.name %></option>
               <% productType.forEach(productType => { %> 
-                  <option value="<%= productType.id %>"><%= productType.name %></option>
+                  <option value="<%= productType.name %>" <%= Product.ProductType.name === productType.name && 'selected' %>><%= productType.name %></option>
               <%}); %>
           </select>
           </div>
