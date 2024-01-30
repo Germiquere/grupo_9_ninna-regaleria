@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const db = require('../database/models')
+const {validationResult} = require('express-validator');
 
 const productsFilePath = path.join(__dirname, '../data/products.json');
 
@@ -103,28 +104,42 @@ const controller = {
 	},
 
 	async store(req, res) {
-		const [style, barrelType, store] = await Promise.all([
-			db.Style.create({ name: req.body.grape }),
-			db.TypeOfBarrel.create({ name: req.body.typeOfBarrel }),
-			db.Store.create({ name: req.body.store }),
-		]);
+		try {
+			const errors = validationResult(req);
 
-		db.Product.create({
-			name: req.body.name,
-			price: req.body.price,
-			discount: req.body.discount,
-			description: req.body.description,
-			image: req.file ? req.file.filename : "default.png",
-			stock: req.body.stock,
-			time_of_barrel: req.body.timeInBarrel,
-			year: req.body.year,
-			products_segmentations_id: req.body.category,
-			products_types_id: req.body.type,
-			styles_id: style.id,
-			barrels_types_id: barrelType.id,
-			stores_id: store.id,
-		});
-		res.redirect('/allProducts');
+			if (!errors.isEmpty()) {
+				return res.render('./products/product-create-form', {
+					errors: errors.mapped(),
+					oldData: req.body
+				});
+			}
+
+			const [style, barrelType, store] = await Promise.all([
+				db.Style.create({ name: req.body.grape }),
+				db.TypeOfBarrel.create({ name: req.body.typeOfBarrel }),
+				db.Store.create({ name: req.body.store }),
+			]);
+
+			db.Product.create({
+				name: req.body.name,
+				price: req.body.price,
+				discount: req.body.discount,
+				description: req.body.description,
+				image: req.file ? req.file.filename : "default.png",
+				stock: req.body.stock,
+				time_of_barrel: req.body.timeInBarrel,
+				year: req.body.year,
+				products_segmentations_id: req.body.category,
+				products_types_id: req.body.type,
+				styles_id: style.id,
+				barrels_types_id: barrelType.id,
+				stores_id: store.id,
+			});
+			res.redirect('/allProducts');
+		} catch (error) {
+			console.error(error);
+			res.status(500).send('Error interno del servidor');
+		}
 	},
 
 	async edit(req, res) {
