@@ -7,13 +7,14 @@
                 <li>
                     <h3>Categorias</h3>
                 </li>
+                <li><a href="/">Inicio</a></li>
                 <li><a href="/wines">Vinos</a></li>
                 <li><a href="/whiskies">Whiskies</a></li>
                 <li><a href="/spirits">Spirits</a></li>
                 <li><a href="/beers">Cervezas</a></li>
                 <li><a href="/allProducts">Todos los Productos</a></li>
-                <% if(locals.user?.role==1) {%>
-                    <div><a href="/create">Crear Producto</a></div>
+                <% if(locals.user?.roles_id==1) {%>
+                    <li><a href="/create">Crear Producto</a></li>
                 <% } %>
             </ul>
         </div>
