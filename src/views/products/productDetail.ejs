@@ -33,7 +33,7 @@
                     </div>
                     <button class="purchase-buttom" href="">Comprar ahora</button>
                     <button class="cart-buttom" href="">Agregar al carrito</button>
-                    <% if(locals.user?.role==1) {%>
+                    <% if(locals.user?.roles_id==1) {%>
                     <div class="edit-product">
                         <button class="product-buttom" href="">
                             <a href="/productDetail/<%= products.id %>/edit">Editar</a>

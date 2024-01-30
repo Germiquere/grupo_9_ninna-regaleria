@@ -1,29 +1,20 @@
-const fs = require('fs');
-const db = require('../database/models')
+const db = require('../database/models');
 
-function rememberMiddleware(req, res, next) {
-  
-  if (req.cookies.remember != undefined && 
-    req.session.usuarioLogueado == undefined) {
-      let users = db.User.findAll()
-        if (users == "") {
-          users = [];
-        } else {
-          users = JSON.parse(user);
-        }
-        let usuarioALoguearse
-        
-        for (let i = 0; i < users.length; i++) {
-          if(users[i].email == req.cookies.remember) {
-            usuarioALoguearse = user[i];
-            break;
-          }
-        }
-        
-        req.session.usuarioLogueado = usuarioALoguearse;
-      }
-      
-      next();
+async function rememberMiddleware(req, res, next) {
+  const emailCookie = req.cookies.userEmail;
+  let userInCookie = null;
+
+  if (req.cookies.userEmail) {
+    try {
+      const data = await db.User.findOne({ where: { email: emailCookie } });
+      userInCookie = data;
+      req.session.user = userInCookie;
+    } catch (error) {
+      console.error('Error al buscar usuario por email:', error);
+    }
+  }
+
+  next();
 }
 
 module.exports = rememberMiddleware;
