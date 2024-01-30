@@ -13,36 +13,37 @@
     <%- include('../partials/header') %>
         <main>
             <div class="product-detail">
-                <div class="img-product"><img src="/images/products/<%= products.image %>" alt=" imagen producto">
+                <div class="img-product img"><img src="/images/products/<%= products.image %>" alt=" imagen producto">
                 </div>
                 <div class="details">
-                    <h5 class="product-name">
-                        <%= products.name %>
-                    </h5>
-                    <p class="grape">
-                        <%= products.Styles.name %>
-                    </p>
-                    <p class="price">
-                        <%= products.price %>
-                    </p>
-                    <p class="stock">Stock: <%= products.stock %>
-                    </p>
-                    <div class="purchase-quantity">
-                        <span class="quantity-buttom"> - </span> <span class="quantity"> 1 </span> <span
-                            class="quantity-buttom"> + </span>
+                    <div class="details-products">
+                        <h5 class="product-name">
+                            <%= products.name %>
+                        </h5>
+                        <p class="price">
+                            <%= products.price %>
+                        </p>
+                        <p class="stock">Stock: <%= products.stock %>
+                        </p>
+                        <div class="purchase-quantity">
+                            <span class="quantity-buttom"> - </span> <span class="quantity"> 1 </span> <span
+                                class="quantity-buttom"> + </span>
+                        </div>
                     </div>
-                    <button class="purchase-buttom" href="">Comprar ahora</button>
-                    <button class="cart-buttom" href="">Agregar al carrito</button>
-                    <% if(locals.user?.roles_id==1) {%>
-                    <div class="edit-product">
-                        <button class="product-buttom" href="">
-                            <a href="/productDetail/<%= products.id %>/edit">Editar</a>
-                        </button>
-                        <form action="/productDetail/<%= products.id %>?_method=DELETE" method="post">
-                            <button class="product-buttom" type="submit">Eliminar</button>
-                        </form>
+                    <div class="details-buttom">
+                        <button class="purchase-buttom" href="">Comprar ahora</button>
+                        <button class="cart-buttom" href="">Agregar al carrito</button>
+                        <% if(locals.user?.roles_id==1) {%>
+                        <div class="edit-product">
+                            <button class="product-buttom" href="">
+                                <a href="/productDetail/<%= products.id %>/edit">Editar</a>
+                            </button>
+                            <form action="/productDetail/<%= products.id %>?_method=DELETE" method="post">
+                                <button class="product-buttom" type="submit">Eliminar</button>
+                            </form>
+                        </div>
+                        <% } %>
                     </div>
-                    <% } %>
                 </div>
             </div>
             <div class="desc-container">
