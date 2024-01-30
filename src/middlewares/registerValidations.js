@@ -9,7 +9,13 @@ const createUserValidations = [
         .isNumeric().withMessage('Debes ingresar un número válido'),
     body('dni')
         .notEmpty().withMessage('Debes ingresar tu número de DNI')
-        .isNumeric().withMessage('Ingresa el número sin puntos'),
+        .isNumeric().withMessage('Ingresa el número sin puntos')
+        .custom(async (value) => {
+            const user = await db.User.findOne({ where: { dni: value } });
+            if (user) {
+                return Promise.reject('El DNI ya está registrado');
+            }
+        }),
     body('email')
         .notEmpty().withMessage('Debes ingresar un correo electrónico')
         .isEmail().withMessage('Ingresa un formato de correo válido')
