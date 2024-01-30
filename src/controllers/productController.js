@@ -94,6 +94,7 @@ const controller = {
 			})
 	},
 	create: (req, res) => {
+		console.log(req.session.user)
 		return Promise.all([
 			db.ProductSegmentation.findAll(),
 			db.ProductType.findAll()

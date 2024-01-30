@@ -27,7 +27,6 @@ const controller = {
     },
 
     async loginIn(req, res) {
-        console.log(req.body)
         try {
             const errors = validationResult(req);
       
@@ -62,7 +61,7 @@ const controller = {
               age: user.age,
               dni: user.dni,
               img: user.img,
-              role: user.roles_id,
+              roles_id: user.roles_id,
               timestamp: user.createdAt
             };
 
@@ -100,14 +99,14 @@ const controller = {
         // res.cookie('username', req.body.email)
         // return res.redirect('/profile')
     profile(req, res) {
-        console.log(res.cookie.userEmail)
+      console.log(req.session.user.roles_id)
         const { user } = req.session
         res.render('./users/profile', { user })
     },
 
     logout(req, res) {
         delete req.session.user;
-        res.clearCookie('username');
+        res.clearCookie('userEmail');
         return res.redirect('/');
     },
     register(req, res) {
