@@ -37,12 +37,8 @@ const controller = {
                 oldData: req.body
               });
             }
-      
-            const { email, password } = req.body;
             
-            if(req.body.remember) {
-              res.cookie('userEmail', req.body.email, { maxAge: 120000})
-            }
+           const { email, password } = req.body;
 
             const user = await db.User.findOne({
               where: { email: email }
@@ -69,6 +65,10 @@ const controller = {
               role: user.roles_id,
               timestamp: user.createdAt
             };
+
+            if(req.body.remember) {
+              res.cookie('userEmail', req.body.email, { maxAge: 120000})
+            }
 
             res.redirect('/profile');
           } catch (error) {

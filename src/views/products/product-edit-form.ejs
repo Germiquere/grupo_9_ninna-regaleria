@@ -67,10 +67,9 @@
           <div class="field input-field">
             <label for="type" class="form-label">Segmento:</label>
           <select name="category" id="category">
-            <option value=""><%= Product.ProductSegmentation.name %></option>
-              <% productSegmentation.forEach(productSegmentation => { %> 
-                  <option value="<%= productSegmentation.id %>"><%= productSegmentation.name %></option>
-              <%}); %>
+            <% productSegmentation.forEach(productSegmentation => { %> 
+              <option value="<%= productSegmentation.name %>" <%= Product.ProductSegmentation.name === productSegmentation.name && 'selected' %>><%= productSegmentation.name %></option>
+          <%}); %>
           </select>
           </div>
           <div class="field input-field input-description">

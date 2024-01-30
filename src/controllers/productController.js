@@ -164,6 +164,7 @@ const controller = {
 	},
 
 	async update(req, res) {
+		console.log(req.body)
 		try {
 
 			const product = await db.Product.findByPk(req.params.id);
@@ -182,6 +183,10 @@ const controller = {
 				db.Store.update({ name: req.body.store }, { where: { id: store } }),
 			]);
 
+			const idProducType = await db.ProductType.findOne({where: {name: req.body.type}})
+			const idProducSegmentation = await db.ProductSegmentation.findOne({where: {name: req.body.category}})
+			console.log(idProducType)
+
 			await db.Product.update({
 				name: req.body.name,
 				price: req.body.price,
@@ -191,9 +196,10 @@ const controller = {
 				stock: req.body.stock,
 				time_of_barrel: req.body.timeInBarrel,
 				year: req.body.year,
-				products_segmentations_id: req.body.category,
-				products_types_id: req.body.type
+				products_segmentations_id: idProducSegmentation.id,
+				products_types_id: idProducType.id
 			}, { where: { id: req.params.id } });
+			
 			return res.redirect('/productDetail/' + req.params.id);
 		} catch (error) {
 			return res.status(500).send(error);
