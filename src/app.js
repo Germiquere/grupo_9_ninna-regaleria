@@ -32,9 +32,9 @@ app.use(session({
     secret: process.env.SECRET 
 }));
 app.use(cookie());
-app.use(userLogedMiddleware);
 app.use(cookieParser());
 app.use(rememberMiddleware);
+app.use(userLogedMiddleware);
 app.use(cors())
 
 app.use('/', main);
