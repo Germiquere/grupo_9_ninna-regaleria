@@ -167,6 +167,7 @@ const controller = {
 	async update(req, res) {
 		console.log(req.body)
 		try {
+
 			const product = await db.Product.findByPk(req.params.id);
 
 			if (!product) {

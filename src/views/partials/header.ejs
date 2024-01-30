@@ -26,7 +26,7 @@
             <% if (!locals.isLogged){ %>
                 <p>Iniciar Sesion</p>
             <% } else { %>
-                <p><%= locals.user.name || locals.user.fullname %></p>
+                <p><%= locals.user.user%></p>
                 <% } %>
         </div>
     </a>
@@ -44,7 +44,7 @@
         <div><a href="/spirits">Spirits</a></div>
         <div><a href="/beers">Cervezas</a></div>
         <div><a href="/allProducts">Todos los Productos</a></div>
-        <% if(locals.user?.roles_id==1) {%>
+        <% if(locals.user?.role==1) {%>
         <div><a href="/create">Crear Producto</a></div>
         <% } %>
     </nav>

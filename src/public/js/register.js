@@ -19,6 +19,21 @@ window.onload = function(){
             errors = 0;
         }
     });
+    registerForm.username.addEventListener('blur', ()=>{
+        if (registerForm.username.value.trim() == '') {
+            errors = 1;
+            registerForm.username.style.border = 'red 1px solid';
+            document.getElementById('error-username').innerText = 'Debe ingresar un nombre de usuario';
+        } else if(registerForm.fullname.value.trim().length < 1){
+            errors = 1;
+            registerForm.username.style.border = 'red 1px solid';
+            document.getElementById('error-username').innerText = 'Debe ingresar un nombre de usuario valido';
+        } else {
+            registerForm.username.style.border = '#CACACA 1px solid';
+            document.getElementById('error-username').innerText = '';
+            errors = 0;
+        }
+    });
 
     registerForm.age.addEventListener('blur', ()=>{
         if(registerForm.age.value.trim().length < 1){
@@ -77,12 +92,16 @@ window.onload = function(){
         }
     });
     
-    registerForm.confirmPassword.addEventListener('blur', ()=>{
-        if(registerForm.confirmPassword.value != registerForm.password.value) {
+    registerForm.confirmPassword.addEventListener('blur', () => {
+        const password = registerForm.password.value;
+        const confirmPassword = registerForm.confirmPassword.value;
+
+        if (password !== confirmPassword) {
             errors = 1;
             registerForm.confirmPassword.style.border = 'red 1px solid';
             document.getElementById('error-confirm-password').innerText = 'Las contraseñas no coinciden';
         } else {
+            // Limpiar errores si las contraseñas coinciden
             registerForm.confirmPassword.style.border = '#CACACA 1px solid';
             document.getElementById('error-confirm-password').innerText = '';
             errors = 0;

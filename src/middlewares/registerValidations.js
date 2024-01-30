@@ -3,7 +3,15 @@ const db = require('../database/models')
 const createUserValidations = [
     body('fullname')
         .notEmpty().withMessage('Debe ingresar un nombre')
-        .isLength({min: 6}).withMessage('Ingresa tu nombre y apellido'),
+        .isLength({ min: 6 }).withMessage('Ingresa tu nombre y apellido'),
+    body('username')
+        .notEmpty().withMessage('Debe ingresar un nombre de usuario')
+        .isLength({ max: 9 }).withMessage('Nombre de usuario maximo con 9 caracteres').custom(async (value) => {
+            const user = await db.User.findOne({ where: { username: value } });
+            if (user) {
+                return Promise.reject('El Nombre de usuario ya está registrado');
+            }
+        }),
     body('age')
         .notEmpty().withMessage('Debes ingresar tu edad')
         .isNumeric().withMessage('Debes ingresar un número válido'),
