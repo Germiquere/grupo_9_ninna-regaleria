@@ -27,3 +27,7 @@
 ## LINK TRELLO
 
 https://trello.com/b/6flBFaNO/tablero-grupo-9-ninna
+
+## REPOSITORIO DASHBOAR
+
+https://github.com/giaroligisel/dashboard_ninna-regaleria
